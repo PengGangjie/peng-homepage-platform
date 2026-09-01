@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>彭岗杰 · 个人主页风格草案</title>
+  <style>
+    :root {
+      --ink: #1a1814;
+      --muted: #6a6358;
+      --line: #ddd6c8;
+      --paper: #f4efe6;
+      --card: #fffdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Palatino Linotype", "Noto Serif SC", "Songti SC", Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 56px 28px 80px;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    header p {
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 42em;
+      font-size: 16px;
+    }
+    .note {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 40px;
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    a.card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(40, 32, 18, 0.08);
+    }
+    .thumb {
+      height: 168px;
+      position: relative;
+      overflow: hidden;
+    }
+    .thumb span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px 18px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .body {
+      padding: 20px 20px 22px;
+    }
+    .body h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .tag {
+      display: inline-block;
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8a4b1f;
+      margin-bottom: 8px;
+    }
+    .body p {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #3f3a34;
+    }
+    .fit {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .go {
+      margin-top: 16px;
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+    .t-letter { background: #f6f1e8; color: #1c1916; border-bottom: 1px solid #d9d0c2; }
+    .t-letter::after {
+      content: "Gangjie Peng";
+      font-size: 28px;
+      padding: 48px 20px 20px;
+    }
+    .t-keynote { background: #000; color: #f5f5f7; }
+    .t-keynote::after {
+      content: "SHIPPED";
+      font-family: "Segoe UI", sans-serif;
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      padding: 52px 20px 20px;
+    }
+    .t-studio { background: #3d4a34; color: #f3eadc; }
+    .t-studio::after {
+      content: "HABITAT";
+      font-size: 36px;
+      letter-spacing: 0.18em;
+      padding: 56px 20px 20px;
+    }
+    .t-grid { background: #faf8f5; color: #111; }
+    .t-grid .mini {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 8px;
+      padding: 18px;
+      height: 100%;
+    }
+    .t-grid .mini i {
+      display: block;
+      background: #fff;
+      border: 1px solid #e6e0d6;
+      border-radius: 4px;
+    }
+    .t-grid .mini i:first-child { background: #8c1c13; }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .wrap { padding: 36px 18px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>彭岗杰 · 个人主页风格草案</h1>
+      <p>对照 YC 风简历的主线来的：高职讲师，做存量人居的数字化方法，并把系统真正做上线。下面四套都是可落地的单页 HTML，点进去看全页节奏。公开页默认不放手机号。</p>
+      <p class="note">建议先看「一页纸」和「空间所」。前者最贴简历，后者最贴专业身份。发布场适合把作品当产品讲；工作台适合把几条线摊开，但主线会散一点。</p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="style-letter.html">
+        <div class="thumb t-letter"></div>
+        <div class="body">
+          <div class="tag">建议优先看</div>
+          <h2>一页纸</h2>
+          <p>把简历变成一封排好版的信。衬线、留白、产品用一句话交代规模。读完就能决定要不要点进 GitHub 或上线地址。</p>
+          <p class="fit">适合：Superlinear / Builder / 投递附页</p>
+          <p class="go">打开全页 →</p>
+        </div>
+      </a>
+
+      <a class="card" href="style-keynote.html">
+        <div class="thumb t-keynote"></div>
+        <div class="body">
+          <div class="tag">产品叙事</div>
+          <h2>发布场</h2>
+          <p>黑场大字，一屏一个已上线作品。实训科平台、人居孪生、砺行、沉浮各自占一章，数字先于头衔。</p>
+          <p class="fit">适合：作品演示、录屏封面、让外行 30 秒看懂你 ship 了什么</p>
+          <p class="go">打开全页 →</p>
+        </div>
+      </a>
+
+      <a class="card" href="style-studio.html">
+        <div class="thumb t-studio"></div>
+        <div class="body">
+          <div class="tag">专业身份</div>
+          <h2>空间所</h2>
+          <p>小型建筑/人居工作室站点。墨绿与暖纸，项目按案例陈列。林孪智服落在人居孪生同一条线上，不另开林业栏目。</p>
+          <p class="fit">适合：课题、同行、设计圈；以后补现场图会更完整</p>
+          <p class="go">打开全页 →</p>
+        </div>
+      </a>
+
+      <a class="card" href="style-grid.html">
+        <div class="thumb t-grid">
+          <div class="mini"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="body">
+          <div class="tag">多线程</div>
+          <h2>工作台</h2>
+          <p>卡片栅格，教学、系统、专辑、路径同时在场。信息密度高，主线要靠第一张大卡钉住，否则会看起来像什么都做。</p>
+          <p class="fit">适合：自己用的门户；对外需克制卡片数量</p>
+          <p class="go">打开全页 →</p>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      内容来自 YC 简历 2026-08 稿。选定风格后，再补完整项目页、中英切换和真实现场图。
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>彭岗杰 · 工作台</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f3efe8;
+      color: #161412;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 22px;
+      font-size: 13px;
+      color: #6b645c;
+    }
+    header a { text-decoration: none; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(140px, auto);
+      gap: 12px;
+    }
+    .card {
+      background: #fffdf9;
+      border: 1px solid #e4ddd2;
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .hero {
+      grid-column: span 2;
+      grid-row: span 2;
+      background: #8c1c13;
+      color: #f8efe6;
+      border-color: #8c1c13;
+    }
+    .hero h1 {
+      font-family: "Palatino Linotype", "Noto Serif SC", serif;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .hero p { margin-top: 16px; font-size: 16px; line-height: 1.5; opacity: 0.92; }
+    .k {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8a8176;
+      margin-bottom: 8px;
+    }
+    .hero .k { color: rgba(248, 239, 230, 0.7); }
+    h2 { font-size: 18px; font-weight: 650; }
+    p { font-size: 14px; line-height: 1.5; color: #3f3a34; }
+    .hero p { color: inherit; }
+    .wide { grid-column: span 2; }
+    .quote {
+      background: #161412;
+      color: #f3eadc;
+      border-color: #161412;
+      display: flex;
+      align-items: center;
+    }
+    .quote p {
+      font-family: "Palatino Linotype", "Noto Serif SC", serif;
+      font-size: 22px;
+      color: inherit;
+    }
+    .link { color: #8c1c13; font-size: 13px; text-decoration: none; }
+    .link:hover { text-decoration: underline; }
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .hero { grid-column: span 2; }
+    }
+    @media (max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero, .wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="index.html">← 风格草案</a>
+      <span>Desk · 2026</span>
+    </header>
+    <div class="grid">
+      <article class="card hero">
+        <p class="k">Now</p>
+        <h1>彭岗杰</h1>
+        <p>存量人居的数字化方法。高职讲师，把测绘、BIM、权限系统和每天能用的工具做上线。</p>
+      </article>
+
+      <article class="card">
+        <p class="k">01</p>
+        <h2>实训科平台</h2>
+        <p>9 院 5 角色。354 间实训室，547 个房间页。</p>
+        <p style="margin-top:10px;"><a class="link" href="https://gxstzy-shixun.ai-builders.space">打开</a></p>
+      </article>
+
+      <article class="card">
+        <p class="k">02</p>
+        <h2>人居孪生</h2>
+        <p>乡土 BIM + 点云。课题 2025KY1625。林孪智服是现场练习。</p>
+      </article>
+
+      <article class="card wide">
+        <p class="k">Teach</p>
+        <h2>建筑装饰 / 实训室运行</h2>
+        <p>广西生态工程职业技术学院，2021 至今。SketchUp Official Trainer。年课时 800–1100。竞赛工作室：广西技能大赛二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</p>
+      </article>
+
+      <article class="card">
+        <p class="k">03</p>
+        <h2>砺行</h2>
+        <p>11 模块个人 OS。先习惯，再同步。</p>
+      </article>
+
+      <article class="card">
+        <p class="k">04</p>
+        <h2>沉浮 EP</h2>
+        <p>四曲。歌词同步，留言板。</p>
+        <p style="margin-top:10px;"><a class="link" href="https://chenfu-ep.ai-builders.space">打开</a></p>
+      </article>
+
+      <article class="card quote">
+        <p>君子不器，知行合一。</p>
+      </article>
+
+      <article class="card wide">
+        <p class="k">Path</p>
+        <h2>UDG → 长江新区 → 学院</h2>
+        <p>景观概念与投标，借调管委会做规划文本，再到高职把方法教出去、把系统跑起来。地大武汉硕士，2015 年 TU Berlin。</p>
+      </article>
+
+      <article class="card">
+        <p class="k">Write</p>
+        <h2>IEEE ICEACE</h2>
+        <p>传统建筑多尺度融合与深度学习保存，2025。</p>
+      </article>
+
+      <article class="card">
+        <p class="k">Contact</p>
+        <h2>邮件 / GitHub</h2>
+        <p><a class="link" href="mailto:102627184@qq.com">102627184@qq.com</a><br /><a class="link" href="https://github.com/PengGangjie">PengGangjie</a></p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

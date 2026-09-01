@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>彭岗杰 · 发布场</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-snap-type: y mandatory; }
+    body {
+      background: #000;
+      color: #f5f5f7;
+      font-family: "SF Pro Display", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    }
+    a { color: #2997ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 28px;
+      font-size: 13px;
+      color: #a1a1a6;
+      background: linear-gradient(#000, transparent);
+    }
+    .bar a { color: #a1a1a6; }
+    section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 96px 8vw 72px;
+    }
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 104px);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 0.95;
+    }
+    .hero p {
+      margin-top: 28px;
+      max-width: 18em;
+      font-size: clamp(20px, 2.4vw, 28px);
+      color: #a1a1a6;
+      font-weight: 400;
+    }
+    .kicker {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #86868b;
+      margin-bottom: 16px;
+    }
+    .num {
+      font-size: clamp(64px, 12vw, 140px);
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
+    }
+    .num span {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      color: #86868b;
+      margin-top: 12px;
+      font-weight: 400;
+    }
+    h2 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      margin: 12px 0 16px;
+    }
+    .copy {
+      max-width: 22em;
+      font-size: 19px;
+      color: #d2d2d7;
+      line-height: 1.45;
+    }
+    .light {
+      background: #f5f5f7;
+      color: #1d1d1f;
+    }
+    .light .kicker, .light .copy { color: #6e6e73; }
+    .light a { color: #0066cc; }
+    footer.cta {
+      min-height: 70vh;
+      text-align: left;
+    }
+    footer.cta p { margin-top: 20px; color: #a1a1a6; }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <a href="index.html">风格草案</a>
+    <span>Peng · Shipped</span>
+  </div>
+
+  <section class="hero">
+    <p class="kicker">Gangjie Peng</p>
+    <h1>会把系统<br>做上线。</h1>
+    <p>高职课堂上教人居数字化。实验室操作系统、乡土孪生、个人工具和一张专辑，都已经在跑。</p>
+  </section>
+
+  <section>
+    <p class="kicker">01 · 实训科平台</p>
+    <p class="num">9<span>个学院 · 5 角色权限</span></p>
+    <h2>嵌套 Excel 换成可审计的实验室 OS。</h2>
+    <p class="copy">245/438 间教室对齐到 354 间实训室、547 个房间页。FastAPI、Logto、Turso。管理员不再翻文件夹。<br /><a href="https://gxstzy-shixun.ai-builders.space">打开站点</a></p>
+  </section>
+
+  <section class="light">
+    <p class="kicker">02 · Habitat Twin</p>
+    <p class="num">2025KY1625<span>省厅课题 · 乡土民居 BIM + 点云</span></p>
+    <h2>已有的房子，做成可量测的孪生。</h2>
+    <p class="copy">SketchUp 官方认证讲师。林孪智服是同一套人居孪生栈的现场练习。</p>
+  </section>
+
+  <section>
+    <p class="kicker">03 · 砺行</p>
+    <p class="num">11<span>个每天能填的模块</span></p>
+    <h2>职业框架变成个人 OS。</h2>
+    <p class="copy">密度日志、偏差环、生命之轮。先养成习惯，再登录同步。</p>
+  </section>
+
+  <section class="light">
+    <p class="kicker">04 · 沉浮</p>
+    <p class="num">4<span>曲 · 歌词同步与留言</span></p>
+    <h2>一张专辑，也做成能住的站点。</h2>
+    <p class="copy"><a href="https://chenfu-ep.ai-builders.space">chenfu-ep.ai-builders.space</a></p>
+  </section>
+
+  <section class="cta">
+    <p class="kicker">Now</p>
+    <h2>彭岗杰</h2>
+    <p class="copy">广西生态工程职业技术学院 · 建筑装饰 / 实训室运行<br />此前 UDG 景观，借调长江新区。<br />中国地质大学（武汉）硕士 · TU Berlin 2015</p>
+    <p><a href="mailto:102627184@qq.com">102627184@qq.com</a> · <a href="https://github.com/PengGangjie">GitHub</a></p>
+  </section>
+</body>
+</html>
