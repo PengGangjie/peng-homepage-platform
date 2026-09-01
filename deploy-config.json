@@ -1,10 +1,10 @@
 {
   "repo_url": "https://github.com/PengGangjie/peng-homepage-platform",
-  "service_name": "PengGangjie",
+  "service_name": "penggangjie",
   "branch": "main",
   "env_vars": {
     "APP_MODE": "prod",
     "LOG_LEVEL": "info",
-    "PUBLIC_BASE_URL": "https://PengGangjie.ai-builders.space"
+    "PUBLIC_BASE_URL": "https://penggangjie.ai-builders.space"
   }
 }
