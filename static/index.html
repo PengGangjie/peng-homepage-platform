@@ -703,6 +703,10 @@
     .flat-grid .frame.paperish { background: #f4f3ef; }
     .flat-grid article h3 { font-size: 18px; margin-top: 12px; line-height: 1.35; }
     .flat-grid article p { font-size: 14px; margin-top: 4px; color: var(--muted); }
+    .flat-video { margin-top: 26px; }
+    .flat-video video { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; display: block; background: #050505; }
+    .flat-video h3 { font-size: 18px; margin-top: 12px; line-height: 1.35; }
+    .flat-video p { font-size: 14px; margin-top: 4px; color: var(--muted); }
 
     .certs { background: var(--char); }
     .cert-grid {
@@ -782,7 +786,7 @@
 
       /* 触控与留白 */
       .btn { padding: 12px 18px; }
-      .reel video, .scan iframe { aspect-ratio: 4 / 3; }
+      .reel video, .scan iframe, .flat-video video { aspect-ratio: 4 / 3; }
       .foot-mp img { width: 96px; height: 96px; }
     }
   </style>
@@ -1011,7 +1015,7 @@
           <p class="kicker">Studio</p>
           <h2 data-i18n="studio.h2">已经被人住过、用过的空间，怎么改。</h2>
         </div>
-        <p class="body" data-i18n="studio.lede">住宅与厂房改造、店面与概念馆设计，以及品牌平面和摄影。收录方案图、展板与效果图。</p>
+        <p class="body" data-i18n="studio.lede">住宅与厂房改造、店面与概念馆设计，以及办公与展厅公共空间的落地实施。收录方案图、展板、效果图与落地视频。</p>
       </div>
 
       <div class="studio-hold" hidden>
@@ -1094,27 +1098,18 @@
       <div class="flat" id="flat">
         <div class="flat-head">
           <div>
-            <p class="kicker">Flat works</p>
-            <h3 data-i18n="flat.h3">平面与摄影</h3>
+            <p class="kicker">Public space</p>
+            <h3 data-i18n="flat.h3">公共空间设计 · 办公与展厅</h3>
           </div>
-          <p data-i18n="flat.lede">海报、商业摄影与抽象平面。和空间方案同一条线：把判断落到能看清的画面上。</p>
+          <p data-i18n="flat.lede">办公与展厅公共空间设计，从方案到建成落地的视频记录。</p>
         </div>
-        <div class="flat-grid">
-          <article>
-            <div class="frame contain" data-src="works/studio/flat-photo.jpg">
-              <img alt="团队风采展示与青楠园艺商业摄影" />
-            </div>
-            <h3 data-i18n="flat.photo.h3">团队风采 · 青楠园艺</h3>
-            <p data-i18n="flat.photo.p">左：长江新区团队风采海报。右：青楠园艺商业摄影。</p>
-          </article>
-          <article>
-            <div class="frame contain paperish" data-src="works/studio/flat-xiangsheng.jpg">
-              <img alt="相生平面作品" />
-            </div>
-            <h3 data-i18n="flat.xs.h3">相生</h3>
-            <p data-i18n="flat.xs.p">抽象笔触双联。相 / 生，暖冷对照。</p>
-          </article>
-        </div>
+        <figure class="flat-video">
+          <video controls playsinline preload="metadata" poster="works/video/office-hall.jpg">
+            <source src="works/video/office-hall.mp4" type="video/mp4" />
+          </video>
+          <h3 data-i18n="flat.video.h3">落地视频 · 办公与展厅</h3>
+          <p data-i18n="flat.video.p">公共空间设计实施完成后的实景记录。</p>
+        </figure>
       </div>
     </div>
   </section>
