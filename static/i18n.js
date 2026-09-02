@@ -88,7 +88,7 @@
     "path4.idx": "CUG Wuhan",
     "teach.h2": "Teach software in class; turn rooms into runnable archives after.",
     "teach.p1": "Trimble SketchUp Official Trainer (Standard, T-010-000179, Beijing ATC, Aug 2024). Teach SketchUp and BIM; co-edited a national vocational textbook on architectural drawing.",
-    "teach.p2": "Habitat-twin studio makes existing houses measurable. Competition studio covers interior, exhibition, and digital design. One stack: draw, measure, deliver.",
+    "teach.p2": "Teaches architectural decoration engineering technology; outstanding academic mentor and class advisor. Five second prizes and four third prizes at the national Digital-Creative Teaching Skills Competition; students took two silver medals at the regional vocational skills competition and 40+ design industry awards. Runs lab construction and safety, skills-competition organization, and industry-education integration; leads a Guangxi young-faculty research grant project.",
     "teach.cap": "Guest teaching · Zhejiang University",
     "certs.h2": "Credentials & Memberships",
     "certs.lede": "Three core certificates open for online check; industry roles and issuers listed below.",
