@@ -54,7 +54,7 @@
     "card.gewuji.go": "Open repo →",
     "studio.h2": "How to change spaces people already live in and use.",
     "studio.lede": "Home and factory retrofit, storefront and concept-hall design, plus built public-space work for offices and exhibition halls. Boards, drawings, renderings, and an on-site video.",
-    "proj.shuxiang.h3": "Shuxiangyuan home retrofit",
+    "proj.shuxiang.h3": "Home retrofit",
     "proj.shuxiang.p": "New Chinese interior renewal: living room, entry kitchen, study, primary bedroom. A shippable plan for an existing home—not collage concepts.",
     "quad.yunhai.h3": "Yunhai tea shop",
     "quad.yunhai.p": "Night storefront. Cloud motif, entry, and signage—brand landed on a buildable facade.",
