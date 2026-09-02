@@ -761,6 +761,29 @@
       .hero-shot { padding: 0; }
       .hero-shot::before, .feat::before { display: none; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
+
+      /* —— 移动端顶栏：品牌 + EN 一行，导航单行横滑 —— */
+      header.top .wrap { flex-wrap: wrap; min-height: 0; padding: 10px 0 6px; gap: 6px 16px; }
+      .nav-row { display: contents; }
+      .lang-toggle { order: 1; margin-left: auto; }
+      nav.links {
+        order: 2; width: 100%;
+        flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+        gap: 18px; margin: 0; padding: 4px 2px 6px; scrollbar-width: none;
+        -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+        mask-image: linear-gradient(to right, #000 88%, transparent);
+      }
+      nav.links::-webkit-scrollbar { display: none; }
+      nav.links a { font-size: 12.5px; letter-spacing: 0.12em; white-space: nowrap; }
+      nav.links a:active { color: #fff; }
+
+      /* 锚点跳转不被 sticky 顶栏遮住 */
+      section[id] { scroll-margin-top: 64px; }
+
+      /* 触控与留白 */
+      .btn { padding: 12px 18px; }
+      .reel video, .scan iframe { aspect-ratio: 4 / 3; }
+      .foot-mp img { width: 96px; height: 96px; }
     }
   </style>
 </head>
