@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>彭岗杰 · Resume / 简历</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --dark: #050505;
+      --paper: #f7f5f0;
+      --accent: #f15a24;
+      --ink: #141414;
+      --muted: #5c5852;
+      --line: rgba(20, 20, 20, 0.12);
+      --font: Montserrat, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      --serif: "Noto Serif SC", "Songti SC", serif;
+      --max: 860px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--dark);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(12px);
+      color: #fff;
+    }
+    .bar .inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .bar a {
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .bar a:hover { color: var(--accent); }
+    .bar .acts { display: flex; gap: 10px; flex-wrap: wrap; }
+    .bar .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .sheet {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 28px auto 64px;
+      background: var(--paper);
+      padding: clamp(28px, 4vw, 48px);
+      border-top: 4px solid var(--accent);
+    }
+    .name {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .name-zh {
+      margin-top: 4px;
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .contact {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      word-break: break-word;
+    }
+    .contact a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    .note {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    section.resume-block { margin-top: 28px; }
+    .sec-title {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+    .pair { margin-bottom: 16px; }
+    .en { font-size: 14px; color: var(--ink); }
+    .zh {
+      margin-top: 6px;
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .job { margin-top: 18px; }
+    .job-head {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .job-role {
+      margin-top: 2px;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .proj {
+      margin-top: 12px;
+      padding-left: 0;
+    }
+    .proj-title {
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+    ul.bullets {
+      margin: 8px 0 0 1.1em;
+      font-size: 13.5px;
+    }
+    ul.bullets li { margin: 4px 0; }
+    ul.bullets .zh-li {
+      list-style: none;
+      margin-left: -1.1em;
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .foot-note {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    @media print {
+      .bar { display: none; }
+      body { background: #fff; }
+      .sheet { margin: 0; width: 100%; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="inner">
+      <a href="index.html">← 返回主页 / Home</a>
+      <div class="acts">
+        <a class="btn" href="works/Peng_Gangjie_YC_Resume_v2.pdf" target="_blank" rel="noreferrer">下载英文 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="sheet">
+    <h1 class="name">GANGJIE PENG</h1>
+    <p class="name-zh">彭岗杰</p>
+    <p class="contact">
+      [hidden] ·
+      <a href="mailto:102627184@qq.com">102627184@qq.com</a> ·
+      <a href="https://github.com/PengGangjie" target="_blank" rel="noreferrer">github.com/PengGangjie</a> ·
+      Liuzhou, China
+    </p>
+    <p class="note">
+      双语对照页基于 <strong>Peng_Gangjie_YC_Resume_v2.pdf</strong>。上方英文与下方中文一一对应；打印 / 投递请用英文 PDF。
+    </p>
+
+    <section class="resume-block">
+      <h2 class="sec-title">Personal Summary</h2>
+      <div class="pair">
+        <p class="en">Vocational-college lecturer and AI builder working on digital methods for existing inhabited space. Ships lab-operations software, BIM retrofit teaching, agent pipelines, and a four-track music EP. Trimble SketchUp Official Trainer; previously a landscape designer at UDG, seconded to a municipal new-town bureau.</p>
+        <p class="zh">高职讲师与 AI 建设者，做人居存量空间的数字化方法。已交付实验室运营软件、BIM 改造教学、智能体流水线与四曲专辑站。Trimble SketchUp Official Trainer；此前在 UDG 做景观设计，并借调市级管委会。</p>
+      </div>
+    </section>
+
+    <section class="resume-block">
+      <h2 class="sec-title">Professional Experience</h2>
+
+      <article class="job">
+        <p class="job-head">GUANGXI ECO-ENGINEERING VOCATIONAL &amp; TECHNICAL COLLEGE — LIUZHOU, CHINA</p>
+        <p class="job-role">Lecturer, Architectural Decoration · Training Lab Ops (Academic Affairs) · 2021.07–Present</p>
+        <p class="zh" style="margin-top:6px;">广西生态工程职业技术学院 · 建筑装饰讲师 / 教务处实训室运行 · 2021.07–至今</p>
+
+        <div class="proj">
+          <p class="proj-title">Shixun Platform, a permissioned cloud that replaced nested Excel ledgers for campus training labs:</p>
+          <p class="zh">实训科平台：用带权限的云端系统替换嵌套 Excel 台账。</p>
+          <ul class="bullets">
+            <li>Shipped FastAPI + Logto + Turso with 5-role RBAC across 9 colleges; live at gxstzy-shixun.ai-builders.space.</li>
+            <li class="zh-li">交付 FastAPI + Logto + Turso，九院五角色权限；现网 gxstzy-shixun.ai-builders.space。</li>
+            <li>Aligned 245/438 classrooms to 354 labs, 547 room pages; audit-logged admin replaced folder archaeology.</li>
+            <li class="zh-li">对齐教室 245/438 与实训室 354，分室页 547；审计后台替代翻文件夹。</li>
+          </ul>
+        </div>
+
+        <div class="proj">
+          <p class="proj-title">Habitat Twin Studio, teaching and research that turns existing houses into measurable digital twins:</p>
+          <p class="zh">人居孪生工作室：把已有房屋做成可量测数字孪生，服务教学与研究。</p>
+          <ul class="bullets">
+            <li>Hosting a provincial grant on BIM + point-cloud preservation of Guangxi vernacular houses (2025KY1625).</li>
+            <li class="zh-li">主持省厅课题：BIM + 点云保存广西乡土民居（2025KY1625）。</li>
+            <li>Trimble SketchUp Official Trainer (Std., T-010-000179, Beijing ATC, Aug 2024); teach SketchUp and BIM.</li>
+            <li class="zh-li">Trimble SketchUp Official Trainer（Standard，T-010-000179，北京 ATC，2024.08）；教 SketchUp 与 BIM。</li>
+            <li>Co-edited national vocational textbook on architectural drawing; shipped Linluan Zhifu habitat-twin demo.</li>
+            <li class="zh-li">参编建筑制图国家职教教材；交付林孪智服人居孪生演示。</li>
+          </ul>
+        </div>
+
+        <div class="proj">
+          <p class="proj-title">Competition Studio, a student pipeline in interior, exhibition, and digital design:</p>
+          <p class="zh">竞赛工作室：室内、展示与数字设计的学生通道。</p>
+          <ul class="bullets">
+            <li>Coached GX Skills Contest 2nd (env. art), Yongchuang Cup national 1st, Milan Design Week national 2nd.</li>
+            <li class="zh-li">指导广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</li>
+            <li>Won 5 national 2nds and 4 3rds in Digital Creative Teaching Skills; 2024 Outstanding Teacher / Advisor.</li>
+            <li class="zh-li">数字创意教学能力竞赛全国二等奖 5 项、三等奖 4 项；2024 优秀教师 / 优秀指导教师。</li>
+            <li>Taught 800–1,100 contact hours/year; 2024 mentor rank 3rd campus-wide.</li>
+            <li class="zh-li">年课时 800–1,100；2024 导师工作量全校第 3。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="job-head">INDEPENDENT PRODUCTS — OPEN SOURCE</p>
+        <p class="job-role">Product Builder — Lixing, Chenfu EP, and related tools · 2024–Present</p>
+        <p class="zh" style="margin-top:6px;">独立产品 · 开源 · 砺行、沉浮 EP 及相关工具 · 2024–至今</p>
+
+        <div class="proj">
+          <p class="proj-title">Chenfu EP (Float &amp; Sink), a four-track album hub for lyrics-synced listening and fan feedback:</p>
+          <p class="zh">沉浮 EP：四曲专辑站，歌词同步与留言反馈。</p>
+          <ul class="bullets">
+            <li>Shipped Chenfu EP, a 4-track album hub (lyrics sync, guest board, album loop) at chenfu-ep.ai-builders.space.</li>
+            <li class="zh-li">已上线 chenfu-ep.ai-builders.space（歌词同步、留言板、整辑循环）。</li>
+          </ul>
+        </div>
+
+        <div class="proj">
+          <p class="proj-title">Lixing, a personal OS that turns career frameworks into fillable daily tools:</p>
+          <p class="zh">砺行：把职业框架做成可每日填写的个人 OS。</p>
+          <ul class="bullets">
+            <li>Shipped 11-module PWA (density log, bias ring, Wheel of Life) with Logto sync; habit-first, then auth.</li>
+            <li class="zh-li">11 模块 PWA（密度日志、偏差环、生命之轮）+ Logto 同步；先习惯，再登录。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="job-head">WUHAN CHANGJIANG NEW TOWN ADMINISTRATIVE COMMITTEE — WUHAN, CHINA</p>
+        <p class="job-role">Staff, Development Bureau (seconded from UDG) · 2018–2021</p>
+        <p class="zh" style="margin-top:6px;">武汉长江新区管委会 · 发改委（自 UDG 借调）· 2018–2021</p>
+        <div class="proj">
+          <p class="proj-title">New-town planning desk for a municipal development district:</p>
+          <p class="zh">市级发展区新城规划案头：</p>
+          <ul class="bullets">
+            <li>Handled plan compilation, investment decks, and bids; bridged consultants and government sign-off.</li>
+            <li class="zh-li">发展规划案、招商材料与招标对接；衔接咨询方与政府签批。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="job-head">UDG UNITED DESIGN GROUP (WUHAN) — WUHAN, CHINA</p>
+        <p class="job-role">Landscape Designer · 2017.07–2021.07</p>
+        <p class="zh" style="margin-top:6px;">UDG 联创（武汉）· 景观设计师 · 2017.07–2021.07</p>
+        <div class="proj">
+          <p class="proj-title">Concept Landscape, early-stage masterplans and bid presentations:</p>
+          <p class="zh">概念景观：早期总图与投标汇报。</p>
+          <ul class="bullets">
+            <li>Produced overall concept schemes and pitch decks for landscape bids; interned 2016, hired 2017.</li>
+            <li class="zh-li">产出概念总图与投标文本；2016 实习，2017 入职。</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="resume-block">
+      <h2 class="sec-title">Publication</h2>
+      <div class="pair">
+        <p class="en">Peng, G. (2025). High-Precision Intelligent Digital Preservation of Traditional Architecture through Multi-Scale Fusion and Deep Learning. IEEE 3rd ICEACE.</p>
+        <p class="zh">彭岗杰（2025）。基于多尺度融合与深度学习的传统建筑高精度智能数字保存。IEEE 第 3 届 ICEACE。</p>
+      </div>
+    </section>
+
+    <section class="resume-block">
+      <h2 class="sec-title">Education</h2>
+      <ul class="bullets">
+        <li>China University of Geosciences (Wuhan) — M.A. in Art Design — 2017.06</li>
+        <li class="zh-li">中国地质大学（武汉）· 艺术设计硕士 · 2017.06</li>
+        <li>China University of Geosciences (Wuhan) — B.A. in Environmental Design — 2014.06</li>
+        <li class="zh-li">中国地质大学（武汉）· 环境设计学士 · 2014.06</li>
+        <li>TU Berlin (exchange studio) — Design — Berlin 2030 — 2015</li>
+        <li class="zh-li">柏林工业大学交换工作室 · Berlin 2030 · 2015</li>
+      </ul>
+    </section>
+
+    <section class="resume-block">
+      <h2 class="sec-title">Core Skill Set</h2>
+      <ul class="bullets">
+        <li>Build: Python, FastAPI, Logto, Turso, Cursor agent pipelines</li>
+        <li class="zh-li">构建：Python、FastAPI、Logto、Turso、Cursor agent 流水线</li>
+        <li>Domain: Trimble SketchUp Official Trainer, BIM, Habitat Digital Twin, Interior Retrofit</li>
+        <li class="zh-li">领域：SketchUp Official Trainer、BIM、人居数字孪生、室内改造更新</li>
+      </ul>
+    </section>
+
+    <p class="foot-note">
+      Source PDF: works/Peng_Gangjie_YC_Resume_v2.pdf · © 2026 Gangjie Peng
+    </p>
+  </main>
+</body>
+</html>
