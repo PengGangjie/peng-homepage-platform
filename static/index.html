@@ -78,6 +78,21 @@
     }
     nav.links a:hover { color: var(--accent); }
 
+    .lang-toggle {
+      border: 1px solid rgba(255,255,255,0.28);
+      background: transparent;
+      color: #fff;
+      font: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      padding: 8px 12px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    header.top .nav-row { display: flex; align-items: center; gap: 18px; }
+
     .hero {
       position: relative;
       padding: 88px 0 108px;
@@ -645,18 +660,22 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-text">
           <strong>彭岗杰</strong>
-          <span class="brand-sub">Gangjie Peng · 人居方法</span>
+          <span class="brand-sub" data-i18n="brand.sub">Gangjie Peng · 人居方法</span>
         </span>
       </a>
-      <nav class="links">
-        <a href="#belief">方法</a>
-        <a href="#works">作品</a>
-        <a href="#studio">设计</a>
-        <a href="#story">路径</a>
-        <a href="#teach">教学</a>
-        <a href="#certs">证书</a>
-        <a href="#contact">联系</a>
-      </nav>
+      <div class="nav-row">
+        <nav class="links">
+          <a href="#belief" data-i18n="nav.belief">方法</a>
+          <a href="#works" data-i18n="nav.works">作品</a>
+          <a href="#studio" data-i18n="nav.studio">设计</a>
+          <a href="#story" data-i18n="nav.story">路径</a>
+          <a href="#teach" data-i18n="nav.teach">教学</a>
+          <a href="#certs" data-i18n="nav.certs">证书</a>
+          <a href="resume.html" data-i18n="nav.resume">简历</a>
+          <a href="#contact" data-i18n="nav.contact">联系</a>
+        </nav>
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Language">EN</button>
+      </div>
     </div>
   </header>
 
@@ -664,14 +683,15 @@
     <span class="mega-num" aria-hidden="true">01</span>
     <div class="wrap">
       <div>
-        <p class="kicker">Peng Gangjie · 岗杰</p>
-        <h1>把已经住过的空间做成<span class="tint">可交付</span>的方法。</h1>
-        <p class="lede">高职课堂上教测绘、BIM 与改造。实验室操作系统、乡土民居孪生、每天能填的工具和一张专辑，都已经在跑。</p>
+        <p class="kicker" data-i18n="hero.kicker">Peng Gangjie · 岗杰</p>
+        <h1 data-i18n="hero.h1">把已经住过的空间做成<span class="tint">可交付</span>的方法。</h1>
+        <p class="lede" data-i18n="hero.lede">高职课堂上教测绘、BIM 与改造。实验室操作系统、乡土民居孪生、每天能填的工具和一张专辑，都已经在跑。</p>
         <div class="ctas">
-          <a class="btn btn-fill" href="#works">看作品</a>
-          <a class="btn btn-ghost" href="#story">走过的路</a>
+          <a class="btn btn-fill" href="resume.html" data-i18n="cta.resume">个人简历</a>
+          <a class="btn btn-ghost" href="#works" data-i18n="cta.works">看作品</a>
+          <a class="btn btn-ghost" href="#story" data-i18n="cta.path">走过的路</a>
         </div>
-        <p class="creds">一名高校讲师 · 个人开发者 · OPC · Trimble SketchUp Official Trainer · 中国地质大学（武汉）本硕</p>
+        <p class="creds" data-i18n="hero.creds">一名高校讲师 · 个人开发者 · OPC · Trimble SketchUp Official Trainer · 中国地质大学（武汉）本硕</p>
       </div>
       <div class="hero-shot">
         <figure>
@@ -679,11 +699,11 @@
             <img alt="彭岗杰" />
             <div class="hint">works/hero.jpg</div>
           </div>
-          <figcaption>彭岗杰 · 柳州</figcaption>
+          <figcaption data-i18n="hero.cap">彭岗杰 · 柳州</figcaption>
         </figure>
       </div>
     </div>
-    <a class="btn btn-ghost see-more" href="#works">See more</a>
+    <a class="btn btn-ghost see-more" href="#works" data-i18n="see.more">See more</a>
   </section>
 
   <section class="paper block" id="belief">
@@ -691,37 +711,37 @@
       <div class="split">
         <div>
           <p class="kicker">The question</p>
-          <h2>图纸交了之后，空间里有没有变得可量、可改、可运行？</h2>
+          <h2 data-i18n="belief.h2">图纸交了之后，空间里有没有变得可量、可改、可运行？</h2>
         </div>
         <div class="body">
-          <p>效果图能讲圆一个下午。房间要被测绘、被改造、被排进课表，判断才算落地。</p>
-          <p>我反复问的是同一句：做完以后，谁还在用？管理员还要不要翻文件夹，学生还打不打得开模型，房子能不能被量一遍。</p>
+          <p data-i18n="belief.p1">效果图能讲圆一个下午。房间要被测绘、被改造、被排进课表，判断才算落地。</p>
+          <p data-i18n="belief.p2">我反复问的是同一句：做完以后，谁还在用？管理员还要不要翻文件夹，学生还打不打得开模型，房子能不能被量一遍。</p>
         </div>
       </div>
 
       <div class="tri">
         <article>
           <div class="idx"><span>01</span><span>Method</span></div>
-          <h3>还在自己手里的方法</h3>
-          <p class="body">拿掉职称、学院和当季工具，测绘、建模、把判断做成能跑的系统，这几件事还在。</p>
+          <h3 data-i18n="m1.h3">还在自己手里的方法</h3>
+          <p class="body" data-i18n="m1.p">拿掉职称、学院和当季工具，测绘、建模、把判断做成能跑的系统，这几件事还在。</p>
         </article>
         <article>
           <div class="idx"><span>02</span><span>Delivery</span></div>
-          <h3>现实能回答的交付</h3>
-          <p class="body">有人打开、有人拒绝、有人改一版，比材料写得完整更要紧。实训科平台和专辑站都已经在这个标准上。</p>
+          <h3 data-i18n="m2.h3">现实能回答的交付</h3>
+          <p class="body" data-i18n="m2.p">有人打开、有人拒绝、有人改一版，比材料写得完整更要紧。实训科平台和专辑站都已经在这个标准上。</p>
         </article>
         <article>
           <div class="idx"><span>03</span><span>Horizon</span></div>
-          <h3>课还能继续用</h3>
-          <p class="body">第一版交出去以后，东西自己还在工作：权限还在、课题还在跑、四首歌还能听。</p>
+          <h3 data-i18n="m3.h3">课还能继续用</h3>
+          <p class="body" data-i18n="m3.p">第一版交出去以后，东西自己还在工作：权限还在、课题还在跑、四首歌还能听。</p>
         </article>
       </div>
 
       <div class="quote-row">
         <p class="quote">君子不器，知行合一。</p>
         <div class="body">
-          <p>人居数字化是一条线：空间表达，到点云与 BIM，再到能协同的更新工作流。林孪智服是同一套栈的现场练习，不是改行林业。</p>
-          <p>教务侧的系统证明判断能进学校的真实负荷。独立产品证明方法能离开教案，自己站住。</p>
+          <p data-i18n="quote.note1">人居数字化是一条线：空间表达，到点云与 BIM，再到能协同的更新工作流。林孪智服是同一套栈的现场练习，不是改行林业。</p>
+          <p data-i18n="quote.note2">教务侧的系统证明判断能进学校的真实负荷。独立产品证明方法能离开教案，自己站住。</p>
         </div>
       </div>
     </div>
@@ -733,7 +753,7 @@
         <div class="frame" data-src="works/portrait-side.jpg">
           <img alt="彭岗杰" />
         </div>
-        <figcaption>形象照 · 2026</figcaption>
+        <figcaption data-i18n="portrait.cap">形象照 · 2026</figcaption>
       </figure>
     </div>
   </section>
@@ -743,9 +763,9 @@
       <div class="split">
         <div>
           <p class="kicker">Works</p>
-          <h2>已经上线、已经在用的东西。</h2>
+          <h2 data-i18n="works.h2">已经上线、已经在用的东西。</h2>
         </div>
-        <p class="body">两条主打影像可以直接播放。下面的无人机扫描场地可以旋转查看。实训科、沉浮、砺行、格物记再往下打开。</p>
+        <p class="body" data-i18n="works.lede">两条主打影像可以直接播放。下面的无人机扫描场地可以旋转查看。实训科、沉浮、砺行、格物记再往下打开。</p>
       </div>
 
       <div class="reels">
@@ -753,15 +773,15 @@
           <video controls playsinline preload="metadata" poster="works/video/sanyuesan.jpg">
             <source src="works/video/sanyuesan.mp4" type="video/mp4" />
           </video>
-          <h3>广西三月三民俗运动会品牌策划</h3>
-          <p>主打影像 · 1:19</p>
+          <h3 data-i18n="reel1.h3">广西三月三民俗运动会品牌策划</h3>
+          <p data-i18n="reel1.p">主打影像 · 1:19</p>
         </figure>
         <figure class="reel">
           <video controls playsinline preload="metadata" poster="works/video/renewal.jpg">
             <source src="works/video/renewal.mp4" type="video/mp4" />
           </video>
-          <h3>建筑更新数字化全流程设计</h3>
-          <p>基于无人机 / AI / BIM / VR · 0:40</p>
+          <h3 data-i18n="reel2.h3">建筑更新数字化全流程设计</h3>
+          <p data-i18n="reel2.p">基于无人机 / AI / BIM / VR · 0:40</p>
         </figure>
       </div>
 
@@ -773,8 +793,8 @@
           allow="autoplay; fullscreen; xr-spatial-tracking"
           allowfullscreen
         ></iframe>
-        <h3>无人机扫描复原场地</h3>
-        <p>旧厂房改造现场的倾斜摄影模型，占地 960.45 平方米。拖动旋转，滚轮推近。 <a href="https://skfb.ly/pGoCp" target="_blank" rel="noreferrer">在 Sketchfab 打开 →</a></p>
+        <h3 data-i18n="scan.h3">无人机扫描复原场地</h3>
+        <p data-i18n="scan.p">旧厂房改造现场的倾斜摄影模型，占地 960.45 平方米。拖动旋转，滚轮推近。 <a href="https://skfb.ly/pGoCp" target="_blank" rel="noreferrer">在 Sketchfab 打开 →</a></p>
       </figure>
 
       <div class="cards">
@@ -786,18 +806,18 @@
               <h3>实训科平台</h3>
             </div>
           </div>
-          <p>嵌套 Excel 换成带权限的实验室 OS。入口是导航仓：八个模块各自独立页。这是学校交付，放在教务侧作品。</p>
-          <p class="go">打开站点 →</p>
+          <p data-i18n="card.shixun.p">嵌套 Excel 换成带权限的实验室 OS。入口是导航仓：八个模块各自独立页。这是学校交付，放在教务侧作品。</p>
+          <p class="go" data-i18n="card.shixun.go">打开站点 →</p>
         </a>
         <article class="card">
           <div class="frame thumb" data-src="works/habitat.jpg">
             <img alt="桂北乡土民居现场" />
             <div class="cap">
               <p class="kicker">Habitat twin</p>
-              <h3>乡土民居数字保存</h3>
+              <h3 data-i18n="card.habitat.h3">乡土民居数字保存</h3>
             </div>
           </div>
-          <p>省厅课题 2025KY1625。用 BIM 与点云把广西乡土民居做成可量测档案，服务保护与改造教学。</p>
+          <p data-i18n="card.habitat.p">省厅课题 2025KY1625。用 BIM 与点云把广西乡土民居做成可量测档案，服务保护与改造教学。</p>
         </article>
         <a class="card" href="https://chenfu-ep.ai-builders.space" target="_blank" rel="noreferrer">
           <div class="frame thumb" data-src="works/chenfu.jpg">
@@ -807,8 +827,8 @@
               <h3>沉浮 EP</h3>
             </div>
           </div>
-          <p>四曲专辑站：歌词同步、留言板、整辑循环。用来证明方法能离开教案。</p>
-          <p class="go">打开站点 →</p>
+          <p data-i18n="card.chenfu.p">四曲专辑站：歌词同步、留言板、整辑循环。用来证明方法能离开教案。</p>
+          <p class="go" data-i18n="card.chenfu.go">打开站点 →</p>
         </a>
       </div>
 
@@ -818,10 +838,10 @@
             <img alt="林孪智服运营驾驶舱" />
             <div class="cap">
               <p class="kicker">Field studio</p>
-              <h3>林孪智服 · 现场练习</h3>
+              <h3 data-i18n="card.field.h3">林孪智服 · 现场练习</h3>
             </div>
           </div>
-          <p>同一套人居孪生栈放到现场：语义与空间对齐，交出可演示的工作流。</p>
+          <p data-i18n="card.field.p">同一套人居孪生栈放到现场：语义与空间对齐，交出可演示的工作流。</p>
         </article>
         <a class="card" href="https://life-density.ai-builders.space/" target="_blank" rel="noreferrer">
           <div class="frame thumb" data-src="works/lixing.jpg">
@@ -831,8 +851,8 @@
               <h3>砺行 · 日省</h3>
             </div>
           </div>
-          <p>11 模块 PWA。密度日志、偏差环、生命之轮。先养成习惯，再登录同步。</p>
-          <p class="go">打开站点 →</p>
+          <p data-i18n="card.lixing.p">11 模块 PWA。密度日志、偏差环、生命之轮。先养成习惯，再登录同步。</p>
+          <p class="go" data-i18n="card.lixing.go">打开站点 →</p>
         </a>
         <a class="card" href="https://github.com/PengGangjie/gewuji-os" target="_blank" rel="noreferrer">
           <div class="frame thumb" data-src="works/gewuji.jpg">
@@ -842,8 +862,8 @@
               <h3>格物记 OS</h3>
             </div>
           </div>
-          <p>衣橱收纳与穿搭推荐。默认 100 件上限，本地优先。穿过已有的，而不是再买一件。</p>
-          <p class="go">打开仓库 →</p>
+          <p data-i18n="card.gewuji.p">衣橱收纳与穿搭推荐。默认 100 件上限，本地优先。穿过已有的，而不是再买一件。</p>
+          <p class="go" data-i18n="card.gewuji.go">打开仓库 →</p>
         </a>
       </div>
     </div>
@@ -854,9 +874,9 @@
       <div class="split">
         <div>
           <p class="kicker">Studio</p>
-          <h2>已经被人住过、用过的空间，怎么改。</h2>
+          <h2 data-i18n="studio.h2">已经被人住过、用过的空间，怎么改。</h2>
         </div>
-        <p class="body">住宅、厂房、店面、概念馆，以及平面与摄影。下面是方案图和展板，不是奖状。超大 PPT 源文件留在本地，站点只放能看清的图。校园方案暂时不公开。</p>
+        <p class="body" data-i18n="studio.lede">住宅、厂房、店面、概念馆，以及平面与摄影。下面是方案图和展板，不是奖状。超大 PPT 源文件留在本地，站点只放能看清的图。校园方案暂时不公开。</p>
       </div>
 
       <div class="studio-hold" hidden>
@@ -901,8 +921,8 @@
         </div>
       </div>
       <div class="proj-meta">
-        <h3>书香园住宅改造</h3>
-        <p>新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
+        <h3 data-i18n="proj.shuxiang.h3">书香园住宅改造</h3>
+        <p data-i18n="proj.shuxiang.p">新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
       </div>
 
       <div class="quad">
@@ -910,29 +930,29 @@
           <div class="frame" data-src="works/studio/yunhai-night.jpg">
             <img alt="云海茶饮夜间店面" />
           </div>
-          <h3>云海茶饮</h3>
-          <p>店面夜间场景。云纹、入口与招牌，把品牌落到可建造的立面上。</p>
+          <h3 data-i18n="quad.yunhai.h3">云海茶饮</h3>
+          <p data-i18n="quad.yunhai.p">店面夜间场景。云纹、入口与招牌，把品牌落到可建造的立面上。</p>
         </article>
         <article>
           <div class="frame" data-src="works/studio/retrofit-1.jpg">
             <img alt="改造更新庭院" />
           </div>
-          <h3>改造更新</h3>
-          <p>既有建筑加庭院、楼梯与黄框开口。存量更新的空间操作，不是新建摆拍。</p>
+          <h3 data-i18n="quad.retro.h3">改造更新</h3>
+          <p data-i18n="quad.retro.p">既有建筑加庭院、楼梯与黄框开口。存量更新的空间操作，不是新建摆拍。</p>
         </article>
         <article>
           <div class="frame contain board" data-src="works/studio/museum-1.jpg">
             <img alt="柳州工业博物馆文化园区厂房改造展板" />
           </div>
-          <h3>柳州工业博物馆 · 厂房改造</h3>
-          <p>工业遗产更新展板：区位、拆改逻辑、总图与场景。</p>
+          <h3 data-i18n="quad.museum.h3">柳州工业博物馆 · 厂房改造</h3>
+          <p data-i18n="quad.museum.p">工业遗产更新展板：区位、拆改逻辑、总图与场景。</p>
         </article>
         <article>
           <div class="frame contain board" data-src="works/studio/canglian.jpg">
             <img alt="苍涟幻境——南沙群岛海洋展览馆概念设计展板" />
           </div>
-          <h3>苍涟幻境——南沙群岛海洋展览馆概念设计</h3>
-          <p>南沙群岛永暑礁。从水、船、礁生成形体，展陈分区、平立面与室内效果在一张板上。</p>
+          <h3 data-i18n="quad.canglian.h3">苍涟幻境——南沙群岛海洋展览馆概念设计</h3>
+          <p data-i18n="quad.canglian.p">南沙群岛永暑礁。从水、船、礁生成形体，展陈分区、平立面与室内效果在一张板上。</p>
         </article>
       </div>
 
@@ -940,24 +960,24 @@
         <div class="flat-head">
           <div>
             <p class="kicker">Flat works</p>
-            <h3>平面与摄影</h3>
+            <h3 data-i18n="flat.h3">平面与摄影</h3>
           </div>
-          <p>海报、商业摄影与抽象平面。和空间方案同一条线：把判断落到能看清的画面上。</p>
+          <p data-i18n="flat.lede">海报、商业摄影与抽象平面。和空间方案同一条线：把判断落到能看清的画面上。</p>
         </div>
         <div class="flat-grid">
           <article>
             <div class="frame contain" data-src="works/studio/flat-photo.jpg">
               <img alt="团队风采展示与青楠园艺商业摄影" />
             </div>
-            <h3>团队风采 · 青楠园艺</h3>
-            <p>左：长江新区团队风采海报。右：青楠园艺商业摄影。</p>
+            <h3 data-i18n="flat.photo.h3">团队风采 · 青楠园艺</h3>
+            <p data-i18n="flat.photo.p">左：长江新区团队风采海报。右：青楠园艺商业摄影。</p>
           </article>
           <article>
             <div class="frame contain paperish" data-src="works/studio/flat-xiangsheng.jpg">
               <img alt="相生平面作品" />
             </div>
-            <h3>相生</h3>
-            <p>抽象笔触双联。相 / 生，暖冷对照。</p>
+            <h3 data-i18n="flat.xs.h3">相生</h3>
+            <p data-i18n="flat.xs.p">抽象笔触双联。相 / 生，暖冷对照。</p>
           </article>
         </div>
       </div>
@@ -969,30 +989,30 @@
       <div class="split">
         <div>
           <p class="kicker">The path</p>
-          <h2>从把方案讲圆，到让系统在学校里跑。</h2>
+          <h2 data-i18n="story.h2">从把方案讲圆，到让系统在学校里跑。</h2>
         </div>
-        <p class="lede">景观投标教我把概念收成文本。新区教我材料怎么过会。学院把这两件事接到真房间、真课表、真截止日上。</p>
+        <p class="lede" data-i18n="story.lede">景观投标教我把概念收成文本。新区教我材料怎么过会。学院把这两件事接到真房间、真课表、真截止日上。</p>
       </div>
       <div class="path-grid">
         <article>
           <div class="idx"><span>2017–2021</span><span>UDG 联创</span></div>
-          <h3>景观设计师</h3>
-          <p>概念总图与投标文本。2016 实习，2017 入职。</p>
+          <h3 data-i18n="path1.h3">景观设计师</h3>
+          <p data-i18n="path1.p">概念总图与投标文本。2016 实习，2017 入职。</p>
         </article>
         <article>
           <div class="idx"><span>2018–2021</span><span>长江新区</span></div>
-          <h3>管委会发改委</h3>
-          <p>发展规划案、招商材料、招标对接。咨询方和签字方之间的那一层。</p>
+          <h3 data-i18n="path2.h3">管委会发改委</h3>
+          <p data-i18n="path2.p">发展规划案、招商材料、招标对接。咨询方和签字方之间的那一层。</p>
         </article>
         <article>
           <div class="idx"><span>2021—</span><span>生态学院</span></div>
-          <h3>建筑装饰 / 实训室运行</h3>
-          <p>年课时 800–1100。竞赛工作室带出广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</p>
+          <h3 data-i18n="path3.h3">建筑装饰 / 实训室运行</h3>
+          <p data-i18n="path3.p">年课时 800–1100。竞赛工作室带出广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</p>
         </article>
         <article>
           <div class="idx"><span>2014 / 2017</span><span>地大武汉</span></div>
-          <h3>环境设计 · 艺术设计硕士</h3>
-          <p>2015 年 TU Berlin 交换工作室 Berlin 2030。2025 年 IEEE ICEACE：传统建筑多尺度融合与深度学习保存。</p>
+          <h3 data-i18n="path4.h3">环境设计 · 艺术设计硕士</h3>
+          <p data-i18n="path4.p">2015 年 TU Berlin 交换工作室 Berlin 2030。2025 年 IEEE ICEACE：传统建筑多尺度融合与深度学习保存。</p>
         </article>
       </div>
     </div>
@@ -1004,17 +1024,17 @@
       <div class="split">
         <div>
           <p class="kicker">Teaching</p>
-          <h2>课上教软件，课下把房间做成可运行的档案。</h2>
+          <h2 data-i18n="teach.h2">课上教软件，课下把房间做成可运行的档案。</h2>
           <div class="body" style="margin-top:22px;">
-            <p>Trimble SketchUp Official Trainer（Standard，T-010-000179，北京 ATC，2024.08）。教 SketchUp 与 BIM，参编建筑制图国家职教教材。</p>
-            <p>人居孪生工作室把已有房屋做成可量测对象。竞赛工作室走室内、展示与数字设计。两条线共用同一套：能画、能量、能交。</p>
+            <p data-i18n="teach.p1">Trimble SketchUp Official Trainer（Standard，T-010-000179，北京 ATC，2024.08）。教 SketchUp 与 BIM，参编建筑制图国家职教教材。</p>
+            <p data-i18n="teach.p2">人居孪生工作室把已有房屋做成可量测对象。竞赛工作室走室内、展示与数字设计。两条线共用同一套：能画、能量、能交。</p>
           </div>
         </div>
         <figure class="teach-shot">
           <div class="frame" data-src="works/portrait-talk.jpg">
             <img alt="彭岗杰在浙江大学讲台分享" />
           </div>
-          <figcaption>讲台 · 浙江大学（客场分享）</figcaption>
+          <figcaption data-i18n="teach.cap">讲台 · 浙江大学（客场分享）</figcaption>
         </figure>
       </div>
     </div>
@@ -1025,9 +1045,9 @@
       <div class="split">
         <div>
           <p class="kicker">Credentials</p>
-          <h2>行业证书与身份，用来核对，不是把墙贴满。</h2>
+          <h2 data-i18n="certs.h2">行业证书与身份，用来核对，不是把墙贴满。</h2>
         </div>
-        <p class="lede">上方三张可点开核对。下方写行业身份与发证 / 所属机构；身份证号不出现在站点上。</p>
+        <p class="lede" data-i18n="certs.lede">上方三张可点开核对。下方写行业身份与发证 / 所属机构；身份证号不出现在站点上。</p>
       </div>
       <div class="cert-grid">
         <a class="cert-card" href="works/certs/aib-1.jpg" target="_blank" rel="noreferrer">
@@ -1035,62 +1055,62 @@
             <img alt="AI Builders 课程结业" />
           </div>
           <h3>AI Builders 结业</h3>
-          <p>Superlinear Academy · 2026.09.01<br />毕业生自述：在复杂工作中做出信得过的产品</p>
+          <p data-i18n="cert.aib1.p">Superlinear Academy · 2026.09.01<br />毕业生自述：在复杂工作中做出信得过的产品</p>
         </a>
         <a class="cert-card" href="works/certs/aib-2.jpg" target="_blank" rel="noreferrer">
           <div class="frame contain" data-src="works/certs/aib-2.jpg">
             <img alt="AI Architect 课程结业" />
           </div>
           <h3>AI Architect 结业</h3>
-          <p>Superlinear Academy · 2026.09.01<br />毕业生自述：让系统持续工作、自我迭代</p>
+          <p data-i18n="cert.aib2.p">Superlinear Academy · 2026.09.01<br />毕业生自述：让系统持续工作、自我迭代</p>
         </a>
         <a class="cert-card" href="works/certs/sketchup-p2.jpg?v=7" target="_blank" rel="noreferrer">
           <div class="frame contain" data-src="works/certs/sketchup-p2.jpg?v=7">
             <img alt="SketchUp 国际认证官方讲师" />
           </div>
-          <h3>SketchUp 国际认证官方讲师</h3>
-          <p>Trimble Official Trainer · Standard · T-010-000179 · 北京 ATC · 2024.08</p>
+          <h3 data-i18n="cert.skp.h3">SketchUp 国际认证官方讲师</h3>
+          <p data-i18n="cert.skp.p">Trimble Official Trainer · Standard · T-010-000179 · 北京 ATC · 2024.08</p>
         </a>
       </div>
       <ul class="cert-list">
         <li>
-          <strong>高等学校教师资格</strong>
-          <span>艺术设计学 · 广西壮族自治区教育厅认定</span>
+          <strong data-i18n="cert.teacher">高等学校教师资格</strong>
+          <span data-i18n="cert.teacher.s">艺术设计学 · 广西壮族自治区教育厅认定</span>
         </li>
         <li>
-          <strong>高级室内设计师</strong>
-          <span>工信部教育与考试中心 · 2021.10</span>
+          <strong data-i18n="cert.interior">高级室内设计师</strong>
+          <span data-i18n="cert.interior.s">工信部教育与考试中心 · 2021.10</span>
         </li>
         <li>
-          <strong>中科院心理咨询师</strong>
-          <span>中国科学院心理研究所 · 基础培训合格 · 2023.01</span>
+          <strong data-i18n="cert.psy">中科院心理咨询师</strong>
+          <span data-i18n="cert.psy.s">中国科学院心理研究所 · 基础培训合格 · 2023.01</span>
         </li>
         <li>
-          <strong>SketchUp 国际认证官方讲师</strong>
-          <span>Trimble Official Trainer · T-010-000179 · 培训结业号 T-010-00086</span>
+          <strong data-i18n="cert.skp2">SketchUp 国际认证官方讲师</strong>
+          <span data-i18n="cert.skp2.s">Trimble Official Trainer · T-010-000179 · 培训结业号 T-010-00086</span>
         </li>
         <li>
-          <strong>中国建筑学会 BIM 分会会员</strong>
-          <span>中国建筑学会</span>
+          <strong data-i18n="cert.bim">中国建筑学会 BIM 分会会员</strong>
+          <span data-i18n="cert.bim.s">中国建筑学会</span>
         </li>
         <li>
-          <strong>数字创意专业委员会会员</strong>
-          <span>全国高等院校计算机基础教育研究会</span>
+          <strong data-i18n="cert.digital">数字创意专业委员会会员</strong>
+          <span data-i18n="cert.digital.s">全国高等院校计算机基础教育研究会</span>
         </li>
         <li>
-          <strong>buildingSMART 中国会员</strong>
-          <span>buildingSMART China</span>
+          <strong data-i18n="cert.bs">buildingSMART 中国会员</strong>
+          <span data-i18n="cert.bs.s">buildingSMART China</span>
         </li>
         <li>
-          <strong>商品展示技术裁判</strong>
-          <span>广西壮族自治区职业技能大赛</span>
+          <strong data-i18n="cert.judge">商品展示技术裁判</strong>
+          <span data-i18n="cert.judge.s">广西壮族自治区职业技能大赛</span>
         </li>
         <li>
-          <strong>ICOMOS 中国古迹遗址保护协会会员</strong>
-          <span>ICOMOS China</span>
+          <strong data-i18n="cert.icomos">ICOMOS 中国古迹遗址保护协会会员</strong>
+          <span data-i18n="cert.icomos.s">ICOMOS China</span>
         </li>
       </ul>
-      <p class="cert-note">可对外查验：SketchUp 讲师编号 T-010-000179。其余证书与会员身份公开页只写名称与机构，不放扫描件。</p>
+      <p class="cert-note" data-i18n="cert.note">可对外查验：SketchUp 讲师编号 T-010-000179。其余证书与会员身份公开页只写名称与机构，不放扫描件。</p>
     </div>
   </section>
 
@@ -1102,35 +1122,35 @@
             <span class="brand-mark" aria-hidden="true"></span>
             <span class="brand-text">
               <strong>彭岗杰</strong>
-              <span class="brand-sub" style="color:var(--ink-soft);">Gangjie Peng · 人居方法</span>
+              <span class="brand-sub" style="color:var(--ink-soft);" data-i18n="brand.sub">Gangjie Peng · 人居方法</span>
             </span>
           </a>
           <p style="margin-top:16px;">君子不器，知行合一。</p>
         </div>
         <div>
-          <h3>页面</h3>
-          <a href="#belief">方法</a>
-          <a href="#works">作品</a>
-          <a href="#studio">设计</a>
-          <a href="#story">路径</a>
+          <h3 data-i18n="foot.pages">页面</h3>
+          <a href="#belief" data-i18n="nav.belief">方法</a>
+          <a href="#works" data-i18n="nav.works">作品</a>
+          <a href="#studio" data-i18n="nav.studio">设计</a>
+          <a href="#story" data-i18n="nav.story">路径</a>
         </div>
         <div>
-          <h3>核对</h3>
-          <a href="#teach">教学</a>
-          <a href="#certs">证书</a>
+          <h3 data-i18n="foot.check">核对</h3>
+          <a href="#teach" data-i18n="nav.teach">教学</a>
+          <a href="#certs" data-i18n="nav.certs">证书</a>
         </div>
         <div>
-          <h3>联系</h3>
+          <h3 data-i18n="foot.contact">联系</h3>
           <a href="mailto:102627184@qq.com">102627184@qq.com</a>
           <a href="https://github.com/PengGangjie">github.com/PengGangjie</a>
           <div class="foot-mp">
             <img src="works/lixing-mp-qr.png" width="112" height="112" alt="砺行微信公众号二维码" />
-            <span>砺行公众号</span>
+            <span data-i18n="foot.mp">砺行公众号</span>
           </div>
         </div>
       </div>
       <div class="foot-bottom">
-        <p>© 2026 彭岗杰</p>
+        <p data-i18n="foot.copy">© 2026 彭岗杰</p>
         <img class="foot-ava" src="works/portrait.jpg?v=crop6" alt="彭岗杰" />
       </div>
     </div>
@@ -1152,5 +1172,6 @@
       });
     });
   </script>
+  <script src="i18n.js"></script>
 </body>
 </html>
