@@ -87,7 +87,7 @@
     "teach.h2": "Teach software in class; turn rooms into runnable archives after.",
     "teach.p1": "Trimble SketchUp Official Trainer (Standard, T-010-000179, Beijing ATC, Aug 2024). Teach SketchUp and BIM; co-edited a national vocational textbook on architectural drawing.",
     "teach.p2": "Habitat-twin studio makes existing houses measurable. Competition studio covers interior, exhibition, and digital design. One stack: draw, measure, deliver.",
-    "teach.cap": "Lectern · Zhejiang University (guest talk)",
+    "teach.cap": "Guest teaching · Zhejiang University",
     "certs.h2": "Credentials to verify identity—not to wallpaper the wall.",
     "certs.lede": "Three images above open for check. Below: industry roles and issuers. No ID numbers on this site.",
     "cert.aib1.p": "Superlinear Academy · 2026.09.01<br />Graduate note: ship trustworthy products in hard work",
