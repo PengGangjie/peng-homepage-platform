@@ -46,7 +46,7 @@
     "card.habitat.p": "Provincial grant 2025KY1625. BIM and point clouds turn Guangxi vernacular houses into measurable archives for conservation and teaching.",
     "card.chenfu.p": "Four-track album hub: lyric sync, guest board, album loop. Proof the method can leave the classroom.",
     "card.chenfu.go": "Open site →",
-    "card.field.h3": "Linluan Zhifu · field practice",
+    "card.field.h3": "LinTwin OS",
     "card.field.p": "Same habitat-twin stack on site: align semantics with space, ship a demoable workflow.",
     "card.lixing.p": "11-module PWA. Density log, bias ring, Wheel of Life. Habit first, then sign-in sync.",
     "card.lixing.go": "Open site →",
