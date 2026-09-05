@@ -123,7 +123,7 @@
     "lang.btn": "中文"
   };
 
-  var ZH_TITLE = "彭岗杰 · 把已经住过的空间做成可交付的方法";
+  var ZH_TITLE = "彭岗杰 · 把已经交互过的空间做成可交付的方法";
 
   function storeZh() {
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
