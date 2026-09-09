@@ -13,7 +13,7 @@
     "brand.sub": "Gangjie Peng · Habitat methods",
     "hero.kicker": "Peng Gangjie · 岗杰",
     "hero.h1": "Turn inhabited space into <span class=\"tint\">shippable</span> methods.",
-    "hero.lede": "I teach survey, BIM, and retrofit in a vocational college. A lab OS, vernacular habitat twins, daily tools, and an album are already live.",
+    "hero.lede": "I teach survey, BIM, and retrofit at a college. A lab OS, vernacular habitat twins, daily tools, and an album are already live.",
     "cta.resume": "Resume",
     "cta.works": "Works",
     "cta.path": "The path",
