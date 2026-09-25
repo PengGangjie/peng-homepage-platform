@@ -297,6 +297,31 @@
       flex-wrap: wrap;
     }
     .loc .ic { width: 16px; height: 16px; color: var(--accent); }
+    .live-strip {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px 18px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+    }
+    .live-strip .strip-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.42);
+      font-weight: 700;
+    }
+    .live-strip .lv {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .live-strip .lv i { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); flex-shrink: 0; }
     .hero-shot { margin-top: 44px; position: relative; padding-left: 22px; }
     .hero-shot::before {
       content: "";
@@ -322,10 +347,9 @@
       width: 52px; height: 52px;
       display: grid; place-items: center;
       border: 1px solid rgba(20, 20, 20, 0.16);
-      color: var(--accent);
       background: #fff;
     }
-    .m-ic .ic { width: 24px; height: 24px; }
+    .m-ic img { width: 32px; height: 32px; image-rendering: auto; }
     .m-idx { font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
     .mrow h3 { font-size: 19px; font-weight: 700; margin: 6px 0 6px; }
     .mrow p { font-size: 15px; color: var(--ink-soft); }
@@ -353,10 +377,10 @@
     .ch-t .ch-ic {
       width: 40px; height: 40px;
       display: grid; place-items: center;
-      background: rgba(241, 90, 36, 0.14);
-      color: var(--accent);
+      background: #fff;
     }
-    .ch-t .ch-ic .ic { width: 20px; height: 20px; }
+    .ch-t .ch-ic img { width: 26px; height: 26px; }
+    .show-mark { width: 30px; height: 30px; flex-shrink: 0; }
     .chip {
       display: inline-flex;
       align-items: center;
@@ -413,6 +437,8 @@
       border: 1px solid rgba(0, 0, 0, 0.08);
     }
     .card-logo img { width: 32px; height: 32px; object-fit: contain; }
+    .card-logo.app { background: none; border: 0; border-radius: 9px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.35); }
+    .card-logo.app img { width: 100%; height: 100%; border-radius: 9px; }
     .scanload {
       display: grid;
       justify-items: center;
@@ -606,7 +632,7 @@
     }
     .gzh-qr { width: 128px; height: 128px; object-fit: contain; border: 1px solid var(--paper-line); }
     .gzh-body { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
-    .gzh-logo { width: 44px; height: 44px; object-fit: contain; }
+    .gzh-logo { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; }
     .gzh-body h4 { font-size: 18px; font-weight: 800; }
     .gzh-body p { font-size: 13.5px; color: var(--ink-soft); }
     .gzh-tagline {
@@ -616,7 +642,6 @@
       color: #d94f1f;
       letter-spacing: 0.04em;
     }
-    .paper .wcard .frame::after { content: none; }
 
     /* ————— 联系（收口 CTA） ————— */
     .contact { background: var(--dark); position: relative; overflow: hidden; }
@@ -636,18 +661,61 @@
       background: rgba(241, 90, 36, 0.06);
       padding: 20px;
     }
-    .gift .kicker { display: flex; align-items: center; gap: 8px; }
-    .gift h3 { font-size: 18px; font-weight: 800; margin-top: 8px; }
-    .gift p { font-size: 13.5px; color: var(--muted); margin-top: 8px; }
+    .gift-head { display: flex; align-items: center; gap: 12px; }
+    .gift-ic { width: 46px; height: 46px; display: grid; place-items: center; background: #fff; flex-shrink: 0; }
+    .gift-ic img { width: 34px; height: 34px; }
+    .gift-head .kicker { margin: 0; }
+    .gift-head h3 { font-size: 17px; font-weight: 800; margin-top: 2px; line-height: 1.3; }
+    .gift p { font-size: 13.5px; color: var(--muted); margin-top: 12px; }
+    .gift ul { list-style: none; margin-top: 12px; display: grid; gap: 7px; }
+    .gift li { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: flex-start; }
+    .gift li .ic { width: 14px; height: 14px; color: var(--ok); margin-top: 3px; }
     .gift .btn { margin-top: 14px; width: 100%; }
-    .qr { display: flex; align-items: center; gap: 16px; }
-    .qr img {
-      width: 104px; height: 104px;
-      object-fit: contain;
-      background: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+    .gzh-mini {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: rgba(20, 20, 20, 0.55);
+      padding: 16px;
     }
-    .qr span { font-size: 13px; color: var(--muted); }
+    .gzh-mini-qr { width: 84px; height: 84px; object-fit: contain; background: #fff; padding: 5px; flex-shrink: 0; }
+    .gzh-mini-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .gzh-mini-body strong { font-size: 15px; font-weight: 800; }
+    .gzh-mini-body span { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+    /* ————— 联系区 FAQ（Supastack 页脚模式） ————— */
+    .faq { margin-top: 44px; max-width: 560px; }
+    .faq h3 { font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 6px; }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 0;
+      font-size: 15px;
+      font-weight: 600;
+      min-height: 48px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .ic { width: 16px; height: 16px; color: var(--accent); transition: transform 0.2s ease; flex-shrink: 0; }
+    .faq details[open] summary .ic { transform: rotate(180deg); }
+    .faq details p { padding: 0 0 16px; font-size: 14px; color: var(--muted); max-width: 46em; }
+
+    /* ————— 节目区（白底，与教学区分层） ————— */
+    .show { background: #ffffff; color: var(--ink); border-top: 1px solid var(--paper-line); }
+    .show .lede { color: var(--ink-soft); }
+    .show .chip { color: #0a7c34; background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.4); }
+    .show .wcard > p { color: var(--ink-soft); }
+    .show .gzh-card { background: var(--paper); }
+    .ep-t { font-size: 19px; font-weight: 800; margin-top: 14px; color: var(--ink); line-height: 1.4; }
+    .show-space { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 13px; color: var(--ink-soft); }
+    .show-space .ic { width: 14px; height: 14px; }
+    .show-space a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--paper-line); }
+    .show-space a:hover { color: #d94f1f; border-color: #d94f1f; }
 
     /* ————— 页脚 ————— */
     footer.foot { background: var(--paper); color: var(--ink); padding: 34px 0 calc(30px + var(--sab)); }
@@ -665,6 +733,9 @@
     .foot-nav a:hover { color: var(--accent); }
     .foot-copy { font-size: 13px; color: var(--ink-soft); }
     .foot-copy a { color: var(--accent); text-decoration: none; }
+    .foot-upd { font-size: 13px; color: var(--ink-soft); }
+    .foot-upd a { color: var(--ink-soft); text-decoration: none; }
+    .foot-upd a:hover { color: var(--accent); }
 
     /* ————— 桌面（≥880px） ————— */
     @media (min-width: 880px) {
@@ -702,12 +773,12 @@
       .quad { gap: 20px; }
 
       .teach-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start; }
-      .stats { grid-template-columns: repeat(4, 1fr); }
+      .stats { grid-template-columns: repeat(3, 1fr); }
 
       .cert-row { grid-template-columns: 1fr 1fr 1fr; gap: 26px; }
       .cert-list { grid-template-columns: 1fr 1fr; }
 
-      .show-grid { grid-template-columns: 1.1fr 0.9fr; gap: 30px; align-items: stretch; }
+      .show-grid { grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: start; }
       .gzh-card { padding: 26px; }
 
       .contact .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: start; gap: 40px; }
@@ -740,6 +811,7 @@
     <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8"/></symbol>
     <symbol id="i-rotate-3d" viewBox="0 0 24 24"><path d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2"/><path d="m15.194 13.707 3.814 1.86-1.86 3.814"/><path d="M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4"/></symbol>
     <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
     <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
     <symbol id="i-tv" viewBox="0 0 24 24"><path d="m17 2-5 5-5-5"/><rect width="20" height="15" x="2" y="7" rx="2"/></symbol>
@@ -806,6 +878,13 @@
             <svg class="ic" aria-hidden="true"><use href="#i-map-pin"/></svg>
             <span data-i18n="v2.hero.loc">高校讲师 · SketchUp 官方认证讲师 · 现居柳州</span>
           </p>
+          <div class="live-strip" aria-label="已经在运行的系统">
+            <span class="strip-label" data-i18n="v2.strip.label">已经在跑</span>
+            <span class="lv"><i></i>实训科平台</span>
+            <span class="lv"><i></i>砺行 · 日省</span>
+            <span class="lv"><i></i>沉浮 EP</span>
+            <span class="lv"><i></i>格物记 OS</span>
+          </div>
         </div>
         <figure class="hero-shot rv">
           <div class="frame">
@@ -832,7 +911,7 @@
 
         <div class="methods">
           <article class="mrow rv">
-            <span class="m-ic"><svg class="ic" aria-hidden="true"><use href="#i-pencil-ruler"/></svg></span>
+            <span class="m-ic"><img src="works/icons/method.png" alt="" loading="lazy" decoding="async" /></span>
             <div>
               <p class="m-idx" data-i18n="v2.m1.idx">方法 · Method</p>
               <h3 data-i18n="m1.h3">还在自己手里的方法</h3>
@@ -840,7 +919,7 @@
             </div>
           </article>
           <article class="mrow rv">
-            <span class="m-ic"><svg class="ic" aria-hidden="true"><use href="#i-package-check"/></svg></span>
+            <span class="m-ic"><img src="works/icons/delivery.png" alt="" loading="lazy" decoding="async" /></span>
             <div>
               <p class="m-idx" data-i18n="v2.m2.idx">交付 · Delivery</p>
               <h3 data-i18n="m2.h3">现实能回答的交付</h3>
@@ -848,7 +927,7 @@
             </div>
           </article>
           <article class="mrow rv">
-            <span class="m-ic"><svg class="ic" aria-hidden="true"><use href="#i-infinity"/></svg></span>
+            <span class="m-ic"><img src="works/icons/horizon.png" alt="" loading="lazy" decoding="async" /></span>
             <div>
               <p class="m-idx" data-i18n="v2.m3.idx">长线 · Horizon</p>
               <h3 data-i18n="m3.h3">课还能继续用</h3>
@@ -878,7 +957,7 @@
 
         <div class="chapter rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><svg class="ic" aria-hidden="true"><use href="#i-school"/></svg></span>
+            <span class="ch-ic"><img src="works/icons/school.png" alt="" loading="lazy" decoding="async" /></span>
             <span data-i18n="v2.ch.school">在学校里</span>
           </h3>
           <a class="feature" href="https://gxstzy-shixun.ai-builders.space" target="_blank" rel="noreferrer">
@@ -896,7 +975,7 @@
 
         <div class="chapter rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><svg class="ic" aria-hidden="true"><use href="#i-trees"/></svg></span>
+            <span class="ch-ic"><img src="works/icons/field.png" alt="" loading="lazy" decoding="async" /></span>
             <span data-i18n="v2.ch.field">在田野里</span>
           </h3>
           <div class="duo">
@@ -906,7 +985,7 @@
                 <div class="cap"><h4 data-i18n="card.habitat.h3">乡土民居数字保存</h4></div>
               </div>
               <span class="chip"><i></i><span data-i18n="v2.chip.grant">课题在跑</span></span>
-              <p data-i18n="card.habitat.p">省厅课题 2025KY1625。用 BIM 与点云把广西乡土民居做成可量测档案，服务保护与改造教学。</p>
+              <p data-i18n="card.habitat.p">把广西乡土民居做成可量测的档案——省厅课题 2025KY1625 在跑，服务保护与改造教学。</p>
             </article>
             <article class="wcard">
               <div class="frame">
@@ -928,7 +1007,7 @@
 
         <div class="chapter rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><svg class="ic" aria-hidden="true"><use href="#i-smartphone"/></svg></span>
+            <span class="ch-ic"><img src="works/icons/hand.png" alt="" loading="lazy" decoding="async" /></span>
             <span data-i18n="v2.ch.own">在自己手里</span>
           </h3>
           <div class="trio">
@@ -938,17 +1017,17 @@
                 <div class="cap"><h4>沉浮 EP</h4></div>
               </div>
               <span class="chip"><i></i><span data-i18n="v2.chip.live">已上线</span></span>
-              <p data-i18n="card.chenfu.p">四曲专辑站：歌词同步、留言板、整辑循环。用来证明方法能离开教案。</p>
+              <p data-i18n="card.chenfu.p">证明方法能离开教案：四曲专辑站，歌词同步、留言板、整辑循环。</p>
               <span class="go"><span data-i18n="card.chenfu.go">打开站点 →</span></span>
             </a>
             <a class="wcard" href="https://life-density.ai-builders.space/" target="_blank" rel="noreferrer">
               <div class="frame">
                 <img src="works/lixing.jpg?v=shot2" alt="砺行日省工具台" loading="lazy" decoding="async" />
-                <span class="card-logo"><img src="works/lixing-logo.png" alt="砺行" loading="lazy" decoding="async" /></span>
+                <span class="card-logo app"><img src="works/lixing-appicon.png" alt="砺行 App" loading="lazy" decoding="async" /></span>
                 <div class="cap"><h4>砺行 · 日省</h4></div>
               </div>
               <span class="chip"><i></i><span data-i18n="v2.chip.live">已上线</span></span>
-              <p data-i18n="card.lixing.p">11 模块 PWA。密度日志、偏差环、生命之轮。先养成习惯，再登录同步。</p>
+              <p data-i18n="card.lixing.p">先养成习惯，再登录同步——密度日志、偏差环、生命之轮，11 个模块。</p>
               <span class="go"><span data-i18n="card.lixing.go">打开站点 →</span></span>
             </a>
             <a class="wcard" href="https://github.com/PengGangjie/gewuji-os" target="_blank" rel="noreferrer">
@@ -957,7 +1036,7 @@
                 <div class="cap"><h4>格物记 OS</h4></div>
               </div>
               <span class="chip"><i></i><span data-i18n="v2.chip.open">开源</span></span>
-              <p data-i18n="card.gewuji.p">衣橱收纳与穿搭推荐。默认 100 件上限，本地优先。穿过已有的，而不是再买一件。</p>
+              <p data-i18n="card.gewuji.p">穿过已有的，而不是再买一件——衣橱收纳与穿搭推荐，默认 100 件上限，本地优先。</p>
               <span class="go"><span data-i18n="card.gewuji.go">打开仓库 →</span></span>
             </a>
           </div>
@@ -965,7 +1044,7 @@
 
         <div class="films rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
+            <span class="ch-ic"><img src="works/icons/film.png" alt="" loading="lazy" decoding="async" /></span>
             <span data-i18n="v2.films.t">两部成片</span>
           </h3>
           <p class="lede" data-i18n="v2.films.lede">点了才加载，随时可以停。</p>
@@ -1097,7 +1176,7 @@
           <li class="rv">
             <p class="t-idx"><span>2021—</span><span>生态学院</span></p>
             <h3 data-i18n="path3.h3">建筑装饰 / 实训室运行</h3>
-            <p data-i18n="path3.p">年课时 800–1100。竞赛工作室带出广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</p>
+            <p data-i18n="path3.p">竞赛工作室带出广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</p>
           </li>
           <li class="rv">
             <p class="t-idx"><span>2014 / 2017</span><span>地大武汉</span></p>
@@ -1122,7 +1201,6 @@
               <p data-i18n="v2.teach.p2">获校优秀学业导师、优秀班主任；全国数字创意教学技能大赛国赛二等奖 5 项、三等奖 4 项；指导学生获自治区职业技能大赛银奖 2 项、各类设计行业比赛奖 40 余项。</p>
             </div>
             <div class="stats">
-              <div class="stat"><strong>800–1100</strong><span data-i18n="v2.stat.1">年课时</span></div>
               <div class="stat"><strong>5+4</strong><span data-i18n="v2.stat.2">国赛二等奖 5 · 三等奖 4</span></div>
               <div class="stat"><strong>40+</strong><span data-i18n="v2.stat.3">指导学生获奖</span></div>
               <div class="stat"><strong>1</strong><span data-i18n="v2.stat.4">主持省厅科研课题</span></div>
@@ -1210,28 +1288,34 @@
     </section>
 
     <!-- ============ 节目：八点观察室 ============ -->
-    <section class="paper block" id="show">
+    <section class="show block" id="show">
       <div class="wrap">
         <header class="sec-head">
-          <p class="kicker" style="color:#d94f1f;">The show · 八点观察室</p>
+          <p class="kicker" style="color:#d94f1f;display:flex;align-items:center;gap:10px;">
+            <img class="show-mark" src="works/icons/show.png" alt="" loading="lazy" decoding="async" />The show · 八点观察室</p>
           <h2 data-i18n="v2.show.h2">工作交给机器，人生握在手里。</h2>
           <p class="lede" data-i18n="v2.show.lede">下课以后，我做了一档节目：每晚八点，八分钟一讲。《AI观察室》向外看机器怎么替人交差，《人生观察室》向内看人怎么答人生这张卷。</p>
         </header>
         <div class="show-grid">
-          <a class="wcard rv" href="https://space.bilibili.com/107109569" target="_blank" rel="noreferrer">
+          <div class="show-col">
+          <a class="wcard rv" href="https://www.bilibili.com/video/BV1bChC6DEQq/" target="_blank" rel="noreferrer">
             <div class="frame">
-              <img src="works/pengba-ai05.jpg" alt="八点观察室 · AI-05 这档节目为什么存在" loading="lazy" decoding="async" />
-              <div class="cap"><h4 data-i18n="v2.show.bili.h4">B 站 · 彭八PUMBAA</h4></div>
+              <img src="works/pengba-latest.jpg" alt="AI 不是没用，是你没用对｜四组对照" loading="lazy" decoding="async" />
+              <span class="play-badge"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
+              <span class="dur">7:30</span>
             </div>
-            <span class="chip"><i></i><span data-i18n="v2.chip.updating">更新中</span></span>
-            <p data-i18n="v2.show.bili.p">视频都在这里：AI×BIM 公开课已更四期，《AI观察室》从「这档节目为什么存在」讲起。片尾那句话是节目的全部立场。</p>
-            <span class="go"><span data-i18n="v2.show.bili.go">去 B 站看 →</span></span>
+            <span class="chip"><i></i><span data-i18n="v2.chip.latest">最新一期</span></span>
+            <p class="ep-t" data-i18n="v2.show.ep">AI 不是没用，是你没用对｜四组对照，听完今晚就能改</p>
+            <p data-i18n="v2.show.bili.p">「帮我写个通知」，问法和派活法是两个结果。这期讲四组对照：问题多半不在工具，在用法。</p>
+            <span class="go"><span data-i18n="v2.show.bili.go">去 B 站看这期 →</span></span>
           </a>
+          <p class="show-space"><svg class="ic" aria-hidden="true"><use href="#i-tv"/></svg><a href="https://space.bilibili.com/107109569" target="_blank" rel="noreferrer" data-i18n="v2.show.space">B 站主页 @彭八PUMBAA</a></p>
+          </div>
           <article class="wcard rv">
             <div class="gzh-card">
-              <img class="gzh-qr" src="works/lixing-mp-qr.png" alt="公众号 彭八八点ROOM 二维码" loading="lazy" decoding="async" />
+              <img class="gzh-qr" src="works/gzh-qr.png" alt="公众号 彭八八点ROOM 二维码" loading="lazy" decoding="async" />
               <div class="gzh-body">
-                <img class="gzh-logo" src="works/lixing-logo.png" alt="砺行" loading="lazy" decoding="async" />
+                <img class="gzh-logo" src="works/lixing-appicon.png" alt="砺行" loading="lazy" decoding="async" />
                 <h4 data-i18n="v2.show.gzh.h4">公众号 · 彭八八点ROOM</h4>
                 <p data-i18n="v2.show.gzh.p">每期文字版与金句卡在这里沉淀，周一到周五策展更新。扫码关注。</p>
                 <p class="gzh-tagline" data-i18n="v2.show.tagline">看得清 AI，过得好人生。</p>
@@ -1256,15 +1340,43 @@
         </div>
         <div class="contact-side">
           <div class="gift rv">
-            <p class="kicker"><svg class="ic" style="width:15px;height:15px;" aria-hidden="true"><use href="#i-gift"/></svg> <span data-i18n="v2.gift.tag">One more thing · 见面礼</span></p>
-            <h3 data-i18n="v2.gift.h3">Superlinear 社区 30 天体验</h3>
-            <p data-i18n="v2.gift.p">我学「把 AI 用成产线」的地方，给你留了 30 天体验卡：不绑卡，到期自动结束。</p>
+            <div class="gift-head">
+              <span class="gift-ic"><img src="works/icons/gift.png" alt="" loading="lazy" decoding="async" /></span>
+              <div>
+                <p class="kicker"><span data-i18n="v2.gift.tag">One more thing · 见面礼</span></p>
+                <h3 data-i18n="v2.gift.h3">Superlinear 社区 30 天体验</h3>
+              </div>
+            </div>
+            <p data-i18n="v2.gift.p">我学「把 AI 用成产线」的地方，给你留了 30 天体验卡：</p>
+            <ul>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="v2.gift.b1">不绑卡，到期自动结束</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="v2.gift.b2">邮箱验证即开通，全程自助</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="v2.gift.b3">7 个会员空间 + 3 门会员课程</span></li>
+            </ul>
             <a class="btn btn-fill" href="https://stay.superlinear.academy/invite/pumbaa" target="_blank" rel="noreferrer"><span data-i18n="v2.gift.go">领取体验 →</span></a>
           </div>
-          <div class="qr rv">
-            <img src="works/lixing-mp-qr.png" width="104" height="104" alt="公众号 彭八八点ROOM 二维码" loading="lazy" decoding="async" />
-            <span data-i18n="v2.show.gzh.h4">公众号 · 彭八八点ROOM</span>
+          <div class="gzh-mini rv">
+            <img class="gzh-mini-qr" src="works/gzh-qr.png" width="84" height="84" alt="公众号 彭八八点ROOM 二维码" loading="lazy" decoding="async" />
+            <div class="gzh-mini-body">
+              <strong data-i18n="v2.show.gzh.h4">公众号 · 彭八八点ROOM</strong>
+              <span data-i18n="v2.show.gzh.p">每期文字版与金句卡在这里沉淀，周一到周五策展更新。扫码关注。</span>
+            </div>
           </div>
+        </div>
+        <div class="faq rv">
+          <h3 data-i18n="v2.faq.t">常见三问</h3>
+          <details>
+            <summary><span data-i18n="v2.faq.q1">能约 SketchUp / BIM 内训或讲座吗？</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p data-i18n="v2.faq.a1">能。Trimble 官方认证讲师（T-010-000179），校企内训与公开分享都做过——浙江大学分享、OPC 线上专场。邮件说明场景和人数就行。</p>
+          </details>
+          <details>
+            <summary><span data-i18n="v2.faq.q2">设计改造项目还接吗？</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p data-i18n="v2.faq.a2">接存量住宅、店面与小型公共空间。方法不变：测绘、方案、落地，交出可运行的档案，不止效果图。</p>
+          </details>
+          <details>
+            <summary><span data-i18n="v2.faq.q3">想合作产品或课题怎么开始？</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p data-i18n="v2.faq.a3">砺行、格物记都是开放做出来的。方向在人居数字化与日常工具，邮件写清你是谁、想做什么就行。</p>
+          </details>
         </div>
       </div>
     </section>
@@ -1283,7 +1395,7 @@
         <a href="#story" data-i18n="nav.story">路径</a>
         <a href="#show" data-i18n="nav.show">节目</a>
         <a href="resume.html" data-i18n="nav.resume">简历</a>
-        <a href="changelog.html" data-i18n="v2.foot.changelog">更新日志</a>
+        <span class="foot-upd"><a href="changelog.html" data-i18n="v2.foot.changelog">更新日志</a> · 09-25</span>
       </nav>
       <p class="foot-copy">© 2026 彭岗杰 · <a href="v1.html" data-i18n="v2.foot.v1">V1.0 留档</a></p>
     </div>
@@ -1367,6 +1479,6 @@
       }
     })();
   </script>
-  <script src="i18n.js"></script>
+  <script src="i18n.js?v=25"></script>
 </body>
 </html>
