@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-en="Gangjie Peng · Changelog">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>彭岗杰 · 更新日志</title>
+  <meta name="description" content="彭岗杰个人主页的版本更新日志：V2.1 八点观察室与见面礼，V2.0 叙述化重构，V1.x 稳定运行记录。" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='9' y='9' width='14' height='14' fill='%23f15a24' transform='rotate(45 16 16)'/%3E%3C/svg%3E" />
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    :root {
+      --dark: #050505;
+      --paper: #f4f3ef;
+      --accent: #f15a24;
+      --ink: #141414;
+      --ink-soft: #4d4a45;
+      --muted: rgba(255, 255, 255, 0.58);
+      --paper-line: rgba(20, 20, 20, 0.1);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "MiSans", "Microsoft YaHei", system-ui, sans-serif;
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .wrap { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+    .top { background: var(--dark); color: #fff; padding: calc(var(--sat) + 26px) 0 34px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 16px; }
+    .brand-mark { width: 10px; height: 10px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
+    .kicker { margin-top: 34px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    h1 { margin-top: 10px; font-size: clamp(28px, 6.4vw, 42px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+    .top .lede { margin-top: 12px; font-size: 15px; color: var(--muted); }
+    .top .back { display: inline-block; margin-top: 18px; font-size: 13.5px; color: var(--accent); text-decoration: none; }
+    main { padding: 40px 0 calc(56px + var(--sab)); }
+    .ver { padding: 26px 0; border-bottom: 1px solid var(--paper-line); }
+    .ver:last-child { border-bottom: 0; }
+    .ver-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .ver-head strong { font-size: 20px; font-weight: 800; }
+    .ver-head span { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.06em; }
+    .ver.now .ver-head strong { color: #d94f1f; }
+    .ver ul { list-style: none; margin-top: 12px; }
+    .ver li { position: relative; padding-left: 18px; font-size: 14.5px; color: var(--ink-soft); }
+    .ver li + li { margin-top: 7px; }
+    .ver li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 7px; height: 7px; background: var(--accent); transform: rotate(45deg); }
+    .ver a { color: #d94f1f; text-decoration: none; }
+    .ver-foot { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
+    .lang-row { margin-top: 20px; }
+    .lang {
+      border: 1px solid rgba(255, 255, 255, 0.24); background: transparent; color: #fff;
+      font: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      padding: 10px 12px; min-height: 42px; cursor: pointer;
+    }
+    .lang:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><strong>彭岗杰</strong></a>
+      <p class="kicker">Changelog</p>
+      <h1 data-i18n="v2.cl.h1">更新日志</h1>
+      <p class="lede" data-i18n="v2.cl.lede">主页的每一次改版都记在这里。旧版本留档可回看。</p>
+      <a class="back" href="index.html" data-i18n="v2.cl.back">← 回主页</a>
+      <div class="lang-row"><button type="button" class="lang" id="lang-toggle">EN</button></div>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <article class="ver now">
+        <div class="ver-head"><strong>V2.1</strong><span>2026-09-25</span></div>
+        <ul>
+          <li data-i18n="v2.cl.21a">新增「八点观察室」区块：B 站 @彭八PUMBAA 视频入口 + 公众号「彭八八点ROOM」二维码关注卡。</li>
+          <li data-i18n="v2.cl.21b">联系区新增见面礼：Superlinear 社区 30 天体验卡（stay.superlinear.academy/invite/pumbaa）。</li>
+          <li data-i18n="v2.cl.21c">砺行 LOGO 融入：作品卡角标 + 公众号卡标识，与全平台品牌口径统一。</li>
+          <li data-i18n="v2.cl.21d">本更新日志页上线；V1.0 留档于 <a href="v1.html">v1.html</a>；补 favicon。</li>
+        </ul>
+      </article>
+      <article class="ver">
+        <div class="ver-head"><strong>V2.0</strong><span>2026-09-25</span></div>
+        <ul>
+          <li data-i18n="v2.cl.20a">整页叙述化重构：短句宣言标题、三条线作品结构（学校里 / 田野里 / 自己手里）、时间线路径、数据化教学、证书折叠。</li>
+          <li data-i18n="v2.cl.20b">导航收敛：桌面 3 锚点 + 简历主按钮；移动端品牌 + 简历 + 全屏菜单。</li>
+          <li data-i18n="v2.cl.20c">性能：视频与 Sketchfab 3D 改为点击加载；去 Google Fonts 改系统字体；图片懒加载；动画仅一次性进场。</li>
+          <li data-i18n="v2.cl.20d">图标切换为 lucide（内联 SVG sprite，零 JS）。</li>
+        </ul>
+      </article>
+      <article class="ver">
+        <div class="ver-head"><strong>V1.2</strong><span>2026-09-14</span></div>
+        <ul>
+          <li data-i18n="v2.cl.12a">新增 buildingSMART International Foundation 国际认证证书卡（Certificate ID BgB5XZlAbY）。</li>
+        </ul>
+      </article>
+      <article class="ver">
+        <div class="ver-head"><strong>V1.1</strong><span>2026-09-08</span></div>
+        <ul>
+          <li data-i18n="v2.cl.11a">三个视频移出 Docker 镜像，改走 GitHub Releases 外链（镜像约 110MB → 约 10MB），显著缩短冷启动等待。</li>
+        </ul>
+      </article>
+      <article class="ver">
+        <div class="ver-head"><strong>V1.0</strong><span>2026-09-02</span></div>
+        <ul>
+          <li data-i18n="v2.cl.10a">独立部署上线 penggangjie.ai-builders.space；中英双语切换；英文简历页（YC v2 中英对照）。</li>
+        </ul>
+        <p class="ver-foot"><a href="v1.html" data-i18n="v2.cl.10b">→ 查看 V1.0 留档版</a></p>
+      </article>
+      <article class="ver">
+        <div class="ver-head"><strong data-i18n="v2.cl.00v">立项</strong><span>2026-09-01</span></div>
+        <ul>
+          <li data-i18n="v2.cl.00a">本地首版：暗色 + 焦橙版式，作品 / 路径 / 教学信息架构。</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+  <script src="i18n.js"></script>
+</body>
+</html>

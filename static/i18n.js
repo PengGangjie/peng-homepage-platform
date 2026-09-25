@@ -1,4 +1,5 @@
-/* 彭岗杰主页中英切换：中文为 HTML 真源，英文写入本词典。 */
+/* 彭岗杰主页中英切换：中文为 HTML 真源，英文写入本词典。
+   V2.0（2026-09-25）：新增 v2.* 词条；旧词条全量保留，v1.html 留档页仍可切换。 */
 (function () {
   var EN = {
     "doc.title": "Gangjie Peng · Methods you can ship for inhabited space",
@@ -127,10 +128,90 @@
     "foot.contact": "Contact",
     "foot.mp": "Lixing WeChat",
     "foot.copy": "© 2026 Gangjie Peng",
-    "lang.btn": "中文"
+    "lang.btn": "中文",
+
+    /* ———— V2.0（2026-09-25）———— */
+    "v2.sn.works": "Live systems and two films",
+    "v2.sn.studio": "Seven years on drawings, before systems",
+    "v2.sn.story": "From bid decks to school systems",
+    "v2.sn.teach": "In class and after class",
+    "v2.sn.certs": "Only what can be verified",
+    "v2.sn.resume": "Bilingual · PDF",
+    "v2.sn.mail": "Email me",
+    "v2.hero.kicker": "Peng Gangjie · Habitat methods",
+    "v2.hero.h1": "Turn inhabited space into <em class=\"tint\">shippable</em> methods.",
+    "v2.hero.lede": "I teach surveying, BIM, and retrofit at a college in Liuzhou. After class, I turn what I teach into systems that actually run: a lab platform for the school, habitat archives in the field, and tools I use every day.",
+    "v2.hero.loc": "College lecturer · SketchUp Official Trainer · Liuzhou, Guangxi",
+    "v2.m1.idx": "Method",
+    "v2.m2.idx": "Delivery",
+    "v2.m3.idx": "Horizon",
+    "v2.works.h2": "Start with what's running.",
+    "v2.works.lede": "Every piece opens. Collected in three lines: at school, in the field, and in my own hands.",
+    "v2.ch.school": "At school",
+    "v2.ch.field": "In the field",
+    "v2.ch.own": "In my own hands",
+    "v2.chip.run": "In campus use",
+    "v2.chip.grant": "Grant running",
+    "v2.chip.live": "Live",
+    "v2.chip.open": "Open source",
+    "scan.p2": "Drag to orbit, scroll to zoom. <a href=\"https://skfb.ly/pGoCp\" target=\"_blank\" rel=\"noreferrer\">Open on Sketchfab →</a>",
+    "v2.scan.tap": "Oblique photogrammetry · 960.45 m² · Tap to load the 3D model",
+    "v2.films.t": "Two films",
+    "v2.films.lede": "They load only when you tap. Stop anytime.",
+    "v2.studio.h2": "Before systems, I spent seven years on space.",
+    "v2.studio.lede": "From landscape bids to home, factory, and storefront retrofit. The drawn part lives here; the running part is above.",
+    "flat.dur": "Built record",
+    "v2.teach.p1": "Trimble SketchUp Official Trainer (Standard, T-010-000179, Beijing ATC, Aug 2024). Teach SketchUp and BIM; co-edited a national vocational textbook on architectural drawing. Teach architectural decoration engineering; run lab construction and safety, skills competitions, and industry-education integration.",
+    "v2.teach.p2": "Outstanding academic mentor and class advisor. Five 2nd and four 3rd prizes at the national Digital-Creative Teaching Skills Competition; students took two regional silver medals and 40+ design industry awards.",
+    "v2.stat.1": "teaching hours / year",
+    "v2.stat.2": "National 2nd ×5 · 3rd ×4",
+    "v2.stat.3": "student awards",
+    "v2.stat.4": "Provincial grant, as PI",
+    "v2.certs.h2": "Only what can be verified.",
+    "v2.certs.lede": "Three core certificates open for online check; the remaining roles and IDs are folded in below.",
+    "v2.cert.more": "All roles & certificates",
+    "v2.contact.h2": "Next step: let's talk.",
+    "v2.contact.lede": "Courses, research, retrofit projects, or building something together—it can all start with one email.",
+    "v2.foot.v1": "V1.0 archive",
+
+    /* ———— V2.1（2026-09-25 · 八点观察室 / 见面礼 / 更新日志）———— */
+    "nav.show": "The show",
+    "v2.sn.show": "Every night at eight, Pengba's take",
+    "v2.show.h2": "Work goes to the machines. Life stays in your hands.",
+    "v2.show.lede": "After class, I run a show: eight o'clock every night, eight minutes a talk. AI Observe looks outward at how machines deliver the work; Life Observe looks inward at how we answer life's paper.",
+    "v2.show.bili.h4": "Bilibili · 彭八PUMBAA",
+    "v2.show.bili.p": "All videos live here: the AI×BIM open course has four episodes out; AI Observe starts from \"why this show exists.\" The closing line is the show's whole stance.",
+    "v2.show.bili.go": "Watch on Bilibili →",
+    "v2.show.gzh.h4": "WeChat · 彭八八点ROOM",
+    "v2.show.gzh.p": "Text versions and quote cards of every episode, curated weekly. Scan to follow.",
+    "v2.show.tagline": "See AI clearly. Live life well.",
+    "v2.chip.updating": "Updating",
+    "v2.gift.tag": "One more thing · A gift",
+    "v2.gift.h3": "Superlinear community · 30-day pass",
+    "v2.gift.p": "Where I learned to turn AI into a production line. I've set aside a 30-day pass for you: no card required, ends automatically.",
+    "v2.gift.go": "Claim the pass →",
+    "v2.foot.changelog": "Changelog",
+    "v2.cl.h1": "Changelog",
+    "v2.cl.lede": "Every revision of this homepage is logged here. Older versions stay archived.",
+    "v2.cl.back": "← Back to homepage",
+    "v2.cl.21a": "New \"8PM Observe\" section: Bilibili @彭八PUMBAA video entry + WeChat \"彭八八点ROOM\" follow card with QR code.",
+    "v2.cl.21b": "Welcome gift in Contact: a 30-day Superlinear community pass (stay.superlinear.academy/invite/pumbaa).",
+    "v2.cl.21c": "Lixing logo integrated: work-card badge + official-account card mark, unified with the all-platform brand.",
+    "v2.cl.21d": "This changelog page launched; V1.0 archived at <a href=\"v1.html\">v1.html</a>; favicon added.",
+    "v2.cl.20a": "Narrative rebuild: declarative headlines, works in three lines (at school / in the field / in my own hands), timeline path, stat-row teaching, collapsible credentials.",
+    "v2.cl.20b": "Navigation simplified: desktop 3 anchors + primary resume button; mobile brand + resume + full-screen menu.",
+    "v2.cl.20c": "Performance: click-to-load videos and Sketchfab 3D; Google Fonts dropped for system stack; lazy images; one-shot entrance animations only.",
+    "v2.cl.20d": "Icons switched to lucide (inline SVG sprite, zero JS).",
+    "v2.cl.12a": "Added buildingSMART International Foundation certificate card (Certificate ID BgB5XZlAbY).",
+    "v2.cl.11a": "Videos moved out of the Docker image to GitHub Releases links (image ~110MB → ~10MB), sharply cutting cold-start wait.",
+    "v2.cl.10a": "Standalone launch on penggangjie.ai-builders.space; bilingual toggle; English resume page (YC v2).",
+    "v2.cl.10b": "→ View the archived V1.0",
+    "v2.cl.00v": "Project start",
+    "v2.cl.00a": "First local build: dark + burnt-orange layout with works / path / teaching information architecture."
   };
 
-  var ZH_TITLE = "彭岗杰 · 把已经交互过的空间做成可交付的方法";
+  var ZH_TITLE = document.title;
+  var EN_TITLE_FALLBACK = EN["doc.title"];
 
   function storeZh() {
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
@@ -142,7 +223,9 @@
     storeZh();
     var en = lang === "en";
     document.documentElement.lang = en ? "en" : "zh-CN";
-    document.title = en ? EN["doc.title"] : ZH_TITLE;
+    document.title = en
+      ? (document.documentElement.getAttribute("data-title-en") || EN_TITLE_FALLBACK)
+      : ZH_TITLE;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
       if (en) {
@@ -151,8 +234,9 @@
         el.innerHTML = el.dataset.zh;
       }
     });
-    var btn = document.getElementById("lang-toggle");
-    if (btn) btn.textContent = en ? "中文" : "EN";
+    document.querySelectorAll("[data-lang-btn], #lang-toggle").forEach(function (btn) {
+      btn.textContent = en ? "中文" : "EN";
+    });
     try {
       localStorage.setItem("peng-lang", en ? "en" : "zh");
     } catch (e) {}
@@ -160,21 +244,21 @@
 
   function boot() {
     storeZh();
-    var btn = document.getElementById("lang-toggle");
-    if (btn) {
+    document.querySelectorAll("[data-lang-btn], #lang-toggle").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var next = document.documentElement.lang === "en" ? "zh" : "en";
         apply(next);
       });
-    }
+    });
     var saved = "zh";
     try {
       saved = localStorage.getItem("peng-lang") || "zh";
     } catch (e) {}
     if (saved === "en") apply("en");
     else {
-      var btn2 = document.getElementById("lang-toggle");
-      if (btn2) btn2.textContent = "EN";
+      document.querySelectorAll("[data-lang-btn], #lang-toggle").forEach(function (btn) {
+        btn.textContent = "EN";
+      });
     }
   }
 
