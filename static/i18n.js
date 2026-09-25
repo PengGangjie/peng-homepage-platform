@@ -227,6 +227,11 @@
 
     /* ———— V2.5（2026-09-25 · App 图标 / 时效信号）———— */
     "v2.cl.25a": "Lixing mark switched to the orange App icon (same as the iOS TestFlight build); footer changelog link now carries the update date.",
+
+    /* ———— V2.6（2026-09-25 · 话题卡 / 修订）———— */
+    "v2.show.gzh.read": "Read the article →",
+    "v2.cl.26a": "Official-account card now features the article \"把 AI 用成产线\" with a screenshot and direct link.",
+    "v2.cl.26b": "Removed the research-grant stat from Teaching (two stats remain).",
     "v2.cl.20a": "Narrative rebuild: declarative headlines, works in three lines (at school / in the field / in my own hands), timeline path, stat-row teaching, collapsible credentials.",
     "v2.cl.20b": "Navigation simplified: desktop 3 anchors + primary resume button; mobile brand + resume + full-screen menu.",
     "v2.cl.20c": "Performance: click-to-load videos and Sketchfab 3D; Google Fonts dropped for system stack; lazy images; one-shot entrance animations only.",

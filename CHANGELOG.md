@@ -2,6 +2,11 @@
 
 > 站点：https://penggangjie.ai-builders.space · 线上版：[changelog.html](static/changelog.html)
 
+## V2.6 · 2026-09-25
+
+- 公众号卡改「文章精选」：《把 AI 用成产线，再把这件事讲给二十位OPC创业者听》文章截图 + 直达链接（mp.weixin.qq.com/s/_uVeeaCHJn4RP_n_P6LWng），二维码行保留为扫码关注
+- 教学区移除科研课题数据条（保留：国赛 5+4 / 学生获奖 40+），两列排布
+
 ## V2.5 · 2026-09-25
 
 - 砺行标识换橙色 App 图标（与 iOS TestFlight 内测版同款，取自发布截图 256px；作品卡角标改圆角直出、公众号卡 logo 同步）
