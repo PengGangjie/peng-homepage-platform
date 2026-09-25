@@ -8,11 +8,12 @@
 
 | 文件 | 说明 |
 |---|---|
-| `static/index.html` | 主页 V2（2026-09-25 叙述化重构 + V2.1 八点观察室/见面礼） |
+| `static/index.html` | 主页 V2（叙述化重构 + 八点观察室/见面礼/品牌图标） |
 | `static/v1.html` | V1.0 留档（noindex），主页页脚有入口 |
-| `static/changelog.html` | 站点更新日志 |
 | `static/resume.html` | 英文简历（YC v2 中英对照，PDF 在 `static/works/`） |
-| `static/i18n.js` | 中英切换词典（中文为 HTML 真源，英文写入词典；v1/v2/changelog 共用） |
+| `static/i18n.js` | 中英切换词典（中文为 HTML 真源，英文写入词典；v1/v2 共用） |
+
+更新日志（`changelog.html`）**仅本地可看**：真源在 `output/peng-homepage/changelog.html`，同步脚本已排除、不部署上线（2026-09-25 用户要求）；仓库内版本记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 版本摘要
 
