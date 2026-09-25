@@ -7,6 +7,7 @@
 - 新增「八点观察室」区块：B 站 @彭八PUMBAA（space.bilibili.com/107109569）视频入口 + 公众号「彭八八点ROOM」二维码关注卡；口号「工作交给机器，人生握在手里」
 - 联系区新增见面礼：Superlinear 社区 30 天体验卡（stay.superlinear.academy/invite/pumbaa，自助领取、不绑卡）
 - 砺行 LOGO 融入：砺行·日省 作品卡角标 + 公众号卡标识（全平台统一 LOGO 口径）
+- 品牌字体：标题与金句位（h1/h2/quote/标语/菜单大字）启用国文正楷——WOFF2 子集 `fonts/kai-brand.woff2`（304 字符 / 342KB），生成脚本 `scripts/build_kai_subset.py`；原始 TTF（36MB）不进公开仓，防整字库被下载
 - 新增 `changelog.html` 站点更新日志页（noindex）；sitemap 收录
 - V1.0 完整留档为 `v1.html`（noindex + canonical 指向自身），主页页脚提供入口
 - 补 favicon（内联 SVG 橙菱形），消除 404

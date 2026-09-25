@@ -198,6 +198,7 @@
     "v2.cl.21b": "Welcome gift in Contact: a 30-day Superlinear community pass (stay.superlinear.academy/invite/pumbaa).",
     "v2.cl.21c": "Lixing logo integrated: work-card badge + official-account card mark, unified with the all-platform brand.",
     "v2.cl.21d": "This changelog page launched; V1.0 archived at <a href=\"v1.html\">v1.html</a>; favicon added.",
+    "v2.cl.21e": "Brand font: headlines and mottos now use KaiOldstyle (WOFF2 subset, display-position glyphs only, 342KB).",
     "v2.cl.20a": "Narrative rebuild: declarative headlines, works in three lines (at school / in the field / in my own hands), timeline path, stat-row teaching, collapsible credentials.",
     "v2.cl.20b": "Navigation simplified: desktop 3 anchors + primary resume button; mobile brand + resume + full-screen menu.",
     "v2.cl.20c": "Performance: click-to-load videos and Sketchfab 3D; Google Fonts dropped for system stack; lazy images; one-shot entrance animations only.",

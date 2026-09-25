@@ -28,6 +28,7 @@
 - 本仓是独立 AI Builders Space 部署包（FastAPI 托管静态文件），勿并进实训科 / 人生量化 / 沉浮
 - 本地真源在 workspace `output/peng-homepage/`，视频等大文件不进镜像（`sync_peng_homepage_static.py` 排除）
 - 图标为 lucide v0.544（ISC）内联 SVG sprite，无前端依赖、无构建链
+- 品牌字体国文正楷以 WOFF2 子集提供（`static/fonts/kai-brand.woff2`，仅展示位字符）；**原始 TTF 有商用授权但勿提交进本仓或任何公开目录**；改品牌位文案后重跑 `scripts/build_kai_subset.py`（真源在 E 盘八点观察室/封面/）
 
 ```powershell
 # 从真源同步静态

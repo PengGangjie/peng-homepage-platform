@@ -10,6 +10,12 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='9' y='9' width='14' height='14' fill='%23f15a24' transform='rotate(45 16 16)'/%3E%3C/svg%3E" />
   <script>document.documentElement.classList.add("js");</script>
   <style>
+    @font-face {
+      font-family: "BrandKai";
+      src: url("fonts/kai-brand.woff2?v=21") format("woff2");
+      font-weight: 400 800;
+      font-display: swap;
+    }
     :root {
       --dark: #050505;
       --paper: #f4f3ef;
@@ -31,6 +37,7 @@
     .brand-mark { width: 10px; height: 10px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
     .kicker { margin-top: 34px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
     h1 { margin-top: 10px; font-size: clamp(28px, 6.4vw, 42px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+    h1, .ver-head strong, .sheet-strong { font-family: "BrandKai", "Kaiti SC", "KaiTi", "STKaiti", var(--font); }
     .top .lede { margin-top: 12px; font-size: 15px; color: var(--muted); }
     .top .back { display: inline-block; margin-top: 18px; font-size: 13.5px; color: var(--accent); text-decoration: none; }
     main { padding: 40px 0 calc(56px + var(--sab)); }
@@ -75,6 +82,7 @@
           <li data-i18n="v2.cl.21b">联系区新增见面礼：Superlinear 社区 30 天体验卡（stay.superlinear.academy/invite/pumbaa）。</li>
           <li data-i18n="v2.cl.21c">砺行 LOGO 融入：作品卡角标 + 公众号卡标识，与全平台品牌口径统一。</li>
           <li data-i18n="v2.cl.21d">本更新日志页上线；V1.0 留档于 <a href="v1.html">v1.html</a>；补 favicon。</li>
+          <li data-i18n="v2.cl.21e">品牌字体：标题与金句位启用国文正楷（WOFF2 子集，仅含展示位字符，342KB）。</li>
         </ul>
       </article>
       <article class="ver">
