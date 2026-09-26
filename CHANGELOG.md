@@ -2,6 +2,11 @@
 
 > 站点：https://penggangjie.ai-builders.space · 线上版：[changelog.html](static/changelog.html)
 
+## V2.6.2 · 2026-09-26
+
+- 设计区标题「七年」改为「十年」（2016 年实习起算）；移动菜单副题同步
+- 品牌字体子集补「十」字重跑（307 字符 / 346KB），避免系统楷体混排
+
 ## V2.6.1 · 2026-09-25
 
 - **归档收紧**：`v1.html` 与 `changelog.html` 均退回仅本地可看（线上 404、页脚入口移除、sync 排除）

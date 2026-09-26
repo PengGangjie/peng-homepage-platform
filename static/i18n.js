@@ -132,7 +132,7 @@
 
     /* ———— V2.0（2026-09-25）———— */
     "v2.sn.works": "Live systems and two films",
-    "v2.sn.studio": "Seven years on drawings, before systems",
+    "v2.sn.studio": "Ten years on drawings, before systems",
     "v2.sn.story": "From bid decks to school systems",
     "v2.sn.teach": "In class and after class",
     "v2.sn.certs": "Only what can be verified",
@@ -158,7 +158,7 @@
     "v2.scan.tap": "Oblique photogrammetry · 960.45 m² · Tap to load the 3D model",
     "v2.films.t": "Two films",
     "v2.films.lede": "They load only when you tap. Stop anytime.",
-    "v2.studio.h2": "Before systems, I spent seven years on space.",
+    "v2.studio.h2": "Before systems, I spent ten years on space.",
     "v2.studio.lede": "From landscape bids to home, factory, and storefront retrofit. The drawn part lives here; the running part is above.",
     "flat.dur": "Built record",
     "v2.teach.p1": "Trimble SketchUp Official Trainer (Standard, T-010-000179, Beijing ATC, Aug 2024). Teach SketchUp and BIM; co-edited a national vocational textbook on architectural drawing. Teach architectural decoration engineering; run lab construction and safety, skills competitions, and industry-education integration.",
@@ -232,6 +232,7 @@
     "v2.show.gzh.read": "Read the article →",
     "v2.cl.26a": "Official-account card now features the article \"把 AI 用成产线\" with a screenshot and direct link.",
     "v2.cl.26b": "Removed the research-grant stat from Teaching (two stats remain).",
+    "v2.cl.26c": "Studio headline: seven years changed to ten (counting from the 2016 internship); brand-font subset updated to match.",
     "v2.cl.20a": "Narrative rebuild: declarative headlines, works in three lines (at school / in the field / in my own hands), timeline path, stat-row teaching, collapsible credentials.",
     "v2.cl.20b": "Navigation simplified: desktop 3 anchors + primary resume button; mobile brand + resume + full-screen menu.",
     "v2.cl.20c": "Performance: click-to-load videos and Sketchfab 3D; Google Fonts dropped for system stack; lazy images; one-shot entrance animations only.",
