@@ -2,6 +2,12 @@
 
 > 站点：https://penggangjie.ai-builders.space · 线上版：[changelog.html](static/changelog.html)
 
+## V2.6.1 · 2026-09-25
+
+- **归档收紧**：`v1.html` 与 `changelog.html` 均退回仅本地可看（线上 404、页脚入口移除、sync 排除）
+- **性能**：部署包 11MB → 5.1MB（works 只打包页面引用的 41 个文件）；被引用大图重压 5.1MB → 3.3MB（18 张 1200px/q82 渐进式）；FastAPI 加 Cache-Control（静态 1 天 / HTML etag 304）与 GZip
+- 线上实测：TTFB 6.6s（冷态）→ 0.8–1.6s（温态）；回访走浏览器缓存
+
 ## V2.6 · 2026-09-25
 
 - 公众号卡改「文章精选」：《把 AI 用成产线，再把这件事讲给二十位OPC创业者听》文章截图 + 直达链接（mp.weixin.qq.com/s/_uVeeaCHJn4RP_n_P6LWng），二维码行保留为扫码关注
