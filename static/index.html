@@ -171,6 +171,7 @@
       white-space: nowrap;
     }
     nav.links { display: none; }
+    .bar .lang { display: none; }
     .acts { display: flex; align-items: center; gap: 10px; }
     .lang {
       border: 1px solid rgba(255, 255, 255, 0.24);
@@ -800,7 +801,8 @@
     }
     .contact h2 { font-size: clamp(30px, 7.4vw, 52px); }
     .contact .lede { margin-top: 16px; }
-    .contact .ctas { margin-top: 32px; }
+    .contact .ctas { margin-top: 32px; flex-direction: column; align-items: stretch; }
+    .contact .ctas .btn { width: 100%; }
     .contact-side { display: flex; flex-direction: column; gap: 18px; }
     .city-stage {
       margin-top: 28px;
@@ -816,16 +818,18 @@
     }
     .city-cap {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px 16px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
       padding: 12px 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
     .city-cap p { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
-    .city-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .city-links { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
     .city-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
       font-size: 13.5px;
       font-weight: 700;
       color: #fff;
@@ -834,28 +838,36 @@
     }
     .city-links a:hover { color: var(--accent); }
     .gift-aside {
-      border: 1px dashed rgba(241, 90, 36, 0.55);
+      border: 1px solid #8fd4a4;
+      background: rgba(143, 212, 164, 0.1);
       padding: 14px 16px;
       font-size: 13.5px;
-      color: var(--muted);
+      color: #e7f6ec;
       line-height: 1.55;
     }
     .gift-aside strong {
       display: block;
       margin-bottom: 4px;
-      color: #fff;
+      color: #8fd4a4;
       font-size: 14px;
       font-weight: 800;
     }
     .gift-aside a {
-      display: inline-block;
-      margin-top: 8px;
-      font-weight: 700;
-      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 12px;
+      padding: 11px 16px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #061209;
+      background: #8fd4a4;
       text-decoration: none;
-      border-bottom: 1px solid var(--accent);
+      border: 0;
     }
-    .gift-aside a:hover { color: var(--accent); }
+    .gift-aside a:hover { color: #061209; background: #f8f1e4; }
     .commune {
       border: 1px solid rgba(255, 255, 255, 0.16);
       padding: 18px 18px 16px;
@@ -942,26 +954,27 @@
     .opc-bar {
       margin-top: 22px;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 0;
-      padding: 4px 4px 4px 14px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 4px 0;
       background: var(--paper);
       border: 1px solid var(--paper-line);
     }
-    .opc-bar .cadence { margin: 10px 8px 10px 0; }
-    .opc-bar ol { display: flex; flex-wrap: wrap; list-style: none; flex: 1; }
+    .opc-bar .cadence { margin: 10px 14px; }
+    .opc-bar ol { display: flex; flex-direction: column; list-style: none; flex: 1; width: 100%; }
     .opc-bar li {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 8px;
-      padding: 10px 14px;
-      border-left: 1px solid var(--paper-line);
+      padding: 12px 14px;
+      min-height: 44px;
+      border-top: 1px solid var(--paper-line);
     }
     .opc-bar span { font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft); }
     .opc-bar strong { font-size: 15px; font-weight: 800; }
     .opc-bar em { font-style: normal; font-size: 12.5px; color: var(--ink-soft); }
-    .opc-bar .show-space { margin: 8px 12px 8px auto; }
+    .opc-bar .show-space { margin: 4px 14px 12px; }
     .gzh-list { list-style: none; margin-top: 16px; display: grid; gap: 0; }
     .gzh-list li { border-top: 1px solid var(--paper-line); }
     .gzh-list a {
@@ -1002,6 +1015,7 @@
 
     /* ————— 桌面（≥880px） ————— */
     @media (min-width: 880px) {
+      .bar .lang { display: inline-flex; align-items: center; }
       nav.links { display: flex; gap: 22px; }
       nav.links a {
         text-decoration: none;
@@ -1067,11 +1081,22 @@
       .cert-row { grid-template-columns: 1fr 1fr 1fr; gap: 26px; }
       .cert-list { grid-template-columns: 1fr 1fr; }
 
+      .opc-bar { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 0; padding: 4px 4px 4px 14px; }
+      .opc-bar .cadence { margin: 10px 8px 10px 0; }
+      .opc-bar ol { flex-direction: row; flex-wrap: wrap; width: auto; }
+      .opc-bar li { border-top: 0; border-left: 1px solid var(--paper-line); padding: 10px 14px; min-height: 0; align-items: baseline; }
+      .opc-bar .show-space { margin: 8px 12px 8px auto; }
+
       .show-grid { grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: stretch; }
       .gzh-card { height: 100%; display: flex; flex-direction: column; padding: 18px; }
       .gzh-list { margin-top: auto; }
 
+      .contact .ctas { flex-direction: row; flex-wrap: wrap; align-items: center; }
+      .contact .ctas .btn { width: auto; }
       .contact .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: start; gap: 28px 40px; }
+      .city-cap { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+      .city-links { flex-direction: row; flex-wrap: wrap; gap: 14px; }
+      .city-links a { min-height: 0; }
       .contact-lead { grid-column: 1; grid-row: 1; }
       .contact-side { grid-column: 2; grid-row: 1; justify-self: stretch; width: 100%; }
       .city-stage { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
@@ -1156,6 +1181,7 @@
       <a href="resume.html"><strong data-i18n="nav.resume">简历</strong><span data-i18n="v2.sn.resume">中英对照 · PDF</span></a>
     </nav>
     <div class="sheet-foot">
+      <button type="button" data-lang-btn aria-label="Language">EN</button>
       <a href="mailto:102627184@qq.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="v2.sn.mail">写邮件</span></a>
       <a href="https://github.com/PengGangjie" target="_blank" rel="noreferrer"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
     </div>
