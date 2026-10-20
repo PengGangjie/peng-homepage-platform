@@ -160,6 +160,21 @@
       font-size: 12px;
       color: var(--muted);
     }
+    .job-head, .job-role, .proj-title, .en, .zh, .contact, ul.bullets { overflow-wrap: anywhere; }
+    @media (max-width: 640px) {
+      .bar .inner {
+        width: min(var(--max), calc(100% - 28px));
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+      }
+      .bar a { letter-spacing: 0.02em; }
+      .bar .btn { min-height: 44px; padding: 10px 14px; }
+      .sheet { width: min(var(--max), calc(100% - 28px)); margin: 16px auto 48px; padding: 22px 16px 28px; }
+      .name { letter-spacing: 0.02em; }
+      .job-head { font-size: 12.5px; letter-spacing: 0; }
+    }
     @media print {
       .bar { display: none; }
       body { background: #fff; }
@@ -172,7 +187,7 @@
     <div class="inner">
       <a href="index.html">← 返回主页 / Home</a>
       <div class="acts">
-        <a class="btn" href="works/Peng_Gangjie_YC_Resume_v2.pdf?v=20261020b" target="_blank" rel="noreferrer">下载英文 PDF</a>
+        <a class="btn" href="works/Peng_Gangjie_YC_Resume_v2.pdf?v=20261020d" target="_blank" rel="noreferrer">下载英文 PDF</a>
       </div>
     </div>
   </div>
@@ -203,8 +218,8 @@
 
       <article class="job">
         <p class="job-head">GUANGXI ECO-ENGINEERING VOCATIONAL &amp; TECHNICAL COLLEGE — LIUZHOU, CHINA</p>
-        <p class="job-role">Lecturer, Architectural Decoration · Training Lab Ops (Academic Affairs) · 2021.07–Present</p>
-        <p class="zh" style="margin-top:6px;">广西生态工程职业技术学院 · 建筑装饰讲师 / 教务处实训室运行 · 2021.07–至今</p>
+        <p class="job-role">Lecturer; Deputy Chief, Training-Lab Office (Academic Affairs) · 2021.07–Present</p>
+        <p class="zh" style="margin-top:6px;">广西生态工程职业技术学院 · 讲师 / 教务处实训管理科副科长 · 2021.07–至今</p>
 
         <div class="proj">
           <p class="proj-title">General AI course, 32 hours on campus, plus a four-episode recording for college teachers:</p>
@@ -234,6 +249,8 @@
             <li class="zh-li">主持省厅课题：BIM + 点云保存广西乡土民居（2025KY1625）。</li>
             <li>Shipped Lin Xiaozhi: remind, report, log, and dispatch; it still records when the network is down.</li>
             <li class="zh-li">林小智已交付：提醒、上报、留痕、派单，断网也能记。</li>
+            <li>Associate editor of the national forestry textbook Architectural Drawing and Reading.</li>
+            <li class="zh-li">副主编国家林草局规划教材《建筑装饰制图与识图》。</li>
             <li>Trimble SketchUp Official Trainer (Std., T-010-000179, Aug 2024); buildingSMART Foundation (BgB5XZlAbY, Sep 2026).</li>
             <li class="zh-li">Trimble SketchUp Official Trainer（Standard，T-010-000179，2024.08）；buildingSMART Foundation（BgB5XZlAbY，2026.09）。</li>
           </ul>
@@ -243,10 +260,10 @@
           <p class="proj-title">Competition Studio, a student pipeline in interior, exhibition, and digital design:</p>
           <p class="zh">竞赛工作室：室内、展示与数字设计的学生通道。</p>
           <ul class="bullets">
-            <li>Coached GX Skills Contest 2nd (env. art), Yongchuang Cup national 1st, Milan Design Week national 2nd.</li>
-            <li class="zh-li">指导广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</li>
-            <li>Won 5 national 2nds and 4 3rds in Digital Creative Teaching Skills; campus Outstanding Advisor.</li>
-            <li class="zh-li">数字创意教学能力竞赛全国二等奖 5 项、三等奖 4 项；校优秀学业导师。</li>
+            <li>Coached regional vocational-skills 2nd (env. art), Future College Digital Art Design national 2nd, and Milan Design Week national 2nd.</li>
+            <li class="zh-li">指导自治区职业技能大赛环境艺术设计二等奖、未来全国高校数字艺术设计大赛国赛二等奖、米兰设计周国赛二等奖。</li>
+            <li>Won 5 national 2nds and 4 3rds in Digital Creative Teaching Skills; campus Outstanding Advisor and a moral-education case.</li>
+            <li class="zh-li">数字创意教学能力竞赛全国二等奖 5 项、三等奖 4 项；校优秀学业导师、校级优秀德育案例。</li>
           </ul>
         </div>
       </article>

@@ -121,7 +121,7 @@
     }
     a { color: inherit; }
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
     .ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
     /* ————— 顶栏 ————— */
@@ -298,7 +298,8 @@
     .hero .kicker { margin-bottom: 18px; }
     .hero .lede { margin-top: 22px; }
     .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-    .hero .ctas { margin-top: 32px; }
+    .hero .ctas { margin-top: 32px; flex-direction: column; align-items: stretch; }
+    .hero .ctas .btn { width: 100%; }
     .loc {
       margin-top: 30px;
       display: flex;
@@ -342,8 +343,8 @@
       flex-wrap: wrap;
     }
     .fic {
-      height: 34px;
-      padding: 0 11px 0 9px;
+      min-height: 44px;
+      padding: 0 14px 0 12px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.22);
       background: transparent;
@@ -377,7 +378,7 @@
     }
     .follow-pop img { width: 128px; height: 128px; object-fit: contain; }
     .follow-pop span { display: block; margin-top: 6px; font-size: 12px; font-weight: 700; }
-    .hero-shot { margin-top: 44px; position: relative; padding-left: 22px; }
+    .hero-shot { margin-top: 44px; position: relative; padding-left: 12px; }
     .hero-shot::before {
       content: "";
       position: absolute;
@@ -663,9 +664,10 @@
 
     /* ————— 路径：横轨 + 数字带 ————— */
     .path-rail { list-style: none; margin-top: 36px; display: grid; gap: 26px; }
+    .path-rail li { min-width: 0; }
     .path-rail h3 { font-size: 20px; font-weight: 800; margin: 4px 0 2px; letter-spacing: -0.01em; }
     .path-rail .t-role { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0; }
-    .path-rail li > p:last-child { margin-top: 6px; font-size: 13.5px; color: var(--ink-soft); max-width: 36em; }
+    .path-rail li > p:last-child { margin-top: 6px; font-size: 13.5px; color: var(--ink-soft); max-width: 36em; overflow-wrap: anywhere; }
     .t-idx {
       display: flex;
       gap: 12px;
@@ -812,7 +814,7 @@
     .city-stage iframe {
       display: block;
       width: 100%;
-      height: 420px;
+      height: 360px;
       border: 0;
       background: #061209;
     }
@@ -1004,8 +1006,15 @@
     }
     .foot-row .brand { color: var(--ink); }
     .foot-row .brand span { font-size: 12px; font-weight: 500; color: var(--ink-soft); margin-left: 2px; }
-    .foot-nav { display: flex; gap: 20px; flex-wrap: wrap; }
-    .foot-nav a { font-size: 13.5px; color: var(--ink-soft); text-decoration: none; }
+    .foot-nav { display: flex; gap: 8px 16px; flex-wrap: wrap; }
+    .foot-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
     .foot-nav a:hover { color: var(--accent); }
     .foot-copy { font-size: 13px; color: var(--ink-soft); }
     .foot-copy a { color: var(--accent); text-decoration: none; }
@@ -1013,8 +1022,17 @@
     .foot-upd a { color: var(--ink-soft); text-decoration: none; }
     .foot-upd a:hover { color: var(--accent); }
 
+    /* ————— 更窄手机 ————— */
+    @media (max-width: 380px) {
+      .quad { grid-template-columns: 1fr; }
+      .gzh-mini { flex-direction: column; align-items: flex-start; }
+      .gzh-mini-qr { width: 96px; height: 96px; }
+      .brand-motto { letter-spacing: 0.02em; }
+    }
+
     /* ————— 桌面（≥880px） ————— */
     @media (min-width: 880px) {
+      .wrap { width: min(var(--max), calc(100% - 40px)); }
       .bar .lang { display: inline-flex; align-items: center; }
       nav.links { display: flex; gap: 22px; }
       nav.links a {
@@ -1029,6 +1047,9 @@
       .btn-sm { padding: 10px 18px; min-height: 40px; font-size: 13px; }
 
       .hero { padding: 88px 0 72px; }
+      .hero .ctas { flex-direction: row; flex-wrap: wrap; align-items: center; }
+      .hero .ctas .btn { width: auto; }
+      .hero-shot { padding-left: 36px; }
       .path-rail {
         grid-template-columns: repeat(4, 1fr);
         gap: 28px;
@@ -1056,7 +1077,7 @@
       .path-rail li.is-now::before { background: var(--accent); }
       .proof { grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 52px; }
       .hero-grid { display: grid; grid-template-columns: 1.05fr 0.9fr; gap: 56px; align-items: center; }
-      .hero-shot { margin-top: 0; padding-left: 36px; }
+      .hero-shot { margin-top: 0; }
       .hero-shot::before { top: 40%; width: 64%; height: 64px; }
       .hero-shot .frame { margin-left: auto; }
 
@@ -1074,6 +1095,8 @@
       .feat { grid-template-columns: 1.35fr 0.85fr; gap: 16px; }
       .feat .stack { grid-template-columns: 1fr 1fr 1fr; }
       .quad { gap: 20px; }
+      .fic { min-height: 34px; height: 34px; padding: 0 11px 0 9px; }
+      .foot-nav a { min-height: 0; }
 
       .teach-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start; }
       .stats { grid-template-columns: repeat(2, 1fr); }
@@ -1275,8 +1298,8 @@
           <li class="is-now">
             <p class="t-idx"><span>2021—</span><span data-i18n="v2.path.now">现在</span></p>
             <h3 data-i18n="path3.idx">生态学院</h3>
-            <p class="t-role" data-i18n="path3.h3">建筑装饰 / 实训室运行</p>
-            <p data-i18n="path3.p">竞赛工作室带出广西技能大赛环境艺术二等奖、永创杯全国一等奖、米兰设计周全国二等奖。</p>
+            <p class="t-role" data-i18n="path3.h3">讲师 / 实训管理科副科长</p>
+            <p data-i18n="path3.p">竞赛工作室指导学生获自治区职业技能大赛环境艺术设计二等奖、未来全国高校数字艺术设计大赛国赛二等奖、米兰设计周国赛二等奖。</p>
           </li>
         </ol>
         <div class="proof" aria-label="能核对的数字">
@@ -1657,8 +1680,8 @@
         <div class="teach-grid">
           <div>
             <div class="body">
-              <p data-i18n="v2.teach.p1">校内讲人工智能通识课。Trimble SketchUp Official Trainer（Standard，T-010-000179，北京 ATC，2024.08），也教 SketchUp 与 BIM，参编建筑制图国家职教教材。承担建筑装饰工程技术专业教学，负责实训室建设与安全管理、技能竞赛组织、产教融合等科室业务。</p>
-              <p data-i18n="v2.teach.p2">获校优秀学业导师、优秀班主任；全国数字创意教学技能大赛国赛二等奖 5 项、三等奖 4 项；指导学生获自治区职业技能大赛银奖 2 项、各类设计行业比赛奖 40 余项。</p>
+              <p data-i18n="v2.teach.p1">校内讲人工智能通识课。Trimble SketchUp Official Trainer（Standard，T-010-000179，北京 ATC，2024.08），也教 SketchUp 与 BIM，副主编国家林草局规划教材《建筑装饰制图与识图》。承担建筑装饰工程技术专业教学，负责实训室建设与安全管理、技能竞赛组织、产教融合等科室业务。</p>
+              <p data-i18n="v2.teach.p2">获校优秀学业导师、优秀班主任、校级优秀德育案例；全国数字创意教学技能大赛国赛二等奖 5 项、三等奖 4 项；指导学生获自治区职业技能大赛环境艺术设计二等奖、未来全国高校数字艺术设计大赛国赛二等奖、米兰设计周国赛二等奖，专业比赛合计 40 余项。</p>
             </div>
             <div class="stats">
               <div class="stat"><strong>5+4</strong><span data-i18n="v2.stat.2">国赛二等奖 5 · 三等奖 4</span></div>
@@ -1956,6 +1979,6 @@
       }
     })();
   </script>
-  <script src="i18n.js?v=40"></script>
+  <script src="i18n.js?v=42"></script>
 </body>
 </html>
