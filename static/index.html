@@ -159,6 +159,17 @@
       transform: rotate(45deg);
       flex-shrink: 0;
     }
+    .brand-logo { width: 34px; height: 34px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+    .brand-text strong { font-size: 16px; }
+    .brand-motto {
+      margin-top: 2px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.62);
+      white-space: nowrap;
+    }
     nav.links { display: none; }
     .acts { display: flex; align-items: center; gap: 10px; }
     .lang {
@@ -473,14 +484,17 @@
     }
     .chip i { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); flex-shrink: 0; }
     .feature { display: block; text-decoration: none; margin-top: 22px; color: inherit; }
-    .feature .frame { aspect-ratio: 16 / 9; }
-    .feature .frame::after {
-      content: "";
-      position: absolute; inset: auto 0 0 0; height: 52%;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+    .feature .frame { aspect-ratio: auto; }
+    .feature .frame img { height: auto; object-fit: contain; }
+    .feature .frame::after { display: none; }
+    .cover { min-width: 0; }
+    .cover-name {
+      background: #f4f3ef;
+      color: #141414;
+      padding: 12px 16px 14px;
+      border-top: 4px solid var(--accent);
     }
-    .feature .cap { position: absolute; left: 16px; bottom: 14px; z-index: 1; }
-    .feature .cap h4 { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+    .cover-name h4 { font-size: clamp(18px, 2.1vw, 24px); font-weight: 800; letter-spacing: 0; line-height: 1.3; }
     .f-body { margin-top: 14px; }
     .f-body p { margin-top: 12px; font-size: 14.5px; color: rgba(244, 247, 242, 0.72); }
     .go {
@@ -788,6 +802,76 @@
     .contact .lede { margin-top: 16px; }
     .contact .ctas { margin-top: 32px; }
     .contact-side { display: flex; flex-direction: column; gap: 18px; }
+    .city-stage {
+      margin-top: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #061209;
+    }
+    .city-stage iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: 0;
+      background: #061209;
+    }
+    .city-cap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 16px;
+      padding: 12px 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .city-cap p { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+    .city-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .city-links a {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+    .city-links a:hover { color: var(--accent); }
+    .gift-aside {
+      border: 1px dashed rgba(241, 90, 36, 0.55);
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .gift-aside strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .gift-aside a {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+    .gift-aside a:hover { color: var(--accent); }
+    .commune {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 18px 18px 16px;
+    }
+    .commune h3 { font-size: 18px; font-weight: 800; margin-top: 8px; line-height: 1.35; }
+    .commune p { margin-top: 8px; font-size: 13.5px; color: var(--muted); }
+    .commune-go {
+      display: inline-flex;
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+    .commune-go:hover { color: var(--accent); }
     .gift {
       border: 1px dashed rgba(241, 90, 36, 0.55);
       background: rgba(241, 90, 36, 0.06);
@@ -797,8 +881,8 @@
     .gift-ic { width: 46px; height: 46px; display: grid; place-items: center; background: #fff; flex-shrink: 0; }
     .gift-ic img { width: 34px; height: 34px; }
     .gift-head .kicker { margin: 0; }
-    .gift-head h3 { font-size: 17px; font-weight: 800; margin-top: 2px; line-height: 1.3; }
-    .gift p { font-size: 13.5px; color: var(--muted); margin-top: 12px; }
+    .gift > .kicker { margin: 0; }
+    .gift h3 { font-size: 17px; font-weight: 800; margin-top: 8px; line-height: 1.3; }
     .gift ul { list-style: none; margin-top: 12px; display: grid; gap: 7px; }
     .gift li { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: flex-start; }
     .gift li .ic { width: 14px; height: 14px; color: var(--ok); margin-top: 3px; }
@@ -855,30 +939,35 @@
       letter-spacing: 0.14em;
       color: #d94f1f;
     }
-    .opc { margin-top: 22px; }
-    .opc-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-    .opc-row article {
-      min-height: 108px;
-      padding: 12px;
-      background: #141414;
-      color: #fff;
+    .opc-bar {
+      margin-top: 22px;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 0;
+      padding: 4px 4px 4px 14px;
+      background: var(--paper);
+      border: 1px solid var(--paper-line);
     }
-    .opc-row span { font-size: 12px; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
-    .opc-row strong { font-size: 15px; font-weight: 800; line-height: 1.35; }
-    .opc-row em { font-style: normal; font-size: 12.5px; color: rgba(255,255,255,0.62); line-height: 1.45; }
+    .opc-bar .cadence { margin: 10px 8px 10px 0; }
+    .opc-bar ol { display: flex; flex-wrap: wrap; list-style: none; flex: 1; }
+    .opc-bar li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 10px 14px;
+      border-left: 1px solid var(--paper-line);
+    }
+    .opc-bar span { font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft); }
+    .opc-bar strong { font-size: 15px; font-weight: 800; }
+    .opc-bar em { font-style: normal; font-size: 12.5px; color: var(--ink-soft); }
+    .opc-bar .show-space { margin: 8px 12px 8px auto; }
     .gzh-list { list-style: none; margin-top: 16px; display: grid; gap: 0; }
     .gzh-list li { border-top: 1px solid var(--paper-line); }
     .gzh-list a {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 12px;
       padding: 12px 0;
       text-decoration: none;
@@ -887,6 +976,7 @@
       font-weight: 700;
       line-height: 1.4;
     }
+    .gzh-list a span { min-width: 0; }
     .gzh-list a:hover { color: #d94f1f; }
     .gzh-list i { font-style: normal; flex-shrink: 0; font-size: 12px; font-weight: 700; color: #d94f1f; }
 
@@ -964,7 +1054,6 @@
       .levels { grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
       .trio { grid-template-columns: 1fr 1fr 1fr; gap: 26px; }
       .feature { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 30px; align-items: start; }
-      .feature .frame { aspect-ratio: 16 / 9; }
       .f-body { margin-top: 4px; }
       .film-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
 
@@ -978,11 +1067,16 @@
       .cert-row { grid-template-columns: 1fr 1fr 1fr; gap: 26px; }
       .cert-list { grid-template-columns: 1fr 1fr; }
 
-      .show-grid { grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: start; }
-      .gzh-card { padding: 18px; }
+      .show-grid { grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: stretch; }
+      .gzh-card { height: 100%; display: flex; flex-direction: column; padding: 18px; }
+      .gzh-list { margin-top: auto; }
 
-      .contact .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: start; gap: 40px; }
-      .contact-side { justify-self: end; width: min(320px, 100%); }
+      .contact .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: start; gap: 28px 40px; }
+      .contact-lead { grid-column: 1; grid-row: 1; }
+      .contact-side { grid-column: 2; grid-row: 1; justify-self: stretch; width: 100%; }
+      .city-stage { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
+      .city-stage iframe { height: 520px; }
+      .contact .faq { grid-column: 1 / -1; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1022,8 +1116,11 @@
   <header class="top">
     <div class="bar">
       <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <strong>彭岗杰</strong>
+        <img class="brand-logo" src="works/lixing-logo-white.png" alt="" width="34" height="34" />
+        <span class="brand-text">
+          <strong>彭岗杰</strong>
+          <span class="brand-motto" data-i18n="v2.brand.motto">砥砺日省·知行合一</span>
+        </span>
       </a>
       <nav class="links" aria-label="主导航">
         <a href="#story" data-i18n="nav.story">路径</a>
@@ -1265,9 +1362,11 @@
             </section>
           </div>
           <a class="feature" href="https://badu-space-report.app.workbuddy.host/" target="_blank" rel="noreferrer">
-            <div class="frame">
-              <img src="works/badu.jpg?v=poster" alt="关键办学要素改革 · 八度空间" loading="lazy" decoding="async" />
-              <div class="cap"><h4 data-i18n="card.badu.h4">关键办学要素改革</h4></div>
+            <div class="cover">
+              <div class="frame">
+                <img src="works/badu.jpg?v=poster2" alt="关键办学要素改革 · 八度空间破题远征" loading="lazy" decoding="async" />
+              </div>
+              <div class="cover-name"><h4 data-i18n="card.badu.h4">关键办学要素改革</h4></div>
             </div>
             <div class="f-body">
               <span class="chip"><i></i><span data-i18n="v2.chip.badu">八度空间</span></span>
@@ -1276,9 +1375,11 @@
             </div>
           </a>
           <a class="feature" href="https://gxstzy-shixun.ai-builders.space" target="_blank" rel="noreferrer">
-            <div class="frame">
-              <img src="works/shixun.jpg?v=hub" alt="实训室管理平台导航仓" loading="lazy" decoding="async" />
-              <div class="cap"><h4 data-i18n="card.shixun.h4">实训室管理平台</h4></div>
+            <div class="cover">
+              <div class="frame">
+                <img src="works/shixun-cover.jpg?v=hub2" alt="实训室管理平台八个模块" loading="lazy" decoding="async" />
+              </div>
+              <div class="cover-name"><h4 data-i18n="card.shixun.h4">实训室管理平台</h4></div>
             </div>
             <div class="f-body">
               <span class="chip"><i></i><span data-i18n="v2.chip.run">校内在用</span></span>
@@ -1556,9 +1657,8 @@
           <p class="lede" data-i18n="v2.show.lede">下课以后，我做了一档节目：每晚八点，八分钟一讲。《AI观察室》向外看机器怎么替人交差，《人生观察室》向内看人怎么答人生这张卷。B 站按日更，公众号按周更。</p>
         </header>
         <div class="show-grid">
-          <div class="show-col">
-          <p class="cadence" data-i18n="v2.show.daily">日更</p>
-          <a class="wcard rv" href="https://www.bilibili.com/video/BV1bChC6DEQq/" target="_blank" rel="noreferrer">
+          <a class="wcard show-ep rv" href="https://www.bilibili.com/video/BV1bChC6DEQq/" target="_blank" rel="noreferrer">
+            <p class="cadence" data-i18n="v2.show.daily">日更</p>
             <div class="frame">
               <img src="works/pengba-latest.jpg" alt="AI 不是没用，是你没用对｜四组对照" loading="lazy" decoding="async" />
               <span class="play-badge"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
@@ -1569,16 +1669,6 @@
             <p data-i18n="v2.show.bili.p">「帮我写个通知」，问法和派活法是两个结果。这期讲四组对照：问题多半不在工具，在用法。</p>
             <span class="go"><span data-i18n="v2.show.bili.go">去 B 站看这期 →</span></span>
           </a>
-          <div class="opc">
-            <p class="cadence" data-i18n="v2.show.opc.k">武汉 OPC 专题</p>
-            <div class="opc-row">
-              <article><span>01</span><strong data-i18n="v2.show.opc.1">三坑</strong></article>
-              <article><span>02</span><strong data-i18n="v2.show.opc.2">双卡</strong></article>
-              <article><span>03</span><strong data-i18n="v2.show.opc.3">错题本</strong><em data-i18n="v2.show.opc.3s">AI 时代最重要的学习法</em></article>
-            </div>
-            <p class="show-space"><svg class="ic" aria-hidden="true"><use href="#i-tv"/></svg><a href="https://space.bilibili.com/107109569" target="_blank" rel="noreferrer" data-i18n="v2.show.space">B 站主页 @彭八PUMBAA</a></p>
-          </div>
-          </div>
           <article class="wcard rv">
             <div class="gzh-card">
               <p class="cadence" data-i18n="v2.show.weekly">周更</p>
@@ -1587,16 +1677,27 @@
                 <div class="gzh-body">
                   <img class="gzh-logo" src="works/lixing-appicon.png" alt="砺行" loading="lazy" decoding="async" />
                   <h4 data-i18n="v2.show.gzh.h4">公众号 · 彭八八点ROOM</h4>
-                  <p data-i18n="v2.show.gzh.listnote">新的一篇加在下面这张表最上面。</p>
-                  <p class="gzh-tagline" data-i18n="v2.show.tagline">看得清 AI，过得好人生。</p>
+                  <p class="gzh-tagline" data-i18n="v2.show.tagline">我对行业、人生、教育的深度观察。</p>
                 </div>
               </div>
-              <!-- 新文章插在列表最上面，带上标题和 mp.weixin.qq.com 链接 -->
+              <!-- 新文章插在列表最上面。必须是已发布原文的 mp 链接（带 sn）。搜狗转载页会把 sn 抽空，那种临时链接不要写进来。 -->
               <ol class="gzh-list">
-                <li><a href="https://mp.weixin.qq.com/s/_uVeeaCHJn4RP_n_P6LWng" target="_blank" rel="noreferrer"><span data-i18n="v2.show.gzh.a1">把 AI 用成产线</span><i data-i18n="v2.show.gzh.read">阅读 →</i></a></li>
+                <li><a href="https://mp.weixin.qq.com/s?__biz=MzcxMDMyNTAyMQ==&amp;mid=2247484162&amp;idx=1&amp;sn=8a5b60d6725e75af41127addcc0b5679" target="_blank" rel="noreferrer"><span data-i18n="v2.show.gzh.a1">把猫头鹰放在沙盘外</span><i data-i18n="v2.show.gzh.read">阅读 →</i></a></li>
+                <li><a href="https://mp.weixin.qq.com/s?__biz=MzcxMDMyNTAyMQ==&amp;mid=2247484150&amp;idx=1&amp;sn=e0a21981be4fcf814b68cfe24e94df12" target="_blank" rel="noreferrer"><span data-i18n="v2.show.gzh.a2">这些知识真有用，还是你在卖铲子？</span><i data-i18n="v2.show.gzh.read">阅读 →</i></a></li>
+                <li><a href="https://mp.weixin.qq.com/s?__biz=MzcxMDMyNTAyMQ==&amp;mid=2247484119&amp;idx=1&amp;sn=8fb13c88c17a89560896d8cdc9ad011c" target="_blank" rel="noreferrer"><span data-i18n="v2.show.gzh.a3">识别假工作，但别急着逃离</span><i data-i18n="v2.show.gzh.read">阅读 →</i></a></li>
+                <li><a href="https://mp.weixin.qq.com/s?__biz=MzcxMDMyNTAyMQ==&amp;mid=2247484078&amp;idx=1&amp;sn=507d019abdf6e5e808bae65fa6d8f6ad" target="_blank" rel="noreferrer"><span data-i18n="v2.show.gzh.a4">少学名词，多做动词</span><i data-i18n="v2.show.gzh.read">阅读 →</i></a></li>
               </ol>
             </div>
           </article>
+        </div>
+        <div class="opc-bar">
+          <p class="cadence" data-i18n="v2.show.opc.k">武汉 OPC 专题</p>
+          <ol>
+            <li><span>01</span><strong data-i18n="v2.show.opc.1">三坑</strong></li>
+            <li><span>02</span><strong data-i18n="v2.show.opc.2">双卡</strong></li>
+            <li><span>03</span><strong data-i18n="v2.show.opc.3">错题本</strong><em data-i18n="v2.show.opc.3s">AI 时代最重要的学习法</em></li>
+          </ol>
+          <p class="show-space"><svg class="ic" aria-hidden="true"><use href="#i-tv"/></svg><a href="https://space.bilibili.com/107109569" target="_blank" rel="noreferrer" data-i18n="v2.show.space">B 站主页 @彭八PUMBAA</a></p>
         </div>
       </div>
     </section>
@@ -1604,7 +1705,7 @@
     <!-- ============ 联系 ============ -->
     <section class="contact block" id="contact">
       <div class="wrap">
-        <div>
+        <div class="contact-lead">
           <p class="kicker">Contact</p>
           <h2 data-i18n="v2.contact.h2" style="margin-top:14px;">下一步，欢迎来聊。</h2>
           <p class="lede" data-i18n="v2.contact.lede">课程、课题、改造项目，或者想一起做个东西——都可以从一封邮件开始。</p>
@@ -1614,27 +1715,31 @@
           </div>
         </div>
         <div class="contact-side">
-          <div class="gift rv">
-            <div class="gift-head">
-              <span class="gift-ic"><img src="works/icons/gift.png" alt="" loading="lazy" decoding="async" /></span>
-              <div>
-                <p class="kicker"><span data-i18n="v2.gift.tag">One more thing · 见面礼</span></p>
-                <h3 data-i18n="v2.gift.h3">Superlinear 社区 30 天体验</h3>
-              </div>
-            </div>
-            <p data-i18n="v2.gift.p">我学「把 AI 用成产线」的地方，给你留了 30 天体验卡：</p>
-            <ul>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="v2.gift.b1">不绑卡，到期自动结束</span></li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="v2.gift.b2">邮箱验证即开通，全程自助</span></li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="v2.gift.b3">7 个会员空间 + 3 门会员课程</span></li>
-            </ul>
-            <a class="btn btn-fill" href="https://stay.superlinear.academy/invite/pumbaa" target="_blank" rel="noreferrer"><span data-i18n="v2.gift.go">领取体验 →</span></a>
+          <div class="gift-aside rv">
+            <strong data-i18n="v2.gift.tag">见面礼</strong>
+            <span data-i18n="v2.gift.aside">30 天体验，嘉宾可以送。不绑卡，到期自己结束。</span>
+            <a href="https://stay.superlinear.academy/invite/pumbaa" target="_blank" rel="noreferrer"><span data-i18n="v2.gift.go">领取 →</span></a>
           </div>
           <div class="gzh-mini rv">
             <img class="gzh-mini-qr" src="works/gzh-qr.png" width="84" height="84" alt="公众号 彭八八点ROOM 二维码" loading="lazy" decoding="async" />
             <div class="gzh-mini-body">
               <strong data-i18n="v2.show.gzh.h4">公众号 · 彭八八点ROOM</strong>
-              <span data-i18n="v2.show.gzh.p">文字版按周更新。扫码关注。</span>
+              <span data-i18n="v2.show.gzh.p">行业、人生、教育。扫码读往期。</span>
+            </div>
+          </div>
+        </div>
+        <div class="city-stage rv">
+          <iframe
+            title="彭八在超线性学院的互动页"
+            src="https://city.lizheng.ai/#7273d669"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="city-cap">
+            <p data-i18n="v2.city.note">我在这张图上。点开能看到和谁有来往。</p>
+            <div class="city-links">
+              <a href="https://city.lizheng.ai/#7273d669" target="_blank" rel="noreferrer"><span data-i18n="v2.city.go">打开互动页 →</span></a>
+              <a href="https://www.superlinear.academy/c/say-hello/pumbaa-ai" target="_blank" rel="noreferrer"><span data-i18n="v2.commune.go">从我的介绍进去 →</span></a>
             </div>
           </div>
         </div>
@@ -1825,6 +1930,6 @@
       }
     })();
   </script>
-  <script src="i18n.js?v=35"></script>
+  <script src="i18n.js?v=40"></script>
 </body>
 </html>
