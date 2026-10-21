@@ -666,6 +666,30 @@
     .quad .frame.board { aspect-ratio: 4 / 5; background: #fff; }
     .quad article h3 { font-size: 16px; margin-top: 12px; line-height: 1.4; }
     .quad article p { font-size: 13.5px; margin-top: 4px; color: var(--ink-soft); }
+    .folds { margin-top: 28px; border-top: 1px solid var(--paper-line); }
+    .fold { border-bottom: 1px solid var(--paper-line); }
+    .fold summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 52px;
+      padding: 12px 0;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .fold summary::-webkit-details-marker { display: none; }
+    .fold summary .ic { width: 18px; height: 18px; flex-shrink: 0; color: var(--ink-soft); transition: transform 0.2s ease; }
+    .fold[open] summary .ic { transform: rotate(180deg); }
+    .fold-body { padding: 0 0 20px; }
+    .fold-body .feat { margin-top: 4px; }
+    .fold-body > .frame { aspect-ratio: 16 / 10; margin-top: 0; }
+    .fold-body > .frame.board { aspect-ratio: 4 / 5; max-width: 480px; background: #fff; }
+    .fold-body p { margin-top: 12px; font-size: 14.5px; color: var(--ink-soft); }
+    .fold-body .film { margin-top: 8px; max-width: 860px; }
     .flat { margin-top: 60px; padding-top: 36px; border-top: 1px solid var(--paper-line); }
     .flat .kicker { margin-bottom: 8px; display: block; }
     .flat h3 { font-size: clamp(22px, 4.6vw, 30px); font-weight: 800; letter-spacing: -0.01em; }
@@ -702,6 +726,8 @@
       letter-spacing: -0.04em;
       line-height: 0.95;
       color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
     }
     .proof-n span {
       display: block;
@@ -1316,10 +1342,10 @@
           </li>
         </ol>
         <div class="proof" aria-label="能核对的数字">
-          <div class="proof-n"><strong>10</strong><span data-i18n="v2.proof.years">年，先做空间</span></div>
-          <div class="proof-n"><strong>3</strong><span data-i18n="v2.proof.live">件系统已经在跑</span></div>
-          <div class="proof-n"><strong>40+</strong><span data-i18n="v2.proof.awards">指导学生获奖</span></div>
-          <div class="proof-n"><strong>5+4</strong><span data-i18n="v2.proof.teach">教学国赛二等奖与三等奖</span></div>
+          <div class="proof-n"><strong><span data-count="10">10</span></strong><span data-i18n="v2.proof.years">年，先做空间</span></div>
+          <div class="proof-n"><strong><span data-count="3">3</span></strong><span data-i18n="v2.proof.live">件系统已经在跑</span></div>
+          <div class="proof-n"><strong><span data-count="40" data-suffix="+">40+</span></strong><span data-i18n="v2.proof.awards">指导学生获奖</span></div>
+          <div class="proof-n"><strong><span data-count="5">5</span><span data-prefix="+" data-count="4">+4</span></strong><span data-i18n="v2.proof.teach">教学国赛二等奖与三等奖</span></div>
         </div>
       </div>
     </section>
@@ -1622,56 +1648,65 @@
           </div>
         </div>
 
-        <div class="feat rv">
-          <div class="frame main"><img src="works/studio/shuxiang-living.jpg" alt="书香园住宅改造 · 客厅" loading="lazy" decoding="async" /></div>
-          <div class="stack">
-            <div class="frame"><img src="works/studio/shuxiang-entry.jpg" alt="书香园入口厨房" loading="lazy" decoding="async" /></div>
-            <div class="frame"><img src="works/studio/shuxiang-study.jpg" alt="书香园书房" loading="lazy" decoding="async" /></div>
-            <div class="frame"><img src="works/studio/shuxiang-bedroom.jpg" alt="书香园主卧" loading="lazy" decoding="async" /></div>
-          </div>
-        </div>
-        <div class="proj-meta">
-          <h3 data-i18n="proj.shuxiang.h3">住宅改造</h3>
-          <p data-i18n="proj.shuxiang.p">新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
-        </div>
-
-        <div class="quad">
-          <article class="rv">
-            <div class="frame"><img src="works/studio/yunhai-night.jpg" alt="云海茶饮夜间店面" loading="lazy" decoding="async" /></div>
-            <h3 data-i18n="quad.yunhai.h3">云海茶饮</h3>
-            <p data-i18n="quad.yunhai.p">店面夜间场景。云纹、入口与招牌，把品牌落到可建造的立面上。</p>
-          </article>
-          <article class="rv">
-            <div class="frame"><img src="works/studio/retrofit-1.jpg" alt="改造更新庭院" loading="lazy" decoding="async" /></div>
-            <h3 data-i18n="quad.retro.h3">改造更新</h3>
-            <p data-i18n="quad.retro.p">既有建筑加庭院、楼梯与黄框开口。存量更新的空间操作，不是新建摆拍。</p>
-          </article>
-          <article class="rv">
-            <div class="frame contain board"><img src="works/studio/museum-1.jpg" alt="柳州工业博物馆厂房改造展板" loading="lazy" decoding="async" /></div>
-            <h3 data-i18n="quad.museum.h3">柳州工业博物馆 · 厂房改造</h3>
-            <p data-i18n="quad.museum.p">工业遗产更新展板：区位、拆改逻辑、总图与场景。</p>
-          </article>
-          <article class="rv">
-            <div class="frame contain board"><img src="works/studio/canglian.jpg" alt="苍涟幻境——南沙群岛海洋展览馆概念设计展板" loading="lazy" decoding="async" /></div>
-            <h3 data-i18n="quad.canglian.h3">苍涟幻境——南沙群岛海洋展览馆概念设计</h3>
-            <p data-i18n="quad.canglian.p">南沙群岛永暑礁。从水、船、礁生成形体，展陈分区、平立面与室内效果在一张板上。</p>
-          </article>
-        </div>
-
-        <div class="flat rv">
-          <span class="kicker">Public space</span>
-          <h3 data-i18n="flat.h3">公共空间设计 · 办公与展厅</h3>
-          <figure class="film" data-video-p="https://ghfast.top/https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4" data-video="https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4">
-            <button type="button" class="film-btn" aria-label="播放：办公与展厅落地视频">
-              <img src="works/video/office-hall.jpg" alt="办公与展厅落地视频 封面" loading="lazy" decoding="async" />
-              <span class="play-badge"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
-              <span class="dur" data-i18n="flat.dur">落地记录</span>
-            </button>
-            <figcaption>
-              <strong data-i18n="flat.video.h3">落地视频 · 办公与展厅</strong>
-              <span data-i18n="flat.video.p">公共空间设计实施完成后的实景记录。</span>
-            </figcaption>
-          </figure>
+        <div class="folds">
+          <details class="fold">
+            <summary><span data-i18n="proj.shuxiang.h3">住宅改造</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <div class="fold-body">
+              <div class="feat">
+                <div class="frame main"><img src="works/studio/shuxiang-living.jpg" alt="书香园住宅改造 · 客厅" loading="lazy" decoding="async" /></div>
+                <div class="stack">
+                  <div class="frame"><img src="works/studio/shuxiang-entry.jpg" alt="书香园入口厨房" loading="lazy" decoding="async" /></div>
+                  <div class="frame"><img src="works/studio/shuxiang-study.jpg" alt="书香园书房" loading="lazy" decoding="async" /></div>
+                  <div class="frame"><img src="works/studio/shuxiang-bedroom.jpg" alt="书香园主卧" loading="lazy" decoding="async" /></div>
+                </div>
+              </div>
+              <p data-i18n="proj.shuxiang.p">新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
+            </div>
+          </details>
+          <details class="fold">
+            <summary><span data-i18n="quad.yunhai.h3">云海茶饮</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <div class="fold-body">
+              <div class="frame"><img src="works/studio/yunhai-night.jpg" alt="云海茶饮夜间店面" loading="lazy" decoding="async" /></div>
+              <p data-i18n="quad.yunhai.p">店面夜间场景。云纹、入口与招牌，把品牌落到可建造的立面上。</p>
+            </div>
+          </details>
+          <details class="fold">
+            <summary><span data-i18n="quad.retro.h3">改造更新</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <div class="fold-body">
+              <div class="frame"><img src="works/studio/retrofit-1.jpg" alt="改造更新庭院" loading="lazy" decoding="async" /></div>
+              <p data-i18n="quad.retro.p">既有建筑加庭院、楼梯与黄框开口。存量更新的空间操作，不是新建摆拍。</p>
+            </div>
+          </details>
+          <details class="fold">
+            <summary><span data-i18n="quad.museum.h3">柳州工业博物馆 · 厂房改造</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <div class="fold-body">
+              <div class="frame contain board"><img src="works/studio/museum-1.jpg" alt="柳州工业博物馆厂房改造展板" loading="lazy" decoding="async" /></div>
+              <p data-i18n="quad.museum.p">工业遗产更新展板：区位、拆改逻辑、总图与场景。</p>
+            </div>
+          </details>
+          <details class="fold">
+            <summary><span data-i18n="quad.canglian.h3">苍涟幻境——南沙群岛海洋展览馆概念设计</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <div class="fold-body">
+              <div class="frame contain board"><img src="works/studio/canglian.jpg" alt="苍涟幻境——南沙群岛海洋展览馆概念设计展板" loading="lazy" decoding="async" /></div>
+              <p data-i18n="quad.canglian.p">南沙群岛永暑礁。从水、船、礁生成形体，展陈分区、平立面与室内效果在一张板上。</p>
+            </div>
+          </details>
+          <details class="fold">
+            <summary><span data-i18n="flat.h3">公共空间设计 · 办公与展厅</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <div class="fold-body">
+              <figure class="film" data-video-p="https://ghfast.top/https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4" data-video="https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4">
+                <button type="button" class="film-btn" aria-label="播放：办公与展厅落地视频">
+                  <img src="works/video/office-hall.jpg" alt="办公与展厅落地视频 封面" loading="lazy" decoding="async" />
+                  <span class="play-badge"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
+                  <span class="dur" data-i18n="flat.dur">落地记录</span>
+                </button>
+                <figcaption>
+                  <strong data-i18n="flat.video.h3">落地视频 · 办公与展厅</strong>
+                  <span data-i18n="flat.video.p">公共空间设计实施完成后的实景记录。</span>
+                </figcaption>
+              </figure>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -1900,6 +1935,41 @@
           ifr.allowFullscreen = true;
           scan.replaceWith(ifr);
         });
+      }
+
+      /* 路径数字：进入画面后从 0 数到定稿，只跑一次 */
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var proofNums = document.querySelectorAll(".proof-n [data-count]");
+      function paintCount(el, value) {
+        var prefix = el.getAttribute("data-prefix") || "";
+        var suffix = el.getAttribute("data-suffix") || "";
+        el.textContent = prefix + String(value) + suffix;
+      }
+      function playCount(el) {
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        if (reduceMotion || !(target >= 0)) {
+          paintCount(el, target);
+          return;
+        }
+        var t0 = performance.now();
+        var dur = 1100;
+        function frame(now) {
+          var p = Math.min(1, (now - t0) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          paintCount(el, Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+      if (proofNums.length && "IntersectionObserver" in window && !reduceMotion) {
+        var pio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            playCount(en.target);
+            pio.unobserve(en.target);
+          });
+        }, { threshold: 0.7 });
+        proofNums.forEach(function (el) { pio.observe(el); });
       }
 
       /* 一次性淡入进场；reduced-motion 由 CSS 关闭 */
