@@ -219,7 +219,7 @@
     "v2.gift.go": "Claim the gift →",
     "v2.city.note": "That map is me. Open it to see who I talk with.",
     "v2.city.go": "Open the map →",
-    "v2.gift.aside": "A 30-day pass I can give. No card. It ends on its own.",
+    "v2.gift.aside": "A community welcome gift from a resident guest.",
     "v2.commune.h": "Superlinear. I stay here.",
     "v2.commune.p": "Engineers, builders, and researchers bring the AI work they are actually doing. I am a resident guest.",
     "v2.commune.go": "Enter through my introduction →",
