@@ -438,9 +438,17 @@
       width: 52px; height: 52px;
       display: grid; place-items: center;
       border: 1px solid rgba(20, 20, 20, 0.16);
-      background: #fff;
+      color: #141414;
     }
-    .m-ic img { width: 32px; height: 32px; image-rendering: auto; }
+    .mark {
+      width: 26px; height: 26px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .mark .gem { fill: #f15a24; stroke: none; }
     .m-idx { font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
     .mrow h3 { font-size: 19px; font-weight: 700; margin: 6px 0 6px; }
     .mrow p { font-size: 15px; color: var(--ink-soft); }
@@ -466,12 +474,13 @@
       letter-spacing: 0.08em;
     }
     .ch-t .ch-ic {
-      width: 40px; height: 40px;
+      width: 36px; height: 36px;
       display: grid; place-items: center;
-      background: #fff;
+      color: #f4f3ef;
+      border: 1px solid rgba(255, 255, 255, 0.28);
     }
-    .ch-t .ch-ic img { width: 26px; height: 26px; }
-    .show-mark { width: 30px; height: 30px; flex-shrink: 0; }
+    .ch-t .ch-ic .mark { width: 22px; height: 22px; }
+    .show-mark { width: 22px; height: 22px; flex-shrink: 0; color: #141414; }
     .chip {
       display: inline-flex;
       align-items: center;
@@ -1391,7 +1400,7 @@
 
         <div class="chapter rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><img src="works/icons/school.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="ch-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4v11"/><path d="M12 7.4C10.7 6 8.6 5.2 6.2 5.2H4.6v11.4h2.1c2.2 0 4 .6 5.3 1.8"/><path d="M12 7.4c1.3-1.4 3.4-2.2 5.8-2.2h1.6v11.4h-2.1c-2.2 0-4 .6-5.3 1.8"/><path class="gem" d="M17.7 5.5 18.7 6.5 17.7 7.5 16.7 6.5z"/></svg></span>
             <span data-i18n="v2.ch.school">在学校里</span>
           </h3>
           <div class="levels rv">
@@ -1444,7 +1453,7 @@
 
         <div class="chapter rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><img src="works/icons/field.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="ch-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.2V9.6"/><path d="M12 16.4 7.4 16.4 12 11.6 16.6 16.4"/><path d="M12 13.2 8.6 13.2 12 9.2 15.4 13.2"/><path d="M12 10.2 9.6 10.2 12 6.6 14.4 10.2"/><path class="gem" d="M12 4.2 12.9 5.1 12 6 11.1 5.1z"/></svg></span>
             <span data-i18n="v2.ch.field">在田野里</span>
           </h3>
           <div class="duo">
@@ -1477,7 +1486,7 @@
 
         <div class="chapter rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><img src="works/icons/hand.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="ch-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 12.2V8.2a1.15 1.15 0 0 1 2.3 0v3.6"/><path d="M10.5 11.4V6.6a1.15 1.15 0 0 1 2.3 0v5"/><path d="M12.8 11V7.6a1.15 1.15 0 0 1 2.3 0V13"/><path d="M15.1 11.6V9.4a1.15 1.15 0 0 1 2.3 0v3.8c0 2.8-1.7 4.8-4.4 4.8h-.7c-2.5 0-4.1-1.5-4.1-4V9.8a1.15 1.15 0 0 1 2.3 0v2.4"/><path class="gem" d="M12 14.4 12.8 15.2 12 16 11.2 15.2z"/></svg></span>
             <span data-i18n="v2.ch.own">在自己手里</span>
           </h3>
           <div class="duo">
@@ -1501,18 +1510,11 @@
               <span class="go"><span data-i18n="card.lixing.go">打开站点 →</span></span>
             </a>
           </div>
-          <a class="quiet" href="https://github.com/PengGangjie/gewuji-os" target="_blank" rel="noreferrer">
-            <div class="frame"><img src="works/gewuji.jpg?v=shot3" alt="格物记 OS 风格问卷" loading="lazy" decoding="async" /></div>
-            <div>
-              <h4>格物记 OS</h4>
-              <p data-i18n="card.gewuji.p">穿过已有的，而不是再买一件。衣橱收纳与穿搭推荐，默认 100 件上限，本地优先。打开仓库 →</p>
-            </div>
-          </a>
         </div>
 
         <div class="films rv">
           <h3 class="ch-t">
-            <span class="ch-ic"><img src="works/icons/film.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="ch-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 5.4H5.6V8"/><path d="M15.8 5.4h2.6V8"/><path d="M18.4 16v2.6h-2.6"/><path d="M5.6 16v2.6h2.6"/><path d="M10.2 9.2v5.6l4.8-2.8z"/><path class="gem" d="M16.4 8.6 17.2 9.4 16.4 10.2 15.6 9.4z"/></svg></span>
             <span data-i18n="v2.films.t">两部成片</span>
           </h3>
           <p class="lede" data-i18n="v2.films.lede">点了才加载，随时可以停。</p>
@@ -1560,7 +1562,7 @@
 
         <div class="methods">
           <article class="mrow rv">
-            <span class="m-ic"><img src="works/icons/method.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="m-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 17.8h12.2V6.2"/><path d="M6.2 17.8 18.4 6.2"/><path d="M9 17.8v-1.6M12 17.8v-1.6M15 17.8v-1.6"/><path class="gem" d="M17.2 7.4 18.1 8.3 17.2 9.2 16.3 8.3z"/></svg></span>
             <div>
               <p class="m-idx" data-i18n="v2.m1.idx">方法 · Method</p>
               <h3 data-i18n="m1.h3">还在自己手里的方法</h3>
@@ -1568,7 +1570,7 @@
             </div>
           </article>
           <article class="mrow rv">
-            <span class="m-ic"><img src="works/icons/delivery.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="m-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h7.2L18 8.8V19H7z"/><path d="M14 5v4h4"/><path d="M9.4 13.3 11.2 15.1 14.8 11.4"/><path class="gem" d="M16.5 14.8 17.4 15.7 16.5 16.6 15.6 15.7z"/></svg></span>
             <div>
               <p class="m-idx" data-i18n="v2.m2.idx">交付 · Delivery</p>
               <h3 data-i18n="m2.h3">现实能回答的交付</h3>
@@ -1576,7 +1578,7 @@
             </div>
           </article>
           <article class="mrow rv">
-            <span class="m-ic"><img src="works/icons/horizon.png" alt="" loading="lazy" decoding="async" /></span>
+            <span class="m-ic"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16.8h16"/><path d="M7.2 16.8a4.8 4.8 0 0 1 9.6 0"/><path class="gem" d="M12 8.2 13.1 9.3 12 10.4 10.9 9.3z"/></svg></span>
             <div>
               <p class="m-idx" data-i18n="v2.m3.idx">长线 · Horizon</p>
               <h3 data-i18n="m3.h3">课还能继续用</h3>
@@ -1705,7 +1707,7 @@
       <div class="wrap">
         <header class="sec-head">
           <p class="kicker" style="color:#d94f1f;display:flex;align-items:center;gap:10px;">
-            <img class="show-mark" src="works/icons/show.png" alt="" loading="lazy" decoding="async" />The show · 八点观察室</p>
+            <svg class="mark show-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.2"/><path d="M12 12.2 9.2 14.6"/><path d="M12 12.2V8.2"/><path class="gem" d="M12 12.2 12.7 12.9 12 13.6 11.3 12.9z"/></svg>The show · 八点观察室</p>
           <h2 data-i18n="v2.show.h2">工作交给机器，人生握在手里。</h2>
           <p class="lede" data-i18n="v2.show.lede">下课以后，我做了一档节目：每晚八点，八分钟一讲。《AI观察室》向外看机器怎么替人交差，《人生观察室》向内看人怎么答人生这张卷。B 站按日更，公众号按周更。</p>
         </header>
