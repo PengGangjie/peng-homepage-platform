@@ -715,30 +715,23 @@
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
-    .folds { margin-top: 22px; border-top: 1px solid var(--paper-line); }
-    .fold { border-bottom: 1px solid var(--paper-line); }
-    .fold summary {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 52px;
-      padding: 12px 0;
-      font-size: 17px;
-      font-weight: 800;
-      line-height: 1.35;
+    .studio-stage { margin-top: 8px; }
+    .studio-work { display: none; padding-top: 22px; }
+    .studio-work.is-on { display: block; }
+    .studio-work h3 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; letter-spacing: -0.01em; }
+    .studio-copy { margin-top: 8px; max-width: 40em; font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
+    .studio-work .feat { margin-top: 18px; }
+    .studio-work > .frame { aspect-ratio: 16 / 10; margin-top: 18px; }
+    .studio-work > .frame.board { aspect-ratio: 4 / 5; max-width: 520px; background: #fff; }
+    .studio-work .film { margin-top: 18px; max-width: 860px; }
+    @media (min-width: 880px) {
+      .studio-work.is-on { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); column-gap: 36px; align-items: end; }
+      .studio-work h3,
+      .studio-copy { margin-top: 0; }
+      .studio-work .feat,
+      .studio-work > .frame,
+      .studio-work .film { grid-column: 1 / -1; }
     }
-    .fold summary::-webkit-details-marker { display: none; }
-    .fold summary .ic { width: 18px; height: 18px; flex-shrink: 0; color: var(--ink-soft); transition: transform 0.2s ease; }
-    .fold[open] summary .ic { transform: rotate(180deg); }
-    .fold-body { padding: 0 0 20px; }
-    .fold-body .feat { margin-top: 4px; }
-    .fold-body > .frame { aspect-ratio: 16 / 10; margin-top: 0; }
-    .fold-body > .frame.board { aspect-ratio: 4 / 5; max-width: 480px; background: #fff; }
-    .fold-body p { margin-top: 12px; font-size: 14.5px; color: var(--ink-soft); }
-    .fold-body .film { margin-top: 8px; max-width: 860px; }
     .flat { margin-top: 60px; padding-top: 36px; border-top: 1px solid var(--paper-line); }
     .flat .kicker { margin-bottom: 8px; display: block; }
     .flat h3 { font-size: clamp(22px, 4.6vw, 30px); font-weight: 800; letter-spacing: -0.01em; }
@@ -1658,84 +1651,67 @@
           <p class="lede" data-i18n="v2.studio.lede">从景观投标到住宅、厂房与店面改造。图上的部分在这里，跑起来的部分在上面。</p>
         </header>
       </div>
-      <!-- 跑马灯从下面每条 fold 收封面和标题。以后加作品，只加一条 details.fold。 -->
+      <!-- 跑马灯从每条 studio-work 收封面和标题。以后加作品，只加一条 article。 -->
       <div class="studio-reel">
         <div class="studio-reel-track"></div>
       </div>
       <div class="wrap">
-        <div class="folds">
-          <details class="fold">
-            <summary><span data-i18n="proj.liugao.h3">柳州高中 · 校园景观改造</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <div class="feat">
-                <div class="frame main"><img src="works/studio/liugao-nook.jpg" alt="柳州高中校园景观改造 · BOOK NOOK" loading="lazy" decoding="async" /></div>
-                <div class="stack">
-                  <div class="frame"><img src="works/studio/liugao-tree.jpg" alt="柳州高中 · 榕树下沉节点" loading="lazy" decoding="async" /></div>
-                  <div class="frame"><img src="works/studio/liugao-hall.jpg" alt="柳州高中 · 古榕书苑" loading="lazy" decoding="async" /></div>
-                  <div class="frame"><img src="works/studio/liugao-sign.jpg" alt="柳州高中 · 校园导视" loading="lazy" decoding="async" /></div>
-                </div>
+        <div class="studio-stage">
+          <article class="studio-work is-on">
+            <h3 data-i18n="proj.liugao.h3">柳州高中 · 校园景观改造</h3>
+            <p class="studio-copy" data-i18n="proj.liugao.p">存量校园：BOOK NOOK 台地阅读、榕树下沉节点、古榕书苑，再到耐候钢导视。高差、流线和阅读收成能坐下的空间。</p>
+            <div class="feat">
+              <div class="frame main"><img src="works/studio/liugao-nook.jpg" alt="柳州高中校园景观改造 · BOOK NOOK" loading="lazy" decoding="async" /></div>
+              <div class="stack">
+                <div class="frame"><img src="works/studio/liugao-tree.jpg" alt="柳州高中 · 榕树下沉节点" loading="lazy" decoding="async" /></div>
+                <div class="frame"><img src="works/studio/liugao-hall.jpg" alt="柳州高中 · 古榕书苑" loading="lazy" decoding="async" /></div>
+                <div class="frame"><img src="works/studio/liugao-sign.jpg" alt="柳州高中 · 校园导视" loading="lazy" decoding="async" /></div>
               </div>
-              <p data-i18n="proj.liugao.p">存量校园：BOOK NOOK 台地阅读、榕树下沉节点、古榕书苑，再到耐候钢导视。高差、流线和阅读收成能坐下的空间。</p>
             </div>
-          </details>
-          <details class="fold">
-            <summary><span data-i18n="proj.shuxiang.h3">住宅改造</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <div class="feat">
-                <div class="frame main"><img src="works/studio/shuxiang-living.jpg" alt="书香园住宅改造 · 客厅" loading="lazy" decoding="async" /></div>
-                <div class="stack">
-                  <div class="frame"><img src="works/studio/shuxiang-entry.jpg" alt="书香园入口厨房" loading="lazy" decoding="async" /></div>
-                  <div class="frame"><img src="works/studio/shuxiang-study.jpg" alt="书香园书房" loading="lazy" decoding="async" /></div>
-                  <div class="frame"><img src="works/studio/shuxiang-bedroom.jpg" alt="书香园主卧" loading="lazy" decoding="async" /></div>
-                </div>
+          </article>
+          <article class="studio-work">
+            <h3 data-i18n="proj.shuxiang.h3">住宅改造</h3>
+            <p class="studio-copy" data-i18n="proj.shuxiang.p">新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
+            <div class="feat">
+              <div class="frame main"><img src="works/studio/shuxiang-living.jpg" alt="书香园住宅改造 · 客厅" loading="lazy" decoding="async" /></div>
+              <div class="stack">
+                <div class="frame"><img src="works/studio/shuxiang-entry.jpg" alt="书香园入口厨房" loading="lazy" decoding="async" /></div>
+                <div class="frame"><img src="works/studio/shuxiang-study.jpg" alt="书香园书房" loading="lazy" decoding="async" /></div>
+                <div class="frame"><img src="works/studio/shuxiang-bedroom.jpg" alt="书香园主卧" loading="lazy" decoding="async" /></div>
               </div>
-              <p data-i18n="proj.shuxiang.p">新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
             </div>
-          </details>
-          <details class="fold">
-            <summary><span data-i18n="quad.yunhai.h3">云海茶饮</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <div class="frame"><img src="works/studio/yunhai-night.jpg" alt="云海茶饮夜间店面" loading="lazy" decoding="async" /></div>
-              <p data-i18n="quad.yunhai.p">店面夜间场景。云纹、入口与招牌，把品牌落到可建造的立面上。</p>
-            </div>
-          </details>
-          <details class="fold">
-            <summary><span data-i18n="quad.retro.h3">改造更新</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <div class="frame"><img src="works/studio/retrofit-1.jpg" alt="改造更新庭院" loading="lazy" decoding="async" /></div>
-              <p data-i18n="quad.retro.p">既有建筑加庭院、楼梯与黄框开口。存量更新的空间操作，不是新建摆拍。</p>
-            </div>
-          </details>
-          <details class="fold">
-            <summary><span data-i18n="quad.museum.h3">柳州工业博物馆 · 厂房改造</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <div class="frame contain board"><img src="works/studio/museum-1.jpg" alt="柳州工业博物馆厂房改造展板" loading="lazy" decoding="async" /></div>
-              <p data-i18n="quad.museum.p">工业遗产更新展板：区位、拆改逻辑、总图与场景。</p>
-            </div>
-          </details>
-          <details class="fold">
-            <summary><span data-i18n="quad.canglian.h3">苍涟幻境——南沙群岛海洋展览馆概念设计</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <div class="frame contain board"><img src="works/studio/canglian.jpg" alt="苍涟幻境——南沙群岛海洋展览馆概念设计展板" loading="lazy" decoding="async" /></div>
-              <p data-i18n="quad.canglian.p">南沙群岛永暑礁。从水、船、礁生成形体，展陈分区、平立面与室内效果在一张板上。</p>
-            </div>
-          </details>
-          <details class="fold">
-            <summary><span data-i18n="flat.h3">公共空间设计 · 办公与展厅</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-            <div class="fold-body">
-              <figure class="film" data-video-p="https://ghfast.top/https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4" data-video="https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4">
-                <button type="button" class="film-btn" aria-label="播放：办公与展厅落地视频">
-                  <img src="works/video/office-hall.jpg" alt="办公与展厅落地视频 封面" loading="lazy" decoding="async" />
-                  <span class="play-badge"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
-                  <span class="dur" data-i18n="flat.dur">落地记录</span>
-                </button>
-                <figcaption>
-                  <strong data-i18n="flat.video.h3">落地视频 · 办公与展厅</strong>
-                  <span data-i18n="flat.video.p">公共空间设计实施完成后的实景记录。</span>
-                </figcaption>
-              </figure>
-            </div>
-          </details>
+          </article>
+          <article class="studio-work">
+            <h3 data-i18n="quad.yunhai.h3">云海茶饮</h3>
+            <p class="studio-copy" data-i18n="quad.yunhai.p">店面夜间场景。云纹、入口与招牌，把品牌落到可建造的立面上。</p>
+            <div class="frame"><img src="works/studio/yunhai-night.jpg" alt="云海茶饮夜间店面" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="studio-work">
+            <h3 data-i18n="quad.retro.h3">改造更新</h3>
+            <p class="studio-copy" data-i18n="quad.retro.p">既有建筑加庭院、楼梯与黄框开口。存量更新的空间操作，不是新建摆拍。</p>
+            <div class="frame"><img src="works/studio/retrofit-1.jpg" alt="改造更新庭院" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="studio-work">
+            <h3 data-i18n="quad.museum.h3">柳州工业博物馆 · 厂房改造</h3>
+            <p class="studio-copy" data-i18n="quad.museum.p">工业遗产更新展板：区位、拆改逻辑、总图与场景。</p>
+            <div class="frame contain board"><img src="works/studio/museum-1.jpg" alt="柳州工业博物馆厂房改造展板" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="studio-work">
+            <h3 data-i18n="quad.canglian.h3">苍涟幻境——南沙群岛海洋展览馆概念设计</h3>
+            <p class="studio-copy" data-i18n="quad.canglian.p">南沙群岛永暑礁。从水、船、礁生成形体，展陈分区、平立面与室内效果在一张板上。</p>
+            <div class="frame contain board"><img src="works/studio/canglian.jpg" alt="苍涟幻境——南沙群岛海洋展览馆概念设计展板" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="studio-work">
+            <h3 data-i18n="flat.h3">公共空间设计 · 办公与展厅</h3>
+            <p class="studio-copy" data-i18n="flat.video.p">公共空间设计实施完成后的实景记录。</p>
+            <figure class="film" data-video-p="https://ghfast.top/https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4" data-video="https://github.com/PengGangjie/peng-homepage-platform/releases/download/media-v1/office-hall.mp4">
+              <button type="button" class="film-btn" aria-label="播放：办公与展厅落地视频">
+                <img src="works/video/office-hall.jpg" alt="办公与展厅落地视频 封面" loading="lazy" decoding="async" />
+                <span class="play-badge"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span>
+                <span class="dur" data-i18n="flat.dur">落地记录</span>
+              </button>
+            </figure>
+          </article>
         </div>
       </div>
     </section>
@@ -2086,23 +2062,26 @@
   </script>
   <script src="i18n.js?v=46"></script>
   <script>
-    /* 十年空间跑马灯：从每条 fold 收第一张图和标题。语言切换后重收。 */
+    /* 十年空间：跑马灯选一件，下面只显示这一件。以后加作品，只加一条 article.studio-work。 */
     (function () {
       var reel = document.querySelector(".studio-reel");
       var track = reel && reel.querySelector(".studio-reel-track");
-      var folds = document.querySelectorAll("#studio .fold");
-      if (!reel || !track || !folds.length) return;
+      var stage = document.querySelector("#studio .studio-stage");
+      var works = document.querySelectorAll("#studio .studio-work");
+      if (!reel || !track || !works.length) return;
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var current = 0;
+      works.forEach(function (work, i) { if (work.classList.contains("is-on")) current = i; });
 
-      function toggle(i) {
-        var fold = folds[i];
-        var next = !fold.open;
-        folds.forEach(function (item) { item.open = false; });
-        fold.open = next;
+      function show(i, scroll) {
+        current = i;
+        works.forEach(function (work, k) { work.classList.toggle("is-on", k === i); });
         track.querySelectorAll(".reel-card").forEach(function (btn) {
-          btn.classList.toggle("is-on", next && Number(btn.dataset.idx) === i);
+          var on = Number(btn.dataset.idx) === i;
+          btn.classList.toggle("is-on", on);
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
         });
-        if (next) fold.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+        if (scroll && stage) stage.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
       }
 
       function cardFor(i, title, src) {
@@ -2122,23 +2101,19 @@
         cap.textContent = title;
         btn.appendChild(frame);
         btn.appendChild(cap);
-        btn.addEventListener("click", function () { toggle(i); });
+        btn.addEventListener("click", function () { show(i, true); });
         return btn;
       }
 
       function build() {
-        var openIdx = -1;
-        folds.forEach(function (fold, i) { if (fold.open) openIdx = i; });
         track.replaceChildren();
         var cards = [];
-        folds.forEach(function (fold, i) {
-          var img = fold.querySelector(".fold-body img");
-          var titleEl = fold.querySelector("summary [data-i18n]");
+        works.forEach(function (work, i) {
+          var img = work.querySelector("img");
+          var titleEl = work.querySelector("h3");
           var title = titleEl ? titleEl.textContent.trim() : "";
           if (!img || !title) return;
-          var btn = cardFor(i, title, img.getAttribute("src"));
-          if (i === openIdx) btn.classList.add("is-on");
-          cards.push(btn);
+          cards.push(cardFor(i, title, img.getAttribute("src")));
         });
         cards.forEach(function (btn) { track.appendChild(btn); });
         var still = reduce || cards.length < 2;
@@ -2148,12 +2123,12 @@
             var clone = btn.cloneNode(true);
             clone.setAttribute("aria-hidden", "true");
             clone.tabIndex = -1;
-            clone.addEventListener("click", function () { toggle(Number(btn.dataset.idx)); });
-            if (openIdx === Number(btn.dataset.idx)) clone.classList.add("is-on");
+            clone.addEventListener("click", function () { show(Number(btn.dataset.idx), true); });
             track.appendChild(clone);
           });
           track.style.animationDuration = Math.max(28, cards.length * 6) + "s";
         }
+        show(current, false);
       }
 
       document.addEventListener("peng-lang", build);
