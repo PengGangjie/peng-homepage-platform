@@ -666,7 +666,56 @@
     .quad .frame.board { aspect-ratio: 4 / 5; background: #fff; }
     .quad article h3 { font-size: 16px; margin-top: 12px; line-height: 1.4; }
     .quad article p { font-size: 13.5px; margin-top: 4px; color: var(--ink-soft); }
-    .folds { margin-top: 28px; border-top: 1px solid var(--paper-line); }
+    .studio-reel {
+      margin-top: 32px;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+    }
+    .studio-reel-track {
+      display: flex;
+      width: max-content;
+      animation: studio-marquee 42s linear infinite;
+    }
+    .studio-reel:hover .studio-reel-track,
+    .studio-reel:focus-within .studio-reel-track { animation-play-state: paused; }
+    .reel-card {
+      appearance: none;
+      -webkit-appearance: none;
+      flex: 0 0 300px;
+      width: 300px;
+      margin: 0 14px 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .reel-card .frame { display: block; aspect-ratio: 16 / 10; background: #e7e4de; }
+    .reel-card .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .reel-card.is-on .frame { box-shadow: inset 0 0 0 2px var(--accent); }
+    .reel-card:focus-visible .frame { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .reel-cap {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.8em;
+      margin-top: 10px;
+      font-size: 13.5px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+    .reel-card.is-on .reel-cap { color: var(--ink); font-weight: 800; }
+    .studio-reel.is-still { overflow-x: auto; mask-image: none; }
+    .studio-reel.is-still .studio-reel-track { animation: none; }
+    @keyframes studio-marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .folds { margin-top: 22px; border-top: 1px solid var(--paper-line); }
     .fold { border-bottom: 1px solid var(--paper-line); }
     .fold summary {
       list-style: none;
@@ -1083,6 +1132,7 @@
         border-top: 1px solid var(--paper-line);
       }
       .proof { gap: 28px 16px; margin-top: 32px; }
+      .reel-card { flex-basis: 240px; width: 240px; }
     }
 
     /* ————— 更窄手机 ————— */
@@ -1195,6 +1245,8 @@
       html { scroll-behavior: auto; }
       html.js .rv { opacity: 1; transform: none; transition: none; }
       .sheet { animation: none; }
+      .studio-reel { overflow-x: auto; mask-image: none; }
+      .studio-reel-track { animation: none; }
     }
   </style>
 </head>
@@ -1605,7 +1657,12 @@
           <h2 data-i18n="v2.studio.h2">做系统之前，我先做了十年空间。</h2>
           <p class="lede" data-i18n="v2.studio.lede">从景观投标到住宅、厂房与店面改造。图上的部分在这里，跑起来的部分在上面。</p>
         </header>
-
+      </div>
+      <!-- 跑马灯从下面每条 fold 收封面和标题。以后加作品，只加一条 details.fold。 -->
+      <div class="studio-reel">
+        <div class="studio-reel-track"></div>
+      </div>
+      <div class="wrap">
         <div class="folds">
           <details class="fold">
             <summary><span data-i18n="proj.liugao.h3">柳州高中 · 校园景观改造</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
@@ -2027,6 +2084,81 @@
       }
     })();
   </script>
-  <script src="i18n.js?v=45"></script>
+  <script src="i18n.js?v=46"></script>
+  <script>
+    /* 十年空间跑马灯：从每条 fold 收第一张图和标题。语言切换后重收。 */
+    (function () {
+      var reel = document.querySelector(".studio-reel");
+      var track = reel && reel.querySelector(".studio-reel-track");
+      var folds = document.querySelectorAll("#studio .fold");
+      if (!reel || !track || !folds.length) return;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function toggle(i) {
+        var fold = folds[i];
+        var next = !fold.open;
+        folds.forEach(function (item) { item.open = false; });
+        fold.open = next;
+        track.querySelectorAll(".reel-card").forEach(function (btn) {
+          btn.classList.toggle("is-on", next && Number(btn.dataset.idx) === i);
+        });
+        if (next) fold.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+      }
+
+      function cardFor(i, title, src) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "reel-card";
+        btn.dataset.idx = String(i);
+        var frame = document.createElement("span");
+        frame.className = "frame";
+        var pic = document.createElement("img");
+        pic.src = src;
+        pic.alt = "";
+        pic.decoding = "async";
+        frame.appendChild(pic);
+        var cap = document.createElement("span");
+        cap.className = "reel-cap";
+        cap.textContent = title;
+        btn.appendChild(frame);
+        btn.appendChild(cap);
+        btn.addEventListener("click", function () { toggle(i); });
+        return btn;
+      }
+
+      function build() {
+        var openIdx = -1;
+        folds.forEach(function (fold, i) { if (fold.open) openIdx = i; });
+        track.replaceChildren();
+        var cards = [];
+        folds.forEach(function (fold, i) {
+          var img = fold.querySelector(".fold-body img");
+          var titleEl = fold.querySelector("summary [data-i18n]");
+          var title = titleEl ? titleEl.textContent.trim() : "";
+          if (!img || !title) return;
+          var btn = cardFor(i, title, img.getAttribute("src"));
+          if (i === openIdx) btn.classList.add("is-on");
+          cards.push(btn);
+        });
+        cards.forEach(function (btn) { track.appendChild(btn); });
+        var still = reduce || cards.length < 2;
+        reel.classList.toggle("is-still", still);
+        if (!still) {
+          cards.forEach(function (btn) {
+            var clone = btn.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            clone.tabIndex = -1;
+            clone.addEventListener("click", function () { toggle(Number(btn.dataset.idx)); });
+            if (openIdx === Number(btn.dataset.idx)) clone.classList.add("is-on");
+            track.appendChild(clone);
+          });
+          track.style.animationDuration = Math.max(28, cards.length * 6) + "s";
+        }
+      }
+
+      document.addEventListener("peng-lang", build);
+      build();
+    })();
+  </script>
 </body>
 </html>

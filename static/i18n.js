@@ -340,6 +340,7 @@
     try {
       localStorage.setItem("peng-lang", en ? "en" : "zh");
     } catch (e) {}
+    document.dispatchEvent(new CustomEvent("peng-lang"));
   }
 
   function boot() {
