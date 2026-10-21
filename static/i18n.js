@@ -62,6 +62,8 @@
     "card.gewuji.go": "Open repo →",
     "studio.h2": "How to change spaces people already live in and use.",
     "studio.lede": "Home and factory retrofit, storefront and concept-hall design, plus built public-space work for offices and exhibition halls. Boards, drawings, renderings, and an on-site video.",
+    "proj.liugao.h3": "Liuzhou High School · campus landscape",
+    "proj.liugao.p": "An existing campus: a BOOK NOOK terrace for reading, a sunken node under the banyan, the old-banyan reading court, then weathering-steel wayfinding. Grade, circulation, and a place where reading can sit.",
     "proj.shuxiang.h3": "Home retrofit",
     "proj.shuxiang.p": "New Chinese interior renewal: living room, entry kitchen, study, primary bedroom. A shippable plan for an existing home—not collage concepts.",
     "quad.yunhai.h3": "Yunhai tea shop",
