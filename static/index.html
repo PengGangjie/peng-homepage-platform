@@ -719,23 +719,34 @@
       padding-top: 28px;
       border-top: 1px solid var(--paper-line);
     }
+    .proof-n { min-width: 0; }
     .proof-n strong {
       display: block;
-      font-size: clamp(34px, 7vw, 52px);
+      font-size: clamp(48px, 13vw, 96px);
       font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 0.95;
+      letter-spacing: -0.045em;
+      line-height: 0.9;
       color: var(--ink);
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
     }
-    .proof-n span {
+    .proof-n strong span {
+      display: inline;
+      margin: 0;
+      font-size: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
+      line-height: inherit;
+      color: inherit;
+      max-width: none;
+    }
+    .proof-n > span {
       display: block;
-      margin-top: 8px;
-      font-size: 13px;
-      line-height: 1.45;
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.4;
       color: var(--ink-soft);
-      max-width: 14em;
+      max-width: 12em;
     }
     #studio, #teach { border-top: 1px solid var(--paper-line); }
 
@@ -1061,6 +1072,19 @@
     .foot-upd a { color: var(--ink-soft); text-decoration: none; }
     .foot-upd a:hover { color: var(--accent); }
 
+    /* ————— 手机：段距收一点，路径项分开，数字仍是这一屏最大的字 ————— */
+    @media (max-width: 879px) {
+      section.block { padding: 52px 0; }
+      .hero { padding: 36px 0 48px; }
+      .path-rail { gap: 0; }
+      .path-rail li + li {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--paper-line);
+      }
+      .proof { gap: 28px 16px; margin-top: 32px; }
+    }
+
     /* ————— 更窄手机 ————— */
     @media (max-width: 380px) {
       .quad { grid-template-columns: 1fr; }
@@ -1114,7 +1138,8 @@
         box-shadow: 0 0 0 5px var(--paper);
       }
       .path-rail li.is-now::before { background: var(--accent); }
-      .proof { grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 52px; }
+      .proof { grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 64px; }
+      .proof-n strong { font-size: 92px; }
       .hero-grid { display: grid; grid-template-columns: 1.05fr 0.9fr; gap: 56px; align-items: center; }
       .hero-shot { margin-top: 0; }
       .hero-shot::before { top: 40%; width: 64%; height: 64px; }
