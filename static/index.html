@@ -811,11 +811,29 @@
     /* ————— 凭据（char） ————— */
     .certs { background: var(--dark); }
     #works { border-top: 1px solid rgba(255, 255, 255, 0.16); }
-    .cert-row { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 40px; }
-    .cert-card { text-decoration: none; color: inherit; }
-    .cert-card .frame { aspect-ratio: 16 / 11; background: #fff; }
-    .cert-card h3 { font-size: 16px; font-weight: 700; margin-top: 12px; }
-    .cert-card p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .cert-reel {
+      margin-top: 32px;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+    }
+    .certs .reel-card .frame { background: #fff; }
+    .certs .reel-card .frame img { object-fit: contain; }
+    .certs .reel-cap { color: var(--muted); }
+    .certs .reel-card.is-on .reel-cap { color: #fff; }
+    .cert-stage { margin-top: 8px; }
+    .cert-work { display: none; padding-top: 22px; }
+    .cert-work.is-on { display: block; }
+    .cert-work h3 { font-size: clamp(20px, 3vw, 26px); font-weight: 800; letter-spacing: -0.01em; color: #fff; }
+    .cert-copy { margin-top: 8px; max-width: 40em; font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+    .cert-open { display: block; margin-top: 18px; text-decoration: none; color: inherit; max-width: 520px; }
+    .cert-open .frame { aspect-ratio: 16 / 11; background: #fff; }
+    .cert-open:focus-visible .frame { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @media (min-width: 880px) {
+      .cert-work.is-on { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); column-gap: 36px; align-items: end; }
+      .cert-work h3,
+      .cert-copy { margin-top: 0; }
+      .cert-open { grid-column: 1 / -1; max-width: 560px; }
+    }
     .cert-more { margin-top: 44px; }
     .cert-more summary {
       list-style: none;
@@ -1126,6 +1144,7 @@
       }
       .proof { gap: 28px 16px; margin-top: 32px; }
       .reel-card { flex-basis: 240px; width: 240px; }
+      #certs .reel-card { flex-basis: 220px; width: 220px; }
     }
 
     /* ————— 更窄手机 ————— */
@@ -1208,7 +1227,6 @@
       .teach-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start; }
       .stats { grid-template-columns: repeat(2, 1fr); }
 
-      .cert-row { grid-template-columns: 1fr 1fr 1fr; gap: 26px; }
       .cert-list { grid-template-columns: 1fr 1fr; }
 
       .opc-bar { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 0; padding: 4px 4px 4px 14px; }
@@ -1426,24 +1444,42 @@
         <header class="sec-head">
           <p class="kicker"><svg class="ic" style="width:15px;height:15px;vertical-align:-2px;" aria-hidden="true"><use href="#i-award"/></svg> Credentials</p>
           <h2 data-i18n="v2.certs.h2">能查证的，才写上来。</h2>
-          <p class="lede" data-i18n="v2.certs.lede">三张核心证书可在线核对，其余身份与编号收在下面。</p>
+          <p class="lede" data-i18n="v2.certs.lede">四张核心证书可在线核对，其余身份与编号收在下面。</p>
         </header>
-        <div class="cert-row">
-          <a class="cert-card rv" href="works/certs/sketchup-p2.jpg?v=7" target="_blank" rel="noreferrer">
-            <div class="frame contain"><img src="works/certs/sketchup-p2.jpg?v=7" alt="SketchUp 国际认证官方讲师" loading="lazy" decoding="async" /></div>
+      </div>
+      <div class="cert-reel studio-reel">
+        <div class="studio-reel-track"></div>
+      </div>
+      <div class="wrap">
+        <div class="cert-stage">
+          <article class="cert-work is-on">
             <h3 data-i18n="cert.skp.h3">SketchUp 国际认证官方讲师</h3>
-            <p data-i18n="cert.skp.p">Trimble Official Trainer · Standard · T-010-000179 · 结业号 T-010-00086 · 北京 ATC · 2024.08</p>
-          </a>
-          <a class="cert-card rv" href="works/certs/bsi-cert-v3.jpg" target="_blank" rel="noreferrer">
-            <div class="frame contain"><img src="works/certs/bsi-cert-v3.jpg" alt="buildingSMART International Foundation 国际认证" loading="lazy" decoding="async" /></div>
-            <h3>buildingSMART Foundation 国际认证</h3>
-            <p data-i18n="cert.bsi.p">buildingSMART International · 2026.09.14<br />Certificate ID：BgB5XZlAbY<br />ISO 19650 / openBIM 基础体系</p>
-          </a>
-          <a class="cert-card rv" href="works/certs/aib-1.jpg" target="_blank" rel="noreferrer">
-            <div class="frame contain"><img src="works/certs/aib-1.jpg" alt="AI Builders 课程结业" loading="lazy" decoding="async" /></div>
-            <h3>AI Builders 结业</h3>
-            <p data-i18n="cert.aib1.p">Superlinear Academy · 2026.09.01<br />毕业生自述：在复杂工作中做出信得过的产品</p>
-          </a>
+            <p class="cert-copy" data-i18n="cert.skp.p">Trimble Official Trainer · Standard · T-010-000179 · 结业号 T-010-00086 · 北京 ATC · 2024.08</p>
+            <a class="cert-open" href="works/certs/sketchup-p2.jpg?v=7" target="_blank" rel="noreferrer">
+              <div class="frame contain"><img src="works/certs/sketchup-p2.jpg?v=7" alt="SketchUp 国际认证官方讲师" loading="lazy" decoding="async" /></div>
+            </a>
+          </article>
+          <article class="cert-work">
+            <h3 data-i18n="cert.bsi.h3">buildingSMART Foundation 国际认证</h3>
+            <p class="cert-copy" data-i18n="cert.bsi.p">buildingSMART International · 2026.09.14<br />Certificate ID：BgB5XZlAbY<br />ISO 19650 / openBIM 基础体系</p>
+            <a class="cert-open" href="works/certs/bsi-cert-v3.jpg" target="_blank" rel="noreferrer">
+              <div class="frame contain"><img src="works/certs/bsi-cert-v3.jpg" alt="buildingSMART International Foundation 国际认证" loading="lazy" decoding="async" /></div>
+            </a>
+          </article>
+          <article class="cert-work">
+            <h3 data-i18n="cert.aib1.h3">AI Builders 结业</h3>
+            <p class="cert-copy" data-i18n="cert.aib1.p">Superlinear Academy · 2026.09.01<br />毕业生自述：在复杂工作中做出信得过的产品</p>
+            <a class="cert-open" href="works/certs/aib-1.jpg" target="_blank" rel="noreferrer">
+              <div class="frame contain"><img src="works/certs/aib-1.jpg" alt="AI Builders 课程结业" loading="lazy" decoding="async" /></div>
+            </a>
+          </article>
+          <article class="cert-work">
+            <h3 data-i18n="cert.aib2.h3">AI+Architect 结业</h3>
+            <p class="cert-copy" data-i18n="cert.aib2.p">Superlinear Academy · 2026.09.01<br />毕业生自述：让系统持续工作、自我迭代</p>
+            <a class="cert-open" href="works/certs/aib-2.jpg" target="_blank" rel="noreferrer">
+              <div class="frame contain"><img src="works/certs/aib-2.jpg" alt="AI+Architect 课程结业" loading="lazy" decoding="async" /></div>
+            </a>
+          </article>
         </div>
         <details class="cert-more">
           <summary><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg><span data-i18n="v2.cert.more">全部身份与证书</span></summary>
@@ -2060,79 +2096,87 @@
       }
     })();
   </script>
-  <script src="i18n.js?v=46"></script>
+  <script src="i18n.js?v=47"></script>
   <script>
-    /* 十年空间：跑马灯选一件，下面只显示这一件。以后加作品，只加一条 article.studio-work。 */
+    /* 跑马灯：凭据与十年空间共用。点封面，下面只显示这一件。加条目只加 article。 */
     (function () {
-      var reel = document.querySelector(".studio-reel");
-      var track = reel && reel.querySelector(".studio-reel-track");
-      var stage = document.querySelector("#studio .studio-stage");
-      var works = document.querySelectorAll("#studio .studio-work");
-      if (!reel || !track || !works.length) return;
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var current = 0;
-      works.forEach(function (work, i) { if (work.classList.contains("is-on")) current = i; });
 
-      function show(i, scroll) {
-        current = i;
-        works.forEach(function (work, k) { work.classList.toggle("is-on", k === i); });
-        track.querySelectorAll(".reel-card").forEach(function (btn) {
-          var on = Number(btn.dataset.idx) === i;
-          btn.classList.toggle("is-on", on);
-          btn.setAttribute("aria-pressed", on ? "true" : "false");
-        });
-        if (scroll && stage) stage.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
-      }
+      function bindReel(sectionId, workClass, stageClass) {
+        var root = document.getElementById(sectionId);
+        if (!root) return;
+        var reel = root.querySelector(".studio-reel");
+        var track = reel && reel.querySelector(".studio-reel-track");
+        var stage = root.querySelector("." + stageClass);
+        var works = root.querySelectorAll("." + workClass);
+        if (!reel || !track || !works.length) return;
+        var current = 0;
+        works.forEach(function (work, i) { if (work.classList.contains("is-on")) current = i; });
 
-      function cardFor(i, title, src) {
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "reel-card";
-        btn.dataset.idx = String(i);
-        var frame = document.createElement("span");
-        frame.className = "frame";
-        var pic = document.createElement("img");
-        pic.src = src;
-        pic.alt = "";
-        pic.decoding = "async";
-        frame.appendChild(pic);
-        var cap = document.createElement("span");
-        cap.className = "reel-cap";
-        cap.textContent = title;
-        btn.appendChild(frame);
-        btn.appendChild(cap);
-        btn.addEventListener("click", function () { show(i, true); });
-        return btn;
-      }
-
-      function build() {
-        track.replaceChildren();
-        var cards = [];
-        works.forEach(function (work, i) {
-          var img = work.querySelector("img");
-          var titleEl = work.querySelector("h3");
-          var title = titleEl ? titleEl.textContent.trim() : "";
-          if (!img || !title) return;
-          cards.push(cardFor(i, title, img.getAttribute("src")));
-        });
-        cards.forEach(function (btn) { track.appendChild(btn); });
-        var still = reduce || cards.length < 2;
-        reel.classList.toggle("is-still", still);
-        if (!still) {
-          cards.forEach(function (btn) {
-            var clone = btn.cloneNode(true);
-            clone.setAttribute("aria-hidden", "true");
-            clone.tabIndex = -1;
-            clone.addEventListener("click", function () { show(Number(btn.dataset.idx), true); });
-            track.appendChild(clone);
+        function show(i, scroll) {
+          current = i;
+          works.forEach(function (work, k) { work.classList.toggle("is-on", k === i); });
+          track.querySelectorAll(".reel-card").forEach(function (btn) {
+            var on = Number(btn.dataset.idx) === i;
+            btn.classList.toggle("is-on", on);
+            btn.setAttribute("aria-pressed", on ? "true" : "false");
           });
-          track.style.animationDuration = Math.max(28, cards.length * 6) + "s";
+          if (scroll && stage) stage.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
         }
-        show(current, false);
+
+        function cardFor(i, title, src) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "reel-card";
+          btn.dataset.idx = String(i);
+          var frame = document.createElement("span");
+          frame.className = "frame";
+          var pic = document.createElement("img");
+          pic.src = src;
+          pic.alt = "";
+          pic.decoding = "async";
+          frame.appendChild(pic);
+          var cap = document.createElement("span");
+          cap.className = "reel-cap";
+          cap.textContent = title;
+          btn.appendChild(frame);
+          btn.appendChild(cap);
+          btn.addEventListener("click", function () { show(i, true); });
+          return btn;
+        }
+
+        function build() {
+          track.replaceChildren();
+          var cards = [];
+          works.forEach(function (work, i) {
+            var img = work.querySelector("img");
+            var titleEl = work.querySelector("h3");
+            var title = titleEl ? titleEl.textContent.trim() : "";
+            if (!img || !title) return;
+            cards.push(cardFor(i, title, img.getAttribute("src")));
+          });
+          cards.forEach(function (btn) { track.appendChild(btn); });
+          var still = reduce || cards.length < 2;
+          reel.classList.toggle("is-still", still);
+          if (!still) {
+            cards.forEach(function (btn) {
+              var clone = btn.cloneNode(true);
+              clone.setAttribute("aria-hidden", "true");
+              clone.tabIndex = -1;
+              clone.addEventListener("click", function () { show(Number(btn.dataset.idx), true); });
+              track.appendChild(clone);
+            });
+            track.style.animationDuration = Math.max(28, cards.length * 6) + "s";
+          }
+          show(current, false);
+        }
+
+        document.addEventListener("peng-lang", build);
+        build();
       }
 
-      document.addEventListener("peng-lang", build);
-      build();
+      bindReel("certs", "cert-work", "cert-stage");
+      bindReel("studio", "studio-work", "studio-stage");
     })();
   </script>
 </body>
