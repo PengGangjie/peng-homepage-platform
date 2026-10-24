@@ -171,8 +171,10 @@
       white-space: nowrap;
     }
     nav.links { display: none; }
-    .bar .lang { display: none; }
-    .acts { display: flex; align-items: center; gap: 10px; }
+    .brand { min-width: 0; }
+    .brand-motto { overflow: hidden; text-overflow: ellipsis; }
+    .acts { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .bar .lang { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; padding: 0 10px; }
     .lang {
       border: 1px solid rgba(255, 255, 255, 0.24);
       background: transparent;
@@ -2096,7 +2098,7 @@
       }
     })();
   </script>
-  <script src="i18n.js?v=47"></script>
+  <script src="i18n.js?v=48"></script>
   <script>
     /* 跑马灯：凭据与十年空间共用。点封面，下面只显示这一件。加条目只加 article。 */
     (function () {

@@ -341,7 +341,8 @@
       btn.textContent = en ? "中文" : "EN";
     });
     try {
-      localStorage.setItem("peng-lang", en ? "en" : "zh");
+      sessionStorage.setItem("peng-lang", en ? "en" : "zh");
+      localStorage.removeItem("peng-lang");
     } catch (e) {}
     document.dispatchEvent(new CustomEvent("peng-lang"));
   }
@@ -356,7 +357,8 @@
     });
     var saved = "zh";
     try {
-      saved = localStorage.getItem("peng-lang") || "zh";
+      localStorage.removeItem("peng-lang");
+      saved = sessionStorage.getItem("peng-lang") || "zh";
     } catch (e) {}
     if (saved === "en") apply("en");
     else {
