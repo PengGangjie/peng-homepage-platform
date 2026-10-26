@@ -720,6 +720,7 @@
     .studio-stage { margin-top: 8px; }
     .studio-work { display: none; padding-top: 22px; }
     .studio-work.is-on { display: block; }
+    .studio-work[hidden] { display: none !important; }
     .studio-work h3 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; letter-spacing: -0.01em; }
     .studio-copy { margin-top: 8px; max-width: 40em; font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
     .studio-work .feat { margin-top: 18px; }
@@ -1695,7 +1696,7 @@
       </div>
       <div class="wrap">
         <div class="studio-stage">
-          <article class="studio-work is-on">
+          <article class="studio-work" hidden>
             <h3 data-i18n="proj.liugao.h3">柳州高中 · 校园景观改造</h3>
             <p class="studio-copy" data-i18n="proj.liugao.p">存量校园：BOOK NOOK 台地阅读、榕树下沉节点、古榕书苑，再到耐候钢导视。高差、流线和阅读收成能坐下的空间。</p>
             <div class="feat">
@@ -1707,7 +1708,7 @@
               </div>
             </div>
           </article>
-          <article class="studio-work">
+          <article class="studio-work is-on">
             <h3 data-i18n="proj.shuxiang.h3">住宅改造</h3>
             <p class="studio-copy" data-i18n="proj.shuxiang.p">新中式室内更新：客厅、入口厨房、书房、主卧。存量住宅的可交付方案，不是概念拼贴。</p>
             <div class="feat">
@@ -2110,7 +2111,9 @@
         var reel = root.querySelector(".studio-reel");
         var track = reel && reel.querySelector(".studio-reel-track");
         var stage = root.querySelector("." + stageClass);
-        var works = root.querySelectorAll("." + workClass);
+        var works = Array.prototype.filter.call(root.querySelectorAll("." + workClass), function (work) {
+          return !work.hidden;
+        });
         if (!reel || !track || !works.length) return;
         var current = 0;
         works.forEach(function (work, i) { if (work.classList.contains("is-on")) current = i; });
